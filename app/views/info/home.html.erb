@@ -8,20 +8,31 @@
 		<div id="user_info_box"><a href="#">Kraportov Arkadiy</a></div>
 	</div>
 </div>
-<div id="nav_box">
-	<ul>
-		<li><a href="#">Home</a> | </li>
-		<li><a href="#">Shop</a> | </li>
-		<li><a href="#">Links</a> | </li>
-	</ul>
-</div>
 	
 <div id="the_box">
-	<div id="home_box"></div>
-	<div id="main_box">
-		<div id="browser_box"></div>
-		<div id="catalog_box"></div>
-		<div id="cart_box"></div>
+	<% form_tag do %>
+	<% end %>
+
+	<div id="nav_box"></div>
+	<div id="container_box">
+		<div id="info_box" class="top_boxes" style="display:none"></div>
+		<div id="main_box" class="top_boxes" style="display:none">
+			<div id="catalog_box"></div>
+			<div id="cart_box"></div>
+		</div>
+		<div id="checkout_box" class="top_boxes" style="display:none"></div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	globalURL = {
+		info: '<%=info_path%>',
+		categories: '<%=categories_path%>',
+		token: '<%=escape_javascript form_authenticity_token%>'
+	};
 	
+	<%=remote_function :url => categories_path%>
+	showTopBox('info_box','<%=info_path%>');
+
+
+</script>

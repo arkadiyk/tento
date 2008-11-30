@@ -2,7 +2,7 @@ class CatalogController < ApplicationController
   def items
   end
 
-  def item_categories
+  def categories
   end
 
 end

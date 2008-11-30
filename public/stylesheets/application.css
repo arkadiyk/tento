@@ -23,43 +23,35 @@ body, table, div, td, input {
 
 a img {border: 0}
 
+
 #header_box {
-	float: left;
+	position:relative;
+	height: 60px;
+	border-bottom: 3px solid #339966;;
+	background: #99ffcc;;
 	width: 100%;
-	clear: both;
-	background: #99ffcc;
 }
 
 #logo_box {
-	float:left;
+	float:left; 
 	padding: 15px;
 }
+
 #header_info_box, #language_box, #user_info_box {
-	float: right;
+	float: right; 
 	padding: 5px;
 }
 
-#nav_box{
-	float: left;
-	width: 100%;
-	clear: both;
-	background: #66cc99;
-	padding: 2px 0;
+#nav_box {
+	position: absolute;
+	left: 0;
+	width: 150px;
+	background: #ffffcc;
 }
 
-#nav_box ul
-{
-        list-style:none;
-        float:left;
-        margin:0;
-        margin-left: 10px;
-		padding:0;
-		
+#container_box {
+	position: absolute;
+	left: 150px;
+	right: 0;
 }
-#nav_box li
-{
-        display:inline;
-        float:left;
-        margin:0 10px 0 0;
-        padding:0;
-}
+
