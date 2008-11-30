@@ -1,0 +1,2 @@
+page['brw_pl'].replace_html :partial => 'product_line'
+page['brw_su'].replace_html :partial => 'supplier'

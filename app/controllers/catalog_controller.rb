@@ -3,6 +3,8 @@ class CatalogController < ApplicationController
   end
 
   def categories
+    @pl = ProductLine.find :all
+    @su = Supplier.find :all
   end
 
 end

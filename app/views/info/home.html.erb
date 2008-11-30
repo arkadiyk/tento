@@ -13,7 +13,10 @@
 	<% form_tag do %>
 	<% end %>
 
-	<div id="nav_box"></div>
+	<div id="nav_box">
+		<div id="brw_pl">Product Line</div>
+		<div id="brw_su">Supplier</div>
+	</div>
 	<div id="container_box">
 		<div id="info_box" class="top_boxes" style="display:none"></div>
 		<div id="main_box" class="top_boxes" style="display:none">
@@ -33,6 +36,4 @@
 	
 	<%=remote_function :url => categories_path%>
 	showTopBox('info_box','<%=info_path%>');
-
-
 </script>
