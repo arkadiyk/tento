@@ -45,13 +45,93 @@ a img {border: 0}
 #nav_box {
 	position: absolute;
 	left: 0;
-	width: 150px;
-	background: #ffffcc;
+	width: 170px;
+	background: #fff;
 }
 
 #container_box {
 	position: absolute;
-	left: 150px;
+	left: 172px;
 	right: 0;
 }
 
+
+.cat_item {
+    border-bottom: 1px dotted #EB8;
+    width: 160px;
+    cursor:pointer;
+    padding: 2px;
+    margin-left: 2px;
+}
+
+.cat_desc {
+  font-size: 0.9em;
+  margin-left: 6px;
+}
+
+
+/*  vv Menu vv */
+
+#MainMenu 
+{
+	width:170px;
+	background:#FFF;
+	border:0;
+	margin:0;
+}
+#tab 
+{
+	top:0;
+	height:0;
+	margin:0;
+}
+#tab ul 
+{
+	list-style:none;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#tab li 
+{
+	float:left;
+	clear:both;
+	margin:0 1px 0 0;
+	padding:0;
+}
+#tab a 
+{
+	background:url(/images/bright.gif) no-repeat right bottom;
+	text-decoration:none;
+	width:170px;
+	border:0;
+	display:block;
+	float:left;
+	margin:0;
+	padding:0;
+}
+#tab a span 
+{
+	display:block;
+	background:url(/images/bleft.gif) no-repeat left bottom;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#DD8715;
+	font-weight:700;
+	line-height:21px;
+	padding:0 15px;
+}
+#tab a:hover,#tab li.item_active a 
+{
+	background-position:right top;
+}
+#tab a:hover span,#tab li.item_active a span 
+{
+	background-position:left top;
+	color:#000;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+}
+
+/* ^^ Menu ^^ */
