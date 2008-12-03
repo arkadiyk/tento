@@ -1,75 +1,80 @@
+<!--[if lt IE 7]>
+<style type="text/css">
+.top_boxes {
+  width: expression( ( document.documentElement.clientWidth - 170 ) + 'px');
+}
+</style>
+<![endif]-->
+
+
 <div id="header_box">
-	<div id="logo_box">
-		<h1>LOGO!!!</h1>
-	</div>
-	<div id="header_info_box">
-		<div id="language_box"><a href="#">English</a> <a href="#">日本語</a></div>
-		<br/>
-		<div id="user_info_box"><a href="#">Kraportov Arkadiy</a></div>
-	</div>
+<!--		<h1>LOGO!!!</h1>
+	<span id="header_info_box">
+		<span id="language_box"><a href="#">English</a> <a href="#">日本語</a></span>
+	</span>
+-->
 </div>
 	
-<div id="the_box">
-	<% form_tag do %>
-	<% end %>
-
-	<div id="nav_box">
-  
-  
-  
-  
-  
-  
-  
-  <div id="MainMenu">
-	<div id="tab">
-		<ul>
-			<li class="item_active"><a href="#"><span>Home</span></a></li>
-      <li><a href="#"><span>Today's Specials!</span></a></li>
-      <li><a href="#" onclick="$('brw_pl_o').toggle('appear', { duration: 10 })"><span>Browse By Category</span></a></li>
-      <li id="brw_pl_o" style="display:none"><span id="brw_pl">Product Line</span></li>
-			<li><a href="#" onclick="$('brw_su').toggle('slide', { duration: 1.2 })"><span>Browse By Supplier</span></a></li>
-      <li><div id="brw_su" style="display:none">Supplier</div></li>
-      <li><a href="#"><span>Order</span></a></li>
-			<li><a href="#" onclick="$('brw_info').toggle('slide', { duration: 1.2 })"><span>Information</span></a></li>
-      <li><div id="brw_info" style="display:none">
+<div id="nav_box">
+  <div id="tab">
+    <ul>
+      <li><a href="#" class="mitem_cm" onClick="showTopBox('info_box','<%=info_path%>')"><span>Home</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goCatalog('sp')"><span>Today's Specials!</span></a></li>
+      <li><a href="#" class="mitem_dd"><span>&#x25B6; Browse By Category</span></a></li>
+      <li><div id="brw_pl_o" style="display:none"><div id="brw_pl" class="brw_items"></div></div></li>
+      <li><a href="#" class="mitem_dd"><span>&#x25B6; Browse By Supplier</span></a></li>
+      <li><div id="brw_su_o" style="display:none"><div id="brw_su" class="brw_items"></div></div></li>
+      <li><a href="#" class="mitem_cm"><span>Order</span></a></li>
+      <li><a href="#" class="mitem_dd"><span>&#x25B6; Information</span></a></li>
+      <li><div id="brw_info_o" style="display:none"><div id="brw_info" class="brw_items">
         <ul>
           <li>Farmers</li>
           <li>How To Order</li>
           <li>Calendar</li>
           <li>Links</li>
         </ul>
-      </div></li>
+      </div></div></li>
       
-		</ul>
-	</div>
+    </ul>
+  </div>
 </div>
 
-  
-  
-  
-  
-  
-  
-		
-	</div>
-	<div id="container_box">
-		<div id="info_box" class="top_boxes" style="display:none"></div>
-		<div id="main_box" class="top_boxes" style="display:none">
-			<div id="catalog_box"></div>
-			<div id="cart_box"></div>
-		</div>
-		<div id="checkout_box" class="top_boxes" style="display:none"></div>
-	</div>
+<div id="container_box">
+  <div id="info_box" class="top_boxes" style="display:none"></div>
+  <div id="main_box" class="top_boxes" style="display:none">
+    <div id="cart_box"></div>
+  </div>
+  <div id="checkout_box" class="top_boxes" style="display:none"></div>
 </div>
+
 
 <script type="text/javascript">
-	globalURL = {
-		info: '<%=info_path%>',
-		categories: '<%=categories_path%>',
-		token: '<%=escape_javascript form_authenticity_token%>'
+	var globalURL = {
+		token: '<%=escape_javascript form_authenticity_token%>',
+    catalog: '<%=catalog_path%>',
+    cartLines: '<%=cart_lines_path%>'
 	};
+  
+  function goCatalog(cat, id) {
+    showTopBox( 'main_box' );
+
+    loadBox(globalURL.cartLines, 'cart_box');
+
+    var box_id = "cat_" + cat + (id == undefined ? "" : "_" + id);
+    hideAll( '.catalog_boxes', box_id );
+    box = $(box_id);
+    if( box == undefined ) {
+      box = new Element('div', { id: box_id, 'class' : 'catalog_boxes'});
+      $('main_box').insert(box);
+    }
+    box.show();
+    loadBox(globalURL.catalog, box_id, { cat: cat, id: (id == undefined ? "" : id) } );
+
+  }
+    
 	
+  $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
+  
 	<%=remote_function :url => categories_path%>
 	showTopBox('info_box','<%=info_path%>');
 </script>

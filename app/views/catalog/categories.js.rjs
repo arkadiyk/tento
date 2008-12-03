@@ -1,2 +1,2 @@
-page['brw_pl'].replace_html :partial => 'category_list', :object => @pl
-page['brw_su'].replace_html :partial => 'category_list', :object => @su
+page['brw_pl'].replace_html :partial => 'category_list', :object => @pl, :locals => { :id => "pl" }
+page['brw_su'].replace_html :partial => 'category_list', :object => @su, :locals => { :id => "su" }

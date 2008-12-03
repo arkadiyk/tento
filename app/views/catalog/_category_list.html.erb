@@ -1,6 +1,6 @@
-<% for cat in category_list %>
-  <div class="cat_item">
+<% for cat in category_list -%>
+  <div class="cat_item" onClick="goCatalog('<%=id%>','<%=cat.id%>')">
     <strong><%=cat.name_en%></strong>
     <p class="cat_desc"><%=cat.long_name_en%></p>
   </div>
-<% end %>
+<% end -%>

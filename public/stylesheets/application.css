@@ -8,6 +8,7 @@ body, html {
     padding: 0;
     overflow: auto;
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -25,10 +26,12 @@ a img {border: 0}
 
 
 #header_box {
-	position:relative;
+  margin: 0;
+  padding: 0;
+	position: relative;
 	height: 60px;
 	border-bottom: 3px solid #339966;;
-	background: #99ffcc;;
+	background: #99ffcc;
 	width: 100%;
 }
 
@@ -37,24 +40,57 @@ a img {border: 0}
 	padding: 15px;
 }
 
-#header_info_box, #language_box, #user_info_box {
+#header_info_box, #language_box {
 	float: right; 
 	padding: 5px;
 }
 
 #nav_box {
-	position: absolute;
+  position: absolute;
+  top: 64px;
 	left: 0;
-	width: 170px;
-	background: #fff;
+  height: auto;
+  width:170px;
 }
 
 #container_box {
 	position: absolute;
-	left: 172px;
+  top: 64px;
+	left: 170px;
 	right: 0;
+  height: auto;
+  width: auto;
 }
 
+.top_boxes {
+  position: absolute;
+  height: auto;
+  top: 0;
+	left: 0;
+  right: 0;
+}
+
+.catalog_boxes {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    padding: 8px;
+    margin-top: 15px;
+}
+
+#cart_box {
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    padding: 8px;
+    margin-top: 15px;
+}
+
+.brw_items {
+  position: relative;
+}
 
 .cat_item {
     border-bottom: 1px dotted #EB8;
@@ -70,15 +106,27 @@ a img {border: 0}
 }
 
 
-/*  vv Menu vv */
-
-#MainMenu 
-{
-	width:170px;
-	background:#FFF;
-	border:0;
-	margin:0;
+.catalog_line_boxes {
+  border: 1px solid #B74;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 2px;
+  float: left;
+  width:100%;
+  vertical-align: center;
 }
+
+.catalog_line_boxes div{
+  margin: 5px;
+  float: left;
+}
+
+
+
+/*  --v-- Menu --v-- */
+
+
+
 #tab 
 {
 	top:0;
@@ -115,11 +163,11 @@ a img {border: 0}
 	display:block;
 	background:url(/images/bleft.gif) no-repeat left bottom;
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:13px;
 	color:#DD8715;
 	font-weight:700;
 	line-height:21px;
-	padding:0 15px;
+	padding:0 10px;
 }
 #tab a:hover,#tab li.item_active a 
 {
@@ -134,4 +182,4 @@ a img {border: 0}
 	text-decoration:none;
 }
 
-/* ^^ Menu ^^ */
+/* --^-- Menu --^-- */

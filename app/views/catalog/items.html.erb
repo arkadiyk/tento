@@ -1,2 +1,15 @@
-<h1>Catalog#items</h1>
-<p>Find me in app/views/catalog/items.html.erb</p>
+<% @cat_items.each do |hdr, items| %>
+  <div class="cat_items_hdr"><%= hdr.name_en %></div>
+  <% for item in items %>
+    <div class="catalog_line_boxes" >
+      <div><%=image_tag("rails.png")%></div>
+      <div style="width: 65%"><%=h item.long_name_en %></div>
+      <div style="width: 15%;float: right">
+        <%=item.unit_en%> / &yen;<%=item.price%>
+        <br/>
+        <%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
+        <%=button_to_function ">", "createCartLine('#{item.id}')"%>
+      </div>
+    </div>
+  <% end %>
+<% end %>

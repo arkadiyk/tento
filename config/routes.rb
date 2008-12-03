@@ -42,7 +42,12 @@ ActionController::Routing::Routes.draw do |map|
   
   map.info '/info', :controller => 'info', :action => 'info'
   map.categories '/catalog/categories', :controller => 'catalog', :action => 'categories'
-  
+  map.catalog '/catalog/items', :controller => 'catalog', :action => 'items'
+
+  map.cart_lines '/cart/lines', :controller => 'cart', :action => 'index', :conditions => { :method => :get }
+  map.cart_lines '/cart/lines', :controller => 'cart', :action => 'create', :conditions => { :method => :post }
+  map.cart_lines '/cart/lines', :controller => 'cart', :action => 'update', :conditions => { :method => :put }
+  map.cart_lines '/cart/lines', :controller => 'cart', :action => 'destroy', :conditions => { :method => :delete }
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
