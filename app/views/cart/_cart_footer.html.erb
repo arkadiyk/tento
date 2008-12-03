@@ -1,0 +1,9 @@
+<div id="botton_panel">
+  <%=button_to_function "Checkout", "redirectToCheckout()"%>
+  <%=button_to_function "Clear Cart", "alert('check out')"%>  
+</div>
+<p>
+  Please add items from Catalog by updating desired quantity and pressing ">>" Button.
+  You can remove cart line by pressing <%=image_tag("remove.png")%> and adjust quantity by pressing 
+  <%=image_tag("up.png")%> or <%=image_tag("down.png")%> buttons.
+</p>

@@ -1,0 +1,9 @@
+if @cart_is_empty
+  page.replace_html "cart_box", :partial => 'empty_cart'
+else
+  page.remove "cart_line_#{@line.id}"
+  if @last_supplier
+    page.remove "supplier_#{@line.catalog_item.supplier_id}"
+    page.remove "supplier_total_#{@line.catalog_item.supplier_id}"
+  end
+end

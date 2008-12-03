@@ -1,0 +1,18 @@
+<% if @line_supplier_map.size == 0 %>
+  <%= render :partial => 'empty_cart' %>
+<% else %>
+  <table id="cart_table">
+  <% @line_supplier_map.each do | supplier, line_items| %>
+    <%= render :partial => 'supplier', :object => supplier %>
+    <% for item in line_items %>
+      <%= render :partial => 'cart_line', :object => item %>
+    <% end %>
+    <%= render :partial => 'supplier_total', 
+      :object => { :id => supplier.id,
+                   :amount =>  line_items.sum { |cl| cl.price * cl.quantity },
+                   :weight =>  line_items.sum { |cl| cl.catalog_item.unit_weight * cl.quantity } }
+       %>
+  <% end %>
+  </table>
+  <%= render :partial => 'cart_footer' %>
+<% end %>

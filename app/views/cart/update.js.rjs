@@ -1,0 +1,1 @@
+page.replace "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
