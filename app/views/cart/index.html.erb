@@ -1,8 +1,8 @@
-<% if @line_supplier_map.size == 0 %>
+<% if @cart_lines_by_supplier.empty? %>
   <%= render :partial => 'empty_cart' %>
 <% else %>
-  <table id="cart_table">
-  <% @line_supplier_map.each do | supplier, line_items| %>
+  <table id="cart_table" cellspacing="0">
+  <% @cart_lines_by_supplier.each do | supplier, line_items| %>
     <%= render :partial => 'supplier', :object => supplier %>
     <% for item in line_items %>
       <%= render :partial => 'cart_line', :object => item %>

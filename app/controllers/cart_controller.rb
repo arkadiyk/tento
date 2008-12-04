@@ -16,7 +16,7 @@ class CartController < ApplicationController
 
   def create
     cart = find_cart( session[ :cart_id ] )
-    @new_cart = cart.line_items.size == 0
+    @new_cart = cart.line_items.empty?
     
     catalog_item_id = params[ :cat_id ]
     quantity = params[ :qty ].to_i
@@ -52,11 +52,11 @@ class CartController < ApplicationController
     cart = Cart.find(session[:cart_id])
     @line = LineItem.find(params[:id])
     cart.line_items.destroy(@line)
-    if cart.line_items.size == 0
+    if cart.line_items.empty?
       @cart_is_empty = true
     else
       sup_cart_lines = cart.line_items.find_all_by_supplier_id( @line.catalog_item.supplier_id )
-      if sup_cart_lines.size == 0
+      if sup_cart_lines.empty?
         @last_supplier = true
       end
     end

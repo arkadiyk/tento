@@ -86,6 +86,9 @@ a img {border: 0}
     width: 35%;
     padding: 8px;
     margin-top: 15px;
+    background-image:  url(/images/cart-bg.png);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 .brw_items {
@@ -183,3 +186,37 @@ a img {border: 0}
 }
 
 /* --^-- Menu --^-- */
+
+#cart_box table {
+  width: 100%;
+}
+
+.supplier_product_hdr, .cat_items_hdr {
+	font-weight: bold;
+	background-color: #EB8;
+	padding: 2px 2px 2px 12px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.cat_items_hdr {
+  float: left;
+  width: 95%;
+  margin: 5px;
+  margin-top: 10px;  
+}
+
+tr.total-line td {
+	font-weight: bold;
+}
+
+#botton_panel {
+    border: 1px solid #EB8;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center; 
+    background-color: #cfc;
+}

@@ -27,7 +27,7 @@ function loadBox(src, elementId, extraQueryParams, forceRefresh){
     onLoading: function(){ 
       $(elementId).innerHTML = "<span style='padding:40px'><img src='/images/spinner.gif'/></span>";
     },
-    onComplete: function(){
+    onSuccess: function(){
         boxList[elementId] = 1;
     },
     parameters: getAuthTokenParam() + extraParams
@@ -75,6 +75,16 @@ function updateCartLine(op, id){
       evalScripts:true, 
       method:'put',
       parameters:'id=' + id + '&op=' + op + '&' + getAuthTokenParam()
+      } 
+    );
+}
+
+function deleteCartLine(id){
+  new Ajax.Request(globalURL.cartLines, {
+      asynchronous:true, 
+      evalScripts:true, 
+      method:'delete',
+      parameters:'id=' + id + '&' + getAuthTokenParam()
       } 
     );
 }
