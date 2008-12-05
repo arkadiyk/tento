@@ -44,7 +44,10 @@
   <div id="main_box" class="top_boxes" style="display:none">
     <div id="cart_box"></div>
   </div>
-  <div id="checkout_box" class="top_boxes" style="display:none"></div>
+  <div id="checkout_box" class="top_boxes" style="display:none">
+    <div id="checkout_cart_box"></div>
+    <div id="payment_box"></div>
+  </div>
 </div>
 
 
@@ -52,7 +55,8 @@
 	var globalURL = {
 		token: '<%=escape_javascript form_authenticity_token%>',
     catalog: '<%=catalog_path%>',
-    cartLines: '<%=cart_lines_path%>'
+    cartLines: '<%=cart_lines_path%>',
+    checkout: '<%=checkout_path%>'
 	};
   
   function goCatalog(cat, id) {
@@ -69,6 +73,13 @@
     }
     box.show();
     loadBox(globalURL.catalog, box_id, { cat: cat, id: (id == undefined ? "" : id) } );
+  }
+
+  function goCheckout() {
+    showTopBox( 'checkout_box' );
+
+    loadBox(globalURL.checkout, 'checkout_cart_box');
+    $('checkout_cart_box').show();
   }
     
 	

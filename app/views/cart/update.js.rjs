@@ -1,1 +1,4 @@
 page.replace "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
+page << "if( $('co_cart_line#{@line.id}') != undefined ) {"
+  page.replace "co_cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
+page << "};"

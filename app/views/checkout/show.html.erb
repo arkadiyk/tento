@@ -1,2 +1,17 @@
-<h1>Checkout#show</h1>
-<p>Find me in app/views/checkout/show.html.erb</p>
+<% if @cart_lines_by_supplier.empty? %>
+  <%= render :partial => 'cart/empty_cart' %>
+<% else %>
+  <table id="checkout_cart_table" cellspacing="0">
+  <% @cart_lines_by_supplier.each do | supplier, line_items| %>
+    <%= render :partial => 'cart/supplier', :object => supplier %>
+    <% for item in line_items %>
+      <%= render :partial => 'cart/cart_line', :object => item %>
+    <% end %>
+    <%= render :partial => 'cart/supplier_total', 
+      :object => { :id => supplier.id,
+                   :amount =>  line_items.sum { |cl| cl.price * cl.quantity },
+                   :weight =>  line_items.sum { |cl| cl.catalog_item.unit_weight * cl.quantity } }
+       %>
+  <% end %>
+  </table>
+<% end %>

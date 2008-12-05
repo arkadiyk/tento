@@ -1,21 +1,20 @@
 class CartController < ApplicationController
-
-  def index
-    cart = find_cart( session[ :cart_id ] )
-    
-    @cart_lines_by_supplier = {}
-    cart.line_items.each do |li|
-    logger.debug li.inspect
-        su = li.supplier
-        @cart_lines_by_supplier[su] ||= []
-        @cart_lines_by_supplier[su] << li
+  helper do
+    def id_prefix
+       ""
+    end
+    def show_points
+      false
     end
   end
 
-
+  def index
+    cart = Cart.find_cart( session[ :cart_id ] )
+    @cart_lines_by_supplier = cart.lines_by_supplier
+  end
 
   def create
-    cart = find_cart( session[ :cart_id ] )
+    cart = Cart.find_cart( session[ :cart_id ] )
     @new_cart = cart.line_items.empty?
     
     catalog_item_id = params[ :cat_id ]
@@ -79,12 +78,4 @@ class CartController < ApplicationController
     end
   end
   
-  private
-    def find_cart( id )
-      begin
-        Cart.find( id )
-      rescue
-        Cart.new
-      end
-    end
 end
