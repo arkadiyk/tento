@@ -1,4 +1,7 @@
-page.replace "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
-page << "if( $('co_cart_line#{@line.id}') != undefined ) {"
-  page.replace "co_cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
+page << "if( $('cart_line_#{@line.id}') != undefined ) {"
+  page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line, :locals => {:show_points => false}
+page << "};"
+
+page << "if( $('co_cart_line_#{@line.id}') != undefined ) {"
+  page.replace_html "co_cart_line_#{@line.id}", :partial => 'cart_line', :object => @line, :locals => {:show_points => true}
 page << "};"

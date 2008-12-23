@@ -1,29 +1,19 @@
 <% @cat_items.each do |hdr, items| %>
-  <span class="cat_items_hdr"><%= hdr.name_en %></span>
+  <div class="c_boxes">
+  <a href="#" class="c_box_headers"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name_en %></span></a>
+  <table>
   <% for item in items %>
-    <div class="catalog_line_boxes" >
-    <!--
-      <div><%=image_tag("rails.png")%></div>
-      <div style="width: 65%"><%=h item.long_name_en %></div>
-      <div style="width: 15%;float: right">
-        <%=item.unit_en%> / &yen;<%=item.price%>
-        <br/>
-        <%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
-        <%=button_to_function ">", "createCartLine('#{item.id}')"%>
-      </div>
-      -->
-      <table cellspacing="3"  width="100%">
-        <tr>
-          <td rowspan="2"  style="width:50px"><%=image_tag("rails.png")%></td>
-          <td rowspan="2"><%=h item.long_name_en %></td>
-          <td style="width:75px"><%=item.unit_en%> / &yen;<%=item.price%></td>
-        </tr>
-        <tr>
-          <td><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
-              <%=button_to_function ">", "createCartLine('#{item.id}')"%>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <tr>
+      <td rowspan="2"  style="width:50px"><%=image_tag("rails.png")%></td>
+      <td rowspan="2"><%=h item.long_name_en %></td>
+      <td style="width:75px;border-bottom: none"><%=item.unit_en%> / &yen;<%=item.price%></td>
+    </tr>
+    <tr>
+      <td><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
+          <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
+      </td>
+    </tr>
   <% end %>
+  </table>
+  </div>
 <% end %>

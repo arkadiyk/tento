@@ -1,16 +1,9 @@
 class CartController < ApplicationController
-  helper do
-    def id_prefix
-       ""
-    end
-    def show_points
-      false
-    end
-  end
-
   def index
     cart = Cart.find_cart( session[ :cart_id ] )
     @cart_lines_by_supplier = cart.lines_by_supplier
+    
+    render :layout => false
   end
 
   def create

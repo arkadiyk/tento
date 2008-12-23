@@ -5,7 +5,9 @@
   <% @cart_lines_by_supplier.each do | supplier, line_items| %>
     <%= render :partial => 'supplier', :object => supplier %>
     <% for item in line_items %>
-      <%= render :partial => 'cart_line', :object => item %>
+      <tr id="cart_line_<%=item.id%>">
+        <%= render :partial => 'cart_line', :object => item, :locals => {:show_points => false} %>
+      </tr>
     <% end %>
     <%= render :partial => 'supplier_total', 
       :object => { :id => supplier.id,

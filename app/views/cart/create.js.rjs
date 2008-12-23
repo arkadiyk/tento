@@ -1,5 +1,4 @@
 unless(@new_line)
-  page.replace "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
   page.replace "supplier_total_#{@supplier_total[:id]}", :partial => 'supplier_total', :object => @supplier_total
 else
   if @new_sup 
@@ -8,11 +7,12 @@ else
       page.insert_html :bottom, 'cart_box', :partial => 'cart_footer'
     end
     page.insert_html :bottom, 'cart_table', :partial => 'supplier', :object => @line.catalog_item.supplier
-    page.insert_html :bottom, 'cart_table', :partial => 'cart_line', :object => @line
+    page.insert_html :bottom, 'cart_table', "<tr id='cart_line_#{@line.id}'></tr>";
     page.insert_html :bottom, 'cart_table', :partial => 'supplier_total', :object => @supplier_total
   else
-    page.insert_html :after, "cart_line_#{@id}", :partial => 'cart_line', :object => @line
+    page.insert_html :after, "cart_line_#{@id}", "<tr id='cart_line_#{@line.id}'></tr>";
     page.replace "supplier_total_#{@supplier_total[:id]}", :partial => 'supplier_total', :object => @supplier_total
   end
 end
-  
+page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line, :locals => {:show_points => false}  
+page.visual_effect :highlight, "cart_line_#{@line.id}", :duration => 0.3

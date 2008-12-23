@@ -58,6 +58,7 @@ ActionController::Routing::Routes.draw do |map|
   map.cart_lines '/cart/lines', :controller => 'cart', :action => 'destroy', :conditions => { :method => :delete }
   
   map.checkout '/checkout', :controller => 'checkout', :action => 'show'
+  map.order '/order', :controller => 'order', :action => 'show'
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

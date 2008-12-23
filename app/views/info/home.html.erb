@@ -18,7 +18,7 @@
 <div id="nav_box">
   <div id="tab">
     <ul>
-      <li><a href="#" class="mitem_cm" onClick="showTopBox('info_box','<%=info_path%>')"><span>Home</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goInfo()"><span>Home</span></a></li>
       <li><a href="#" class="mitem_cm" onClick="goCatalog('sp')"><span>Today's Specials!</span></a></li>
       <li><a href="#" class="mitem_dd"><span>&#x25B6; Browse By Category</span></a></li>
       <li><div id="brw_pl_o" style="display:none"><div id="brw_pl" class="brw_items"></div></div></li>
@@ -40,51 +40,25 @@
 </div>
 
 <div id="container_box">
-  <div id="info_box" class="top_boxes" style="display:none"></div>
-  <div id="main_box" class="top_boxes" style="display:none">
-    <div id="cart_box"></div>
-  </div>
-  <div id="checkout_box" class="top_boxes" style="display:none">
-    <div id="checkout_cart_box"></div>
-    <div id="payment_box"></div>
+  <div id="main_box" class="top_boxes">
+    <div id="info_box" class="center_boxes" style="display:none"></div>
+    <div id="user_box" class="right_boxes" style="display:none"></div>
+    <div id="cart_box" class="right_boxes" style="display:none"></div>
   </div>
 </div>
 
 
 <script type="text/javascript">
-	var globalURL = {
-		token: '<%=escape_javascript form_authenticity_token%>',
-    catalog: '<%=catalog_path%>',
-    cartLines: '<%=cart_lines_path%>',
-    checkout: '<%=checkout_path%>'
-	};
-  
-  function goCatalog(cat, id) {
-    showTopBox( 'main_box' );
-
-    loadBox(globalURL.cartLines, 'cart_box');
-
-    var box_id = "cat_" + cat + (id == undefined ? "" : "_" + id);
-    hideAll( '.catalog_boxes', box_id );
-    box = $(box_id);
-    if( box == undefined ) {
-      box = new Element('div', { id: box_id, 'class' : 'catalog_boxes'});
-      $('main_box').insert(box);
-    }
-    box.show();
-    loadBox(globalURL.catalog, box_id, { cat: cat, id: (id == undefined ? "" : id) } );
-  }
-
-  function goCheckout() {
-    showTopBox( 'checkout_box' );
-
-    loadBox(globalURL.checkout, 'checkout_cart_box');
-    $('checkout_cart_box').show();
-  }
-    
+  token = '<%=escape_javascript form_authenticity_token%>';
 	
+  var boxURL = {
+    info_box: '<%=info_path%>',
+    cat: '<%=catalog_path%>',
+    cart_box: '<%=cart_lines_path%>',
+    checkout_box: {url: '<%=checkout_path%>', force: true}
+	};
+  	
   $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
   
 	<%=remote_function :url => categories_path%>
-	showTopBox('info_box','<%=info_path%>');
 </script>
