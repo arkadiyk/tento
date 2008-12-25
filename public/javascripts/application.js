@@ -1,15 +1,27 @@
 var boxList = [];
 
-function boxShow(boxIds) {
-  toHide = $$('.center_boxes', '.right_boxes');
+function boxShow() {
+  toHide = $$('.a_boxes');
   toHide.each( function(el) {
-    if(boxIds.indexOf(el.id) == -1)
+    if($A(arguments).indexOf(el.id) == -1)
       el.hide();
   }); 
   
-  boxIds.each( function(el) {
+  $A(arguments).each( function(el) {
     loadBox(el);
     $(el).show();
+  });
+}
+
+function boxCollapse() {
+  $A(arguments).each( function(el) {
+    toggleBox(el,'collapse');
+  });
+}
+
+function boxExpand() {
+  $A(arguments).each( function(el) {
+    toggleBox(el,'expand');
   });
 }
 
@@ -23,18 +35,26 @@ function loadBox(elementId){
   var src = boxURL[els[0]];
   var forceRefresh = false;
   
+  if(src == undefined)
+    return;
+  
   if(typeof(src) != "string") {
     forceRefresh = src.force;
     src = src.url;
   }
+  
 
   if(boxList[elementId] != undefined && !forceRefresh)
       return;
 
   box = $(elementId);
   if( box == undefined ) {
-    box = new Element('div', { id: elementId, 'class' : 'center_boxes'});
-    $('main_box').insert(box);
+    box = new Element('div', { id: elementId, 'class' : 'a_boxes'});
+    $('center_col').insert(box);
+  } else {
+    boxC = $(elementId + '_context');
+    if(boxC != undefined)
+      box = boxC;
   }
       
   var  extraParams = "";
@@ -51,16 +71,16 @@ function loadBox(elementId){
     evalScripts: true,
     method:'get',
     onLoading: function(){ 
-      $(elementId).innerHTML = "<span style='padding:40px'><img src='/images/spinner.gif'/></span>";
+      box.innerHTML = "<span style='padding:40px'><img src='/images/spinner.gif'/></span>";
     },
     onSuccess: function(){
         boxList[elementId] = 1;
     },
     onComplete: function(){
-        $$('#' + elementId + ' .c_box_headers').each( function(el){ el.observe('click', toggleBox); } );
+        $$('#' + elementId + ' .c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
     },    
     onFailure: function(){ 
-      $(elementId).innerHTML = "<span style='padding:40px'>Communication problem. Please reload the page</span>";
+      box.innerHTML = "<span style='padding:40px'>Communication problem. Please reload the page</span>";
     },
 
     parameters: getAuthTokenParam() + extraParams
@@ -91,26 +111,42 @@ function toggleDDMenu(event) {
   el.innerHTML = newLabel;
 }
 
-function toggleBox(event) {
+function handleToggleBox(event) {
   var el = event.element();
-  if(el.tagName == 'A')
-    el = el.down();
-    
-  var theBox = el.up().next();
-  if( theBox.visible() ) {
-    newLabel = el.innerHTML.sub( "\u25BC", "\u25B6" );
-    theBox.hide();
-  } else {
-    theBox.show();
-    newLabel = el.innerHTML.sub( "\u25B6", "\u25BC" );
+  if(el.tagName != 'A')
+    el = el.up();
+  
+  toggleBox(el.up(), 'toggle');
+};
+
+function toggleBox(el, op) {
+  el = $(el);    
+  var labelBox = el.down();
+  var theBox = labelBox.next();
+  var expanded = theBox.visible();
+  label = labelBox.innerHTML;
+  if(op == 'toggle'){
+    if( expanded ) {
+      label = label.sub( "\u25BC", "\u25B6" );
+      theBox.hide();
+    } else {
+      theBox.show();
+      label = label.sub( "\u25B6", "\u25BC" );
+    }
+  } else if (op == 'expand' && !expanded){
+      theBox.show();
+      label = label.sub( "\u25B6", "\u25BC" );
+  } else if (op == 'collapse' && expanded) {
+      label = label.sub( "\u25BC", "\u25B6" );
+      theBox.hide();
   }
-  el.innerHTML = newLabel;
+  labelBox.innerHTML = label;
 }
 
 
 function createCartLine(cat_id) {
   qty = $('cart_item_' + cat_id).value;
-  new Ajax.Request(globalURL.cartLines, {
+  new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
       method:'post',
@@ -127,7 +163,7 @@ function updateCartLine(op, id){
     $('co_cart_line_' + id).addClassName('updating');
   }
   
-  new Ajax.Request(globalURL.cartLines, {
+  new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
       method:'put',
@@ -152,7 +188,7 @@ function deleteCartLine(id){
     $('co_cart_line_' + id).addClassName('updating');
   }
 
-  new Ajax.Request(globalURL.cartLines, {
+  new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
       method:'delete',
