@@ -2,7 +2,7 @@ class CartController < ApplicationController
   def index
     cart = Cart.find_cart( session[ :cart_id ] )
     @cart_lines_by_supplier = cart.lines_by_supplier
-    
+    @count = cart.line_items.size
     render :layout => false
   end
 
@@ -38,6 +38,7 @@ class CartController < ApplicationController
           @id = sup_cart_lines.last.id
       end        
     end
+    @count = cart.line_items.size
   end
 
   def destroy
@@ -52,6 +53,7 @@ class CartController < ApplicationController
         @last_supplier = true
       end
     end
+    @count = cart.line_items.size
   end
   
   def update

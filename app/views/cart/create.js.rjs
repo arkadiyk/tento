@@ -14,5 +14,7 @@ else
     page.replace "supplier_total_#{@supplier_total[:id]}", :partial => 'supplier_total', :object => @supplier_total
   end
 end
-page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line, :locals => {:show_points => false}  
+page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
 page.visual_effect :highlight, "cart_line_#{@line.id}", :duration => 0.3
+page.replace_html 'cart_box_label', "#{@count} items in the cart" 
+

@@ -1,0 +1,4 @@
+User: <%= current_user.login %><br>
+<%= link_to_remote 'Logout', :url => logout_path %>
+
+<%= javascript_tag "$('account_box_label').update('Welcome Back, #{current_user.login}');"  %>

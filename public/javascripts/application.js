@@ -2,14 +2,21 @@ var boxList = [];
 
 function boxShow() {
   toHide = $$('.a_boxes');
+  theList = $A(arguments);
   toHide.each( function(el) {
-    if($A(arguments).indexOf(el.id) == -1)
+    if(theList.indexOf(el.id) == -1)
       el.hide();
   }); 
   
-  $A(arguments).each( function(el) {
+  theList.each( function(el) {
     loadBox(el);
     $(el).show();
+  });
+}
+
+function boxReload() {
+  $A(arguments).each( function(el) {
+    loadBox(el, true);
   });
 }
 
@@ -29,10 +36,16 @@ function getAuthTokenParam() {
     return('authenticity_token=' + encodeURIComponent(token));
 }
 
-function loadBox(elementId){
+function loadBox(elementId, reload){
       
   var els = elementId.split('-');
   var src = boxURL[els[0]];
+
+  if(reload) {
+    elementId = els[0];
+    boxList[elementId] = undefined;
+  }
+
   var forceRefresh = false;
   
   if(src == undefined)
@@ -43,10 +56,10 @@ function loadBox(elementId){
     src = src.url;
   }
   
-
   if(boxList[elementId] != undefined && !forceRefresh)
       return;
 
+  
   box = $(elementId);
   if( box == undefined ) {
     box = new Element('div', { id: elementId, 'class' : 'a_boxes'});

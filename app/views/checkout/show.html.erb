@@ -6,7 +6,7 @@
     <%= render :partial => 'cart/supplier', :object => supplier %>
     <% for item in line_items %>
       <tr id="co_cart_line_<%=item.id%>">
-        <%= render :partial => 'cart/cart_line', :object => item, :locals => {:show_points => true} %>
+        <%= render :partial => 'cart/cart_line', :object => item %>
       </tr>
     <% end %>
     <%= render :partial => 'cart/supplier_total', 
@@ -16,6 +16,4 @@
        %>
   <% end %>
   </table>
-  
-  
 <% end %>

@@ -41,29 +41,16 @@
 
 <div id="container_box">
   <div id="main_box">
-<!--  
-    <div id="center_box">
-      <div id="info_box" class="a_boxes" style="display:none"></div>
-    </div>
-  
-    <div id="right_box">
-      <div id="user_box" class="a_boxes c_boxes" style="display:none">
-        <a href="#" class="c_box_headers"><span>&#x25BC;&nbsp;&nbsp;User Info</span></a>
-        <div></div>
-      </div>
-      <div id="cart_box" class="a_boxes c_boxes" style="display:none">
-      </div>
-    </div>
--->
+
   <table width="100%" cellspacing="15px">
     <tr>
       <td id="center_col" valign="top" width="60%">
         <div id="info_box" class="a_boxes" style="display:none"></div>
       </td>
       <td valign="top">
-        <div id="user_box" class="a_boxes c_boxes" style="display:none">
-          <a href="#" class="c_box_headers"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="user_box_label">User Info</span></a>
-          <div id="user_box_context" style="background-color:#F6F6B6"></div>
+        <div id="account_box" class="a_boxes c_boxes" style="display:none">
+          <a href="#" class="c_box_headers"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="account_box_label">User Info</span></a>
+          <div id="account_box_context" style="background-color:#F6F6B6"></div>
         </div>
         <div id="cart_box" class="a_boxes c_boxes" style="display:none">
           <a href="#" class="c_box_headers"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="cart_box_label">Cart Info</span></a>
@@ -84,7 +71,7 @@
     info_box: '<%=info_path%>',
     cat: '<%=catalog_path%>',
     cart_box: '<%=cart_lines_path%>',
-    user_box: '<%=login_path%>',
+    account_box: '<%=account_path%>',
     checkout_box: {url: '<%=checkout_path%>', force: true}
 	};
   

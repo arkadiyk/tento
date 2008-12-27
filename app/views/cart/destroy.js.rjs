@@ -1,15 +1,12 @@
 if @cart_is_empty
   page.replace_html "cart_box_context", :partial => 'empty_cart'
+  page.replace_html 'cart_box_label', "Cart is empty" 
 else
-  page << "if( $('cart_line_#{@line.id}') != undefined ) {"
-    page.visual_effect(:fade, "cart_line_#{@line.id}", :duration => 0.6)
-  page << "}"
-  page << "if( $('co_cart_line_#{@line.id}') != undefined ) {"
-    page.visual_effect(:fade, "cart_line_#{@line.id}", :duration => 0.6)
-  page << "}"
+  page.visual_effect(:fade, "cart_line_#{@line.id}", :duration => 0.6)
   
   if @last_supplier
      page.visual_effect(:fade, "supplier_#{@line.catalog_item.supplier_id}", :duration => 0.6)
      page.visual_effect(:fade, "supplier_total_#{@line.catalog_item.supplier_id}", :duration => 0.6)
   end
+  page.replace_html 'cart_box_label', "#{@count} items in the cart" 
 end
