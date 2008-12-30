@@ -6,7 +6,7 @@ class AccountController < ApplicationController
         render :template => 'sessions/new'
       when 'signup'
         @user = User.new
-        render  :template => 'users/new'
+        render :template => 'users/new'
       else
         if !logged_in?
           render :template => 'sessions/new'
