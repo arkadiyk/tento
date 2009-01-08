@@ -18,14 +18,14 @@
 <div id="nav_box">
   <div id="tab">
     <ul>
-      <li><a href="#" class="mitem_cm" onClick="goInfo()"><span>Home</span></a></li>
-      <li><a href="#" class="mitem_cm" onClick="goCatalog('sp')"><span>Today's Specials!</span></a></li>
-      <li><a href="#" class="mitem_dd"><span>&#x25B6; Browse By Category</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goInfo(); return false;"><span>Home</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goCatalog('sp'); return false;"><span>Today's Specials!</span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Browse By Category</span></a></li>
       <li><div id="brw_pl_o" style="display:none"><div id="brw_pl" class="brw_items"></div></div></li>
-      <li><a href="#" class="mitem_dd"><span>&#x25B6; Browse By Supplier</span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Browse By Supplier</span></a></li>
       <li><div id="brw_su_o" style="display:none"><div id="brw_su" class="brw_items"></div></div></li>
-      <li><a href="#" class="mitem_cm"><span>Checkout!</span></a></li>
-      <li><a href="#" class="mitem_dd"><span>&#x25B6; Information</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="return false;"><span>Checkout!</span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Information</span></a></li>
       <li><div id="brw_info_o" style="display:none"><div id="brw_info" class="brw_items">
         <ul>
           <li>Farmers</li>
@@ -49,11 +49,11 @@
       </td>
       <td valign="top">
         <div id="account_box" class="a_boxes c_boxes" style="display:none">
-          <a href="#" class="c_box_headers"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="account_box_label">User Info</span></a>
+          <a href="#" class="c_box_headers" onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="account_box_label">User Info</span></a>
           <div id="account_box_context" style="background-color:#F6F6B6"></div>
         </div>
         <div id="cart_box" class="a_boxes c_boxes" style="display:none">
-          <a href="#" class="c_box_headers"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="cart_box_label">Cart Info</span></a>
+          <a href="#" class="c_box_headers"  onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="cart_box_label">Cart Info</span></a>
           <div id="cart_box_context" class="c_context_boxes"></div>
         </div>
       </td>
@@ -65,6 +65,28 @@
 
 
 <script type="text/javascript">
+  window.dhtmlHistory.create({
+    toJSON: function(o) {
+      return Object.toJSON(o);
+    },
+    fromJSON: function(s) {
+      return s.evalJSON();
+    }
+  });
+  
+  var pageListener = function(newLocation, historyData) {
+//    alert(dhtmlHistory.currentLocation);
+    eval(historyData);
+  };
+  
+  Event.observe(window, 'load', function() {
+    alert('init');
+    dhtmlHistory.initialize();
+    dhtmlHistory.addListener(pageListener);
+  });
+
+
+
   token = '<%=escape_javascript form_authenticity_token%>';
 	
   var boxURL = {

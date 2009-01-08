@@ -1,6 +1,6 @@
 <% @cat_items.each do |hdr, items| %>
   <div class="c_boxes">
-  <a href="#" class="c_box_headers"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name_en %></span></a>
+  <a href="#" class="c_box_headers" onClick="return false;"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name_en %></span></a>
   <table id="cat_table">
   <% for item in items %>
     <tr>
