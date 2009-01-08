@@ -75,12 +75,16 @@
   });
   
   var pageListener = function(newLocation, historyData) {
-//    alert(dhtmlHistory.currentLocation);
-    eval(historyData);
+	cl = newLocation.split("~");
+	fn = "go" + cl[0].capitalize();
+	if(cl.length > 1)
+		fncall = fn + "('" + cl[1] +"')";
+	else
+		fncall = fn + "()";
+    eval(fncall);
   };
   
   Event.observe(window, 'load', function() {
-    alert('init');
     dhtmlHistory.initialize();
     dhtmlHistory.addListener(pageListener);
   });

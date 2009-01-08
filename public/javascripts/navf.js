@@ -2,7 +2,7 @@
 
 function goInfo() {
   goInfoH();
-  dhtmlHistory.add('h_info', "goInfoH()");
+  dhtmlHistory.add('info', "goInfoH()");
 }  
 
 function goInfoH() {
@@ -12,12 +12,13 @@ function goInfoH() {
 }  
   
 function goCatalog(cat, id) {
-  var box_id = "cat-" + cat + (id == undefined ? "" : "-" + id);
-  goCatalogH(box_id);
-  dhtmlHistory.add('h_' + box_id, "goCatalogH('" + box_id +"')");
+  var cid = cat + (id == undefined ? "" : "-" + id);
+  goCatalogH(cid);
+  dhtmlHistory.add('catalog~' + cid, "goCatalogH('" + cid +"')");
 }  
 
-function goCatalogH(box_id) {
+function goCatalogH(id) {
+  box_id = "cat-" + id;
   boxShow(box_id,'cart_box','account_box');
   boxExpand('cart_box');
   boxCollapse('account_box');
