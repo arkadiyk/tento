@@ -132,6 +132,19 @@ function handleToggleBox(event) {
   toggleBox(el.up(), 'toggle');
 };
 
+function makeColx(box_id, box_title, extraOps) {
+	if(extraOps == undefined)
+		extraOps = {};
+	extraOps.id = box_id + '_context'; 	
+	var contextDiv = new Element('div', extraOps);
+
+	contextDiv.update($(box_id).innerHTML);
+	$(box_id).update('<a href="#" class="c_box_headers" onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="' 
+	+ box_id + '_label">' + box_title + '</span></a>');
+  	$(box_id).insert(contextDiv);
+	$(box_id).addClassName('c_boxes');
+}
+
 function toggleBox(el, op) {
   el = $(el);    
   var labelBox = el.down();

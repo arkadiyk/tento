@@ -96,14 +96,20 @@ a img {border: 0}
 }
 
 
-#cat_table {
+.cat_tables {
   margin: 5px;
   width: 98%;
+  float:left;
+}
+
+.cat_tables td {
+    border-bottom: 1px dotted #EB8;
 }
 
 #cart_table {
   margin: 5px;
   width: 98%;
+	float:left;
 }
 
 .c_context_boxes {
@@ -112,12 +118,8 @@ a img {border: 0}
 }
 
 .c_boxes table {
-  float:left;
 }
 
-.c_boxes table td {
-    border-bottom: 1px dotted #EB8;
-}
 
 .c_box_headers {
 	display:block;

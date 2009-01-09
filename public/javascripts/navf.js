@@ -18,8 +18,18 @@ function goCatalog(cat, id) {
 }  
 
 function goCatalogH(id) {
-  box_id = "cat-" + id;
+  var box_id = "cat-" + id;
   boxShow(box_id,'cart_box','account_box');
   boxExpand('cart_box');
   boxCollapse('account_box');
+}
+
+function goCheckout() {
+  goCheckoutH();
+  dhtmlHistory.add('checkout', "goCheckoutH()");
+}  
+
+function goCheckoutH(id) {
+  boxShow('checkout_box','account_box');
+  boxExpand('account_box');
 }

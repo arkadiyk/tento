@@ -46,16 +46,11 @@
     <tr>
       <td id="center_col" valign="top" width="60%">
         <div id="info_box" class="a_boxes" style="display:none"></div>
+        <div id="checkout_box" class="a_boxes" style="display:none"></div>
       </td>
-      <td valign="top">
-        <div id="account_box" class="a_boxes c_boxes" style="display:none">
-          <a href="#" class="c_box_headers" onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="account_box_label">User Info</span></a>
-          <div id="account_box_context" style="background-color:#F6F6B6"></div>
-        </div>
-        <div id="cart_box" class="a_boxes c_boxes" style="display:none">
-          <a href="#" class="c_box_headers"  onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="cart_box_label">Cart Info</span></a>
-          <div id="cart_box_context" class="c_context_boxes"></div>
-        </div>
+      <td id="right_col" valign="top">
+        <div id="account_box" class="a_boxes" style="display:none"></div>
+        <div id="cart_box" class="a_boxes" style="display:none"></div>
       </td>
     </tr>
   </table>
@@ -65,6 +60,19 @@
 
 
 <script type="text/javascript">
+  token = '<%=escape_javascript form_authenticity_token%>';
+	
+  var boxURL = {
+    info_box: '<%=info_path%>',
+    cat: '<%=catalog_path%>',
+    cart_box: '<%=cart_lines_path%>',
+    account_box: '<%=account_path%>',
+    checkout_box: {url: '<%=checkout_path%>', force: true}
+  };
+  
+  makeColx('cart_box', "Shopping Cart"); 
+  makeColx('account_box', "User Account", {style: 'background-color:#F6F6B6'});
+
   window.dhtmlHistory.create({
     toJSON: function(o) {
       return Object.toJSON(o);
@@ -92,26 +100,10 @@
 	else
 		goInfo();
   });
-
-
-
-  token = '<%=escape_javascript form_authenticity_token%>';
-	
-  var boxURL = {
-    info_box: '<%=info_path%>',
-    cat: '<%=catalog_path%>',
-    cart_box: '<%=cart_lines_path%>',
-    account_box: '<%=account_path%>',
-    checkout_box: {url: '<%=checkout_path%>', force: true}
-	};
-  
-  
   	
   $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
   $$('.c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
   
 	<%=remote_function :url => categories_path%>
-  
-
   
 </script>
