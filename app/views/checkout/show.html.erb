@@ -9,10 +9,11 @@
         <%= render :partial => 'cart_line', :object => item %>
       </tr>
     <% end %>
-    <%= render :partial => 'cart/supplier_total', 
+    <%= render :partial => 'supplier_total', 
       :object => { :id => supplier.id,
                    :amount =>  line_items.sum { |cl| cl.price * cl.quantity },
-                   :weight =>  line_items.sum { |cl| cl.catalog_item.unit_weight * cl.quantity } }
+                   :weight =>  line_items.sum { |cl| cl.catalog_item.unit_weight * cl.quantity },
+				   :points =>  line_items.sum { |cl| cl.points * cl.quantity }}
        %>
   <% end %>
   </table>
