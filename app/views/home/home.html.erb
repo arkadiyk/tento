@@ -79,7 +79,9 @@
     },
     fromJSON: function(s) {
       return s.evalJSON();
-    }
+    },
+    baseTitle: "Tento Express [@@@]",
+    debugMode: false
   });
   
   var pageListener = function(newLocation, historyData) {
@@ -93,12 +95,11 @@
   };
   
   Event.observe(window, 'load', function() {
-	dhtmlHistory.initialize();
-	dhtmlHistory.addListener(pageListener);
-	if(dhtmlHistory.getCurrentLocation() != "")
-		pageListener(dhtmlHistory.getCurrentLocation());
-	else
+	dhtmlHistory.initialize(pageListener);
+	if(dhtmlHistory.getCurrentLocation() == "")
 		goInfo();
+	else
+		pageListener(dhtmlHistory.getCurrentLocation());
   });
   	
   $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
