@@ -72,8 +72,7 @@ window.dhtmlHistory = {
 		} else if (typeof document.all !== "undefined") {
 			this.isIE = true;
 			this.isSupported = true;
-		} else if (vendor.indexOf("Apple Computer, Inc.") > -1) {
-			this.isSafari = true;
+		} else if (vendor.indexOf("Apple Computer, Inc.") > -1 && parseFloat(navigator.version) < 3.0) {			this.isSafari = true;
 			this.isSupported = (platform.indexOf("mac") > -1);
 		} else if (UA.indexOf("gecko") != -1) {
 			this.isGecko = true;
