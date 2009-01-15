@@ -172,11 +172,12 @@ function toggleBox(el, op) {
 
 function createCartLine(cat_id) {
   qty = $('cart_item_' + cat_id).value;
+  unit_id = $('unit_id_' + cat_id).value;
   new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
       method:'post',
-      parameters:'cat_id=' + cat_id + '&qty=' + qty + '&' + getAuthTokenParam()
+      parameters:'unit_id=' + unit_id + '&qty=' + qty + '&' + getAuthTokenParam()
       } 
     );
 }

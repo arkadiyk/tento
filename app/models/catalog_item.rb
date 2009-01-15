@@ -1,6 +1,10 @@
 class CatalogItem < ActiveRecord::Base
   belongs_to :supplier
   belongs_to :product_line
+  has_many :item_units,  :dependent => :destroy
   has_many :current_specials
   has_many :special_types, :through => :current_specials
+
+  translatable_columns :long_name, :name
+  
 end

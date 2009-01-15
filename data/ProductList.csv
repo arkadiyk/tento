@@ -1,0 +1,22 @@
+"Supplier","ProductLine","ItemId","NameEn","NameJa","DescEn","DescJa","UnitEn","UnitJa","UnitWeight","UnitPrice","UnitPoints","ImageFile"
+1,1,1,"Carrots",,"The best Carrots. This could be very long description of the product. Hyperlinks should be allowed as well",,"500g",,0.5,250,25,"carrots_large.png"
+1,1,2,"Tomatoes",,"The best Tomatoes, very Red. This could be very long description of the product. Hyperlinks should be allowed as well",,"500g",,0.5,450,24,"tomatos_large.png"
+1,1,3,"Cabbage",,"The very best Cabbage This could be very long description of the product. Hyperlinks should be allowed as well",,"1kg",,1,350,35,"cabage_large.png"
+1,1,4,"Broccoli",,"The best green Broccoli. This could be very long description of the product. Hyperlinks should be allowed as well",,"1kg",,1,300,30,"broccoli_large.png"
+1,1,5,"Zucchini",,"Very BIG Zucchini",,"2kg",,2,200,20,"broccoli_large.png"
+1,2,6,"Apples",,"The best round Apples. This could be very long description of the product. Hyperlinks should be allowed as well",,"500g",,0.5,250,25,"carrots_small.png"
+1,2,7,"Pears",,"The best ever Pears",,"500g",,0.5,250,25,"carrots_small.png"
+,,,,,,,,,,,,
+2,1,1,"Broccoli",,"The best green Broccoli",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,2,"Broccoli 1",,"The best green Broccoli 1",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,3,"Broccoli 2",,"The best green Broccoli 2",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,4,"Broccoli 3",,"The best green Broccoli 3",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,5,"Broccoli 4",,"The best green Broccoli 4",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,6,"Broccoli 5",,"The best green Broccoli 5",,"1kg",,1,300,30,"broccoli_large.png"
+2,1,7,"Broccoli 6",,"The best green Broccoli 6",,"1kg",,1,300,30,"broccoli_large.png"
+,,,,,,,,,,,,
+3,3,1,"Soba Honey",,"Soba Honey",,"250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","honey.png"
+3,3,2,"Acacia Honey",,"Acacia Honey",,"250g,500g,1kg",,"0.25,0.5,1","2500,4000,7000","25,40,70","honey.png"
+3,3,3,"Tochi Honey",,"Tochi Honey",,"250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","honey.png"
+,,,,,,,,,,,,
+4,4,1,"Pickled Reddish",,"The best Pickled Round Reddish",,"1jar",,1,250,25,"carrots_small.png"

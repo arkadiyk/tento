@@ -1,12 +1,19 @@
 <% @cat_items.each do |hdr, items| %>
   <div class="c_boxes">
-  <a href="#" class="c_box_headers" onClick="return false;"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name_en %></span></a>
+  <a href="#" class="c_box_headers" onClick="return false;"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name %></span></a>
   <table class="cat_tables">
   <% for item in items %>
     <tr>
       <td rowspan="2"  style="width:50px"><%=image_tag("rails.png")%></td>
-      <td rowspan="2"><%=h item.long_name_en %></td>
-      <td style="width:75px;border-bottom: none"><%=item.unit_en%> / &yen;<%=item.price%></td>
+      <td rowspan="2"><%=h item.long_name %></td>
+      <td style="width:75px;border-bottom: none">
+	    <%if item.item_units.size == 1%>
+	  		<%=item.item_units[0].label%>
+			<%=hidden_field_tag "unit_id[#{item.id}]", item.item_units[0].id %>
+		<%else%>
+			<%=collection_select(:unit_id, item.id, item.item_units, :id, :label)%>
+		<%end%>
+	  </td>
     </tr>
     <tr>
       <td><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>

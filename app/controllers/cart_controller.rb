@@ -9,9 +9,9 @@ class CartController < ApplicationController
     cart = Cart.find_cart( session[ :cart_id ] )
     @new_cart = cart.line_items.empty?
     
-    catalog_item_id = params[ :cat_id ]
+    unit_id = params[ :unit_id ]
     quantity = params[ :qty ].to_i
-    @line = cart.add_update_line( catalog_item_id, quantity )
+    @line = cart.add_update_line( unit_id, quantity )
     
     @new_line = @line.new_record?
     cart.save!
@@ -21,7 +21,7 @@ class CartController < ApplicationController
     sup_cart_lines = cart.line_items.find_all_by_supplier_id( @line.catalog_item.supplier_id )
     @supplier_total = { :id => @line.catalog_item.supplier_id,
                    :amount =>  sup_cart_lines.sum { |cl| cl.price * cl.quantity },
-                   :weight =>  sup_cart_lines.sum { |cl| cl.catalog_item.unit_weight * cl.quantity } }
+                   :weight =>  sup_cart_lines.sum { |cl| cl.item_unit.weight * cl.quantity } }
     
     # assuming all request are js:
     if( @new_line )

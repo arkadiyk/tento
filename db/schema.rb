@@ -29,15 +29,11 @@ ActiveRecord::Schema.define(:version => 20081227020630) do
   create_table "catalog_items", :force => true do |t|
     t.integer  "supplier_id"
     t.integer  "product_line_id"
+    t.string   "item_id"
     t.string   "name_en"
     t.string   "name_ja"
     t.string   "long_name_en"
     t.string   "long_name_ja"
-    t.string   "unit_en"
-    t.string   "unit_ja"
-    t.decimal  "unit_weight"
-    t.integer  "price"
-    t.integer  "points"
     t.string   "image_file"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,12 +47,24 @@ ActiveRecord::Schema.define(:version => 20081227020630) do
     t.datetime "updated_at"
   end
 
+  create_table "item_units", :force => true do |t|
+    t.integer  "catalog_item_id"
+    t.string   "name_en"
+    t.string   "name_ja"
+    t.decimal  "weight"
+    t.integer  "price"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "line_items", :force => true do |t|
     t.integer  "cart_id"
     t.integer  "order_id"
+    t.integer  "supplier_id"
     t.integer  "customer_id"
-    t.integer  "catalog_item_id"
-    t.integer  "quantity",        :default => 0
+    t.integer  "item_unit_id"
+    t.integer  "quantity",     :default => 0
     t.integer  "price"
     t.integer  "points"
     t.datetime "created_at"

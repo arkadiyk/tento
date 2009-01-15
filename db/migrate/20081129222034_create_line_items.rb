@@ -3,8 +3,9 @@ class CreateLineItems < ActiveRecord::Migration
     create_table :line_items do |t|
       t.integer :cart_id
       t.integer :order_id
+      t.integer :supplier_id
       t.integer :customer_id
-      t.integer :catalog_item_id
+      t.integer :item_unit_id
       t.integer :quantity,  :default => 0
       t.integer :price
       t.integer :points
