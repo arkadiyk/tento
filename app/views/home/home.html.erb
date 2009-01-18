@@ -51,6 +51,7 @@
       <td id="right_col" valign="top">
         <div id="account_box" class="a_boxes" style="display:none"></div>
         <div id="cart_box" class="a_boxes" style="display:none"></div>
+        <div id="payment_box" class="a_boxes" style="display:none"></div>
       </td>
     </tr>
   </table>
@@ -67,11 +68,13 @@
     cat: '<%=catalog_path%>',
     cart_box: '<%=cart_lines_path%>',
     account_box: '<%=account_path%>',
-    checkout_box: {url: '<%=checkout_path%>', force: true}
+    checkout_box: {url: '<%=checkout_path%>', force: true},
+    payment_box: {url: '<%=payment_path%>', force: true}
   };
   
   makeColx('cart_box', "Shopping Cart"); 
   makeColx('account_box', "User Account", {style: 'background-color:#F6F6B6'});
+  makeColx('payment_box', "Payment Method"); 
 
   window.dhtmlHistory.create({
     toJSON: function(o) {

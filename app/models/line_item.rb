@@ -16,11 +16,11 @@ class LineItem < ActiveRecord::Base
   end
   
   def item_name
-    if catalog_item.item_units.size == 1
-      catalog_item.name
-    else
+#    if catalog_item.item_units.size == 1
+#      catalog_item.name
+#    else
       "#{catalog_item.name}(#{item_unit.name})"
-    end
+#    end
   end
     
   private       

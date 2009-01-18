@@ -26,6 +26,10 @@ class Cart < ActiveRecord::Base
     line.quantity += quantity
     line
   end
+  
+  def empty?
+    line_items.empty?
+  end
 
   private
     def find_create_by_unit_id( unit_id )

@@ -60,6 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   map.account '/account', :controller => 'account', :action => 'show'
   
   map.checkout '/checkout', :controller => 'checkout', :action => 'show'
+  map.payment '/payment', :controller => 'checkout', :action => 'payment'
   map.order '/order', :controller => 'order', :action => 'show'
   
   map.connect ':controller/:action/:id'

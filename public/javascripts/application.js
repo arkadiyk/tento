@@ -20,6 +20,13 @@ function boxReload() {
   });
 }
 
+function boxRefresh() {
+  $A(arguments).each( function(el) {
+  	if(boxList[el] != undefined)
+    	loadBox	(el, true);
+  });
+}
+
 function boxCollapse() {
   $A(arguments).each( function(el) {
     toggleBox(el,'collapse');
@@ -183,24 +190,14 @@ function createCartLine(cat_id) {
 }
 
 function updateCartLine(op, id){
-  if( $('cart_line_' + id) != undefined ) {
-    $('cart_line_' + id).addClassName('updating');
-  }
-  if( $('co_cart_line_' + id) != undefined ) {
-    $('co_cart_line_' + id).addClassName('updating');
-  }
+  $('cart_line_' + id).addClassName('updating');
   
   new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
       method:'put',
       onSuccess: function(){
-        if( $('cart_line_' + id) != undefined ) {
-          $('cart_line_' + id).removeClassName('updating');
-        }
-        if( $('co_cart_line_' + id) != undefined ) {
-          $('co_cart_line_' + id).removeClassName('updating');
-        }
+        $('cart_line_' + id).removeClassName('updating');
       },
       parameters:'id=' + id + '&op=' + op + '&' + getAuthTokenParam()
       } 
@@ -208,12 +205,7 @@ function updateCartLine(op, id){
 }
 
 function deleteCartLine(id){
-  if( $('cart_line_' + id) != undefined ) {
-    $('cart_line_' + id).addClassName('updating');
-  }
-  if( $('co_cart_line_' + id) != undefined ) {
-    $('co_cart_line_' + id).addClassName('updating');
-  }
+  $('cart_line_' + id).addClassName('updating');
 
   new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 

@@ -30,6 +30,6 @@ function goCheckout() {
 }  
 
 function goCheckoutH(id) {
-  boxShow('checkout_box','account_box');
+  boxShow('checkout_box','account_box','payment_box');
   boxExpand('account_box');
 }
