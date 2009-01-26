@@ -47,11 +47,11 @@
       <td id="center_col" valign="top" width="60%">
         <div id="info_box" class="a_boxes" style="display:none"></div>
         <div id="checkout_box" class="a_boxes" style="display:none"></div>
+        <div id="payment_box" class="a_boxes" style="display:none"></div>
       </td>
       <td id="right_col" valign="top">
-        <div id="account_box" class="a_boxes" style="display:none"></div>
+        <div id="account_box" class="a_boxes secure_context" style="display:none"></div>
         <div id="cart_box" class="a_boxes" style="display:none"></div>
-        <div id="payment_box" class="a_boxes" style="display:none"></div>
       </td>
     </tr>
   </table>
@@ -73,7 +73,7 @@
   };
   
   makeColx('cart_box', "Shopping Cart"); 
-  makeColx('account_box', "User Account", {style: 'background-color:#F6F6B6'});
+  makeColx('account_box', "User Account");
   makeColx('payment_box', "Payment Method"); 
 
   window.dhtmlHistory.create({
@@ -88,7 +88,10 @@
   });
   
   var pageListener = function(newLocation, historyData) {
-	cl = newLocation.split("~");
+  	if(newLocation == "")
+		return;
+		
+ 	cl = newLocation.split("~");
 	fn = "go" + cl[0].capitalize();
 	if(cl.length > 1)
 		fncall = fn + "('" + cl[1] +"')";
@@ -106,7 +109,7 @@
   });
   	
   $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
-  $$('.c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
+//  $$('.c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
   
 	<%=remote_function :url => categories_path%>
   

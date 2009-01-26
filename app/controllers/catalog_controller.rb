@@ -12,9 +12,10 @@ class CatalogController < ApplicationController
         item_list = CatalogItem.find_all_by_supplier_id(params[:p2], {:include => header_obj})
     end
     
-    @cat_items = {};
+    @cat_items = {}; @ids = {}
     item_list.each do |item|
       hdr = item.send(header_obj)
+      @ids[hdr] = "ch_#{cat}_#{params[:p2]}_#{hdr.id}"
       @cat_items[hdr] ||= []
       @cat_items[hdr] << item
     end

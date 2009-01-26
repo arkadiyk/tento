@@ -3,8 +3,8 @@ unless(@new_line)
 else
   if @new_sup 
     if(@new_cart)
-      page.replace_html "cart_box_context", "<table id='cart_table'></table>"
-      page.insert_html :bottom, 'cart_box_context', :partial => 'cart_footer'
+      page.replace_html "cart_box", "<table id='cart_table'></table>"
+      page.insert_html :bottom, 'cart_box', :partial => 'cart_footer'
     end
     page.insert_html :bottom, 'cart_table', :partial => 'supplier', :object => @line.catalog_item.supplier
     page.insert_html :bottom, 'cart_table', "<tr id='cart_line_#{@line.id}'></tr>";

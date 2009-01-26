@@ -6,7 +6,7 @@ function goInfo() {
 }  
 
 function goInfoH() {
-  boxShow('info_box', 'cart_box', 'account_box');
+  boxLayout('info_box', 'cart_box', 'account_box');
   boxExpand('account_box');
   boxCollapse('cart_box');
 }  
@@ -19,7 +19,7 @@ function goCatalog(cat, id) {
 
 function goCatalogH(id) {
   var box_id = "cat-" + id;
-  boxShow(box_id,'cart_box','account_box');
+  boxLayout(box_id,'cart_box','account_box');
   boxExpand('cart_box');
   boxCollapse('account_box');
 }
@@ -30,6 +30,6 @@ function goCheckout() {
 }  
 
 function goCheckoutH(id) {
-  boxShow('checkout_box','account_box','payment_box');
+  boxLayout('checkout_box','account_box','payment_box');
   boxExpand('account_box');
 }

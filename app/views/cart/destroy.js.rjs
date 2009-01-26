@@ -1,5 +1,5 @@
 if @cart_is_empty
-  page.replace_html "cart_box_context", :partial => 'empty_cart'
+  page.replace_html "cart_box", :partial => 'empty_cart'
   page.replace_html 'cart_box_label', "Cart is empty" 
 else
   page.visual_effect(:fade, "cart_line_#{@line.id}", :duration => 0.6)

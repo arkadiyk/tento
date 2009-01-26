@@ -1,18 +1,4 @@
-var boxList = [];
-
-function boxShow() {
-  toHide = $$('.a_boxes');
-  theList = $A(arguments);
-  toHide.each( function(el) {
-    if(theList.indexOf(el.id) == -1)
-      el.hide();
-  }); 
-  
-  theList.each( function(el) {
-    loadBox(el);
-    $(el).show();
-  });
-}
+var boxList = {};
 
 function boxReload() {
   $A(arguments).each( function(el) {
@@ -71,10 +57,6 @@ function loadBox(elementId, reload){
   if( box == undefined ) {
     box = new Element('div', { id: elementId, 'class' : 'a_boxes'});
     $('center_col').insert(box);
-  } else {
-    boxC = $(elementId + '_context');
-    if(boxC != undefined)
-      box = boxC;
   }
       
   var  extraParams = "";
@@ -96,22 +78,11 @@ function loadBox(elementId, reload){
     onSuccess: function(){
         boxList[elementId] = 1;
     },
-    onComplete: function(){
-        $$('#' + elementId + ' .c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
-    },    
     onFailure: function(){ 
       box.innerHTML = "<span style='padding:40px'>Communication problem. Please reload the page</span>";
     },
 
     parameters: getAuthTokenParam() + extraParams
-  });
-}
-
-function hideAll(selector, exceptId){
-  var allSM = $$(selector);
-  allSM.each(function(node){
-    if( node.id != exceptId )
-      node.hide();
   });
 }
 
@@ -129,51 +100,6 @@ function toggleDDMenu(event) {
     newLabel = el.innerHTML.sub( "\u25B6", "\u25BC" );
   }
   el.innerHTML = newLabel;
-}
-
-function handleToggleBox(event) {
-  var el = event.element();
-  if(el.tagName != 'A')
-    el = el.up();
-  
-  toggleBox(el.up(), 'toggle');
-};
-
-function makeColx(box_id, box_title, extraOps) {
-	if(extraOps == undefined)
-		extraOps = {};
-	extraOps.id = box_id + '_context'; 	
-	var contextDiv = new Element('div', extraOps);
-
-	contextDiv.update($(box_id).innerHTML);
-	$(box_id).update('<a href="#" class="c_box_headers" onClick="return false;"><span>&nbsp;&nbsp;&#x25BC;&nbsp;&nbsp;</span><span id="' 
-	+ box_id + '_label">' + box_title + '</span></a>');
-  	$(box_id).insert(contextDiv);
-	$(box_id).addClassName('c_boxes');
-}
-
-function toggleBox(el, op) {
-  el = $(el);    
-  var labelBox = el.down();
-  var theBox = labelBox.next();
-  var expanded = theBox.visible();
-  label = labelBox.innerHTML;
-  if(op == 'toggle'){
-    if( expanded ) {
-      label = label.sub( "\u25BC", "\u25B6" );
-      theBox.hide();
-    } else {
-      theBox.show();
-      label = label.sub( "\u25B6", "\u25BC" );
-    }
-  } else if (op == 'expand' && !expanded){
-      theBox.show();
-      label = label.sub( "\u25B6", "\u25BC" );
-  } else if (op == 'collapse' && expanded) {
-      label = label.sub( "\u25BC", "\u25B6" );
-      theBox.hide();
-  }
-  labelBox.innerHTML = label;
 }
 
 

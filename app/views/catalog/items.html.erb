@@ -1,12 +1,10 @@
 <% @cat_items.each do |hdr, items| %>
-  <div class="c_boxes">
-  <a href="#" class="c_box_headers" onClick="return false;"><span>&#x25BC;&nbsp;&nbsp;<%= hdr.name %></span></a>
-  <table class="cat_tables">
+  <table class="cat_tables" id="<%=@ids[hdr]%>">
   <% for item in items %>
     <tr>
       <td rowspan="2"  style="width:50px"><%=image_tag("rails.png")%></td>
       <td rowspan="2"><%=h item.long_name %></td>
-      <td style="width:75px;border-bottom: none">
+      <td style="width:75px;border-bottom: none" nowrap="true">
 	    <%if item.item_units.size == 1%>
 	  		<%=item.item_units[0].label%>
 			<%=hidden_field_tag "unit_id[#{item.id}]", item.item_units[0].id %>
@@ -16,11 +14,15 @@
 	  </td>
     </tr>
     <tr>
-      <td><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
+      <td nowrap="true"><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
           <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
       </td>
     </tr>
   <% end %>
   </table>
-  </div>
+
+  <script type="text/javascript">
+  	makeColx('<%=@ids[hdr]%>','<%=hdr.name%>' );
+  </script>
+
 <% end %>
