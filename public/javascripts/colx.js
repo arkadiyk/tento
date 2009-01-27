@@ -31,7 +31,6 @@ function boxLayout() {
   });
 }
 
-
 function makeColx(box_id, box_title) {
 	var outer = new Element('div', {id: box_id + '_outer'});
 	var theBox = $(box_id);
@@ -76,4 +75,17 @@ function toggleBox(el, op) {
   }
   markBox.innerHTML = label;
 }
+
+function boxCollapse() {
+  $A(arguments).each( function(el) {
+    toggleBox(el,'collapse');
+  });
+}
+
+function boxExpand() {
+  $A(arguments).each( function(el) {
+    toggleBox(el,'expand');
+  });
+}
+
 

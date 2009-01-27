@@ -13,17 +13,6 @@ function boxRefresh() {
   });
 }
 
-function boxCollapse() {
-  $A(arguments).each( function(el) {
-    toggleBox(el,'collapse');
-  });
-}
-
-function boxExpand() {
-  $A(arguments).each( function(el) {
-    toggleBox(el,'expand');
-  });
-}
 
 function getAuthTokenParam() {
     return('authenticity_token=' + encodeURIComponent(token));

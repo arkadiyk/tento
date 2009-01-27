@@ -277,3 +277,7 @@ tr.total-line td {
 .updating td {
     background-color: #FFFF00;
 }
+
+.fieldWithErrors { 
+	border: 1px solid red;
+} 
