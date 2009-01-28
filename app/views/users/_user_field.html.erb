@@ -1,0 +1,10 @@
+<tr>
+	<td><%= label_tag field_name, I18n.t(i18n_name) %></td>
+	<td><%= form.send type, field_name, :size => 20 %></td>
+</tr>
+<%if !error_message_on(model, field_name).empty? -%>
+	<tr><td colspan="2">
+		<%=error_message_on(model, field_name, :prepend_text => "#{I18n.t(i18n_name)} ")%>
+	</td></tr>
+<%end-%>
+

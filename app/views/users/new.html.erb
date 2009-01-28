@@ -12,59 +12,27 @@
 
 <% form_for :user, :url => users_path do |f| -%>
 <table cellspacing="5" style="padding:5px;text-align:right;margin:auto" >
-  <tr>
-    <td><label for="last_name">Last Name</label></td>
-    <td><%= f.text_field :first_name, :size => 20 %></td>
-  </tr>
-  <%if !error_message_on(:user, :last_name).empty? -%>
-  <tr><td colspan="2">
-  	<%=error_message_on(:user, :last_name)%>
-  </td></tr>
-  <%end-%>
-  <tr>
-    <td><label for="first_name">First Name</label></td>
-    <td><%= f.text_field :last_name, :size => 20 %></td>
-  </tr>
-  <tr>
-    <td><%=label_tag 'login', I18n.t(:login)%></td>
-    <td><%= f.text_field :login, :size => 20 %></td>
-  </tr>
-  <%if !error_message_on(:user, :login).empty? -%>
-  <tr><td colspan="2">
-  	<%=error_message_on(:user, :login)%>
-  </td></tr>
-  <%end-%>
-  <tr>
-    <td><%=label_tag 'email', I18n.t(:email)%></td>
-    <td><%= f.text_field :email, :size => 20 %></td>
-  </tr>
-  <tr>
-    <td><%= label_tag 'password', I18n.t(:password) %></td>
-    <td><%= f.password_field :password, :size => 20 %></td>
-  </tr>
-  <tr>
-    <td><%= label_tag 'password_confirmation', I18n.t(:password_confirmation) %></td>
-    <td><%= f.password_field :password_confirmation, :size => 20 %></td>
-  </tr>
+
+  <%= display_user_field f, :last_name %>
+  <%= display_user_field f, :first_name %>
+  <%= display_user_field f, :login %>
+  <%= display_user_field f, :email %>
+
+  <%= display_user_field f, :password,  :type => :password_field %>
+  <%= display_user_field f, :password_confirmation,  :type => :password_field %>
+
   <% fields_for :address do |a| %>
-    <tr>
-      <td><label for="line1">Address Line 1</label></td>
-      <td><%=a.text_field :line1, :size => 20 %></td>
-    </tr>
-    <tr>
-      <td><label for="line2">Address Line 2</label></td>
-      <td><%=a.text_field :line2, :size => 20 %></td>
-    </tr>
-    <tr>
-      <td><label for="postal_code">Postal Code</label></td>
-      <td><%=a.text_field :postal_code, :size => 20 %></td>
-    </tr>
+    <%= display_user_field a, :line1, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :line2, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :postal_code, :prefix => 'address', :model => 'address' %>
   <% end %>
+
     <tr>
       <td colspan="2"><br/>
 		<%= submit_to_remote 'signup', I18n.t(:sign_up), :url => users_path, :update => 'account_box' %>&nbsp;
 		&nbsp;&nbsp;<%= link_to_function 'Back to login screen', "boxReload('account_box-login')"  %>
     </tr>
+
 </table>
 <% end -%>
 

@@ -54,6 +54,9 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
+  def name
+    I18n.t(:name_label, :first_name => first_name, :last_name => last_name)
+  end
   protected
     
 

@@ -89,5 +89,13 @@ module UsersHelper
       link_to_login_with_IP content_text, options
     end
   end
+  
+  def display_user_field(form, field, locals={})
+    locals.reverse_merge!  :form => form, :field_name => field, :model => :user, :type => :text_field, 
+        :i18n_name => locals[:prefix] ? "#{locals[:prefix]}.#{field}".to_sym : field
+        
+    render :partial => 'users/user_field', :locals => locals
+    
+  end
 
 end

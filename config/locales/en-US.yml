@@ -41,6 +41,8 @@ en-US:
   logged_in : "Logged in successfully"
   logged_in_as : "Logged in as {{login}}"
   logged_out : "You have been logged out."
+  first_name : "First Name"
+  last_name : "Last Name"
   login : "Login"
   login_failed : "Couldn't log you in as {{login}}'"
   new_user_sign_up : "Sign up as a new user"
@@ -53,3 +55,11 @@ en-US:
   signup_complete_and_do_login : "Signup complete! Please sign in to continue."
   signup_complete_with_activation : "Thanks for signing up!  We're sending you an email with your activation code."
   signup_problem : "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+  name_label: "{{first_name}} {{last_name}}"
+  
+  address:
+    line1: "Address Line 1"
+    line2: "Address Line 2"
+    postal_code: "Postal Code"
+    telephone: "Telephone"
+    
