@@ -1,7 +1,5 @@
 <% @user.password = @user.password_confirmation = nil %>
 
-<%= error_messages_for :user, :address %>
-
 <% if flash[:error] -%>
 <div style="border:1px solid red;color:red;background-color:#FFC0CB;margin:5px;padding:2px">
 <%= flash[ :error ] %>
