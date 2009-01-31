@@ -11,13 +11,7 @@ class Cart < ActiveRecord::Base
   end
 
   def lines_by_supplier
-    lines = {}
-    line_items.each do |li|
-        su = li.supplier
-        lines[su] ||= []
-        lines[su] << li
-    end
-    lines
+    line_items.group_by{|item| item.supplier}
   end    
     
   def add_update_line( unit_id, quantity ) 
@@ -29,6 +23,9 @@ class Cart < ActiveRecord::Base
   
   def empty?
     line_items.empty?
+  end
+  
+  def shipping_cost
   end
 
   private
