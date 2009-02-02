@@ -1,8 +1,6 @@
 class LineItem < ActiveRecord::Base
-  belongs_to :cart
   belongs_to :order
   belongs_to :item_unit
-  belongs_to :supplier    # ugly. just for simplier queries
 
   before_create :update_fields_from_catalog_item
   
@@ -22,11 +20,22 @@ class LineItem < ActiveRecord::Base
       "#{catalog_item.name}(#{item_unit.name})"
 #    end
   end
-    
+
+  def item_amount
+    price * quantity  
+  end
+  
+  def item_weight
+    item_unit.weight * quantity
+  end
+     
+  def item_points
+    points * quantity
+  end
+  
   private       
     def update_fields_from_catalog_item
       return if self.item_unit.nil? 
-      self.supplier_id = self.item_unit.catalog_item.supplier_id
       self.price = self.item_unit.price
       self.points = self.item_unit.points
     end

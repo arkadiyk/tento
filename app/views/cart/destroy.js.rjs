@@ -6,7 +6,7 @@ else
   
   if @last_supplier
      page.visual_effect(:fade, "supplier_#{@line.catalog_item.supplier_id}", :duration => 0.6)
-     page.visual_effect(:fade, "supplier_total_#{@line.catalog_item.supplier_id}", :duration => 0.6)
+     page.visual_effect(:fade, "order_totals_#{@line.catalog_item.supplier_id}", :duration => 0.6)
   end
   page.replace_html 'cart_box_label', "#{@count} items in the cart" 
 end

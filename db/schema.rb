@@ -20,8 +20,11 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
   end
 
   create_table "carts", :force => true do |t|
-    t.string   "customer_id"
-    t.boolean  "is_ordered"
+    t.integer  "user_id"
+    t.boolean  "is_confirmed"
+    t.integer  "pay_method"
+    t.boolean  "is_paid"
+    t.integer  "shipping_addr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,10 +62,7 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
   end
 
   create_table "line_items", :force => true do |t|
-    t.integer  "cart_id"
     t.integer  "order_id"
-    t.integer  "supplier_id"
-    t.integer  "customer_id"
     t.integer  "item_unit_id"
     t.integer  "quantity",     :default => 0
     t.integer  "price"
@@ -71,26 +71,11 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.datetime "updated_at"
   end
 
-  create_table "logins", :force => true do |t|
-    t.string   "login",                     :limit => 40
-    t.string   "name",                      :limit => 100, :default => ""
-    t.string   "email",                     :limit => 100
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token",            :limit => 40
-    t.datetime "remember_token_expires_at"
-  end
-
-  add_index "logins", ["login"], :name => "index_logins_on_login", :unique => true
-
   create_table "orders", :force => true do |t|
-    t.integer  "supplier_id"
     t.integer  "cart_id"
-    t.integer  "customer_id"
+    t.integer  "supplier_id"
     t.integer  "shipping_cost"
-    t.integer  "shipping_addr_id"
+    t.boolean  "is_shipped"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,7 @@
+#!/usr/bin/ruby -w
+
 require "csv"  
+
 class LoadCatalog
   def load_file
     filename = 'data/ProductList.csv'
@@ -12,6 +15,7 @@ class LoadCatalog
       nl = Hash[*header_line.zip(line).flatten]
       map_record(nl)
       create_record(nl)
+      puts "Record created #{nl.inspect}\n"
     end
     true
   end  
@@ -62,3 +66,6 @@ class LoadCatalog
   end
   
 end
+
+lc = LoadCatalog.new
+lc.load_file

@@ -1,1 +1,2 @@
 page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
+page.replace "order_totals_#{@line.order.id}", :partial => 'order', :object => @line.order

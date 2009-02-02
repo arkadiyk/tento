@@ -1,11 +1,10 @@
 class CreateOrders < ActiveRecord::Migration
   def self.up
     create_table :orders do |t|
-      t.integer :supplier_id
       t.integer :cart_id
-      t.integer :customer_id
+      t.integer :supplier_id
       t.integer :shipping_cost
-      t.integer :shipping_addr_id
+      t.boolean :is_shipped
 
       t.timestamps
     end

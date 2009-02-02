@@ -1,23 +1,19 @@
-<% if @cart_lines_by_supplier.empty? %>
+<% if @cart.empty? %>
   <%= render :partial => 'empty_cart' %>
   <%= javascript_tag "$('cart_box_label').update('Cart is empty');"  %>
 <% else %>
   <table id="cart_table" cellspacing="0">
-  <% @cart_lines_by_supplier.each do | supplier, line_items| %>
-    <%= render :partial => 'supplier', :object => supplier %>
-    <% for item in line_items %>
+  <% @cart.orders.each do |order| %>
+    <%= render :partial => 'supplier', :object => order.supplier %>
+    <% for item in order.line_items %>
       <tr id="cart_line_<%=item.id%>">
         <%= render :partial => 'cart_line', :object => item %>
       </tr>
     <% end %>
-    <%= render :partial => 'supplier_total', 
-      :object => { :id => supplier.id,
-                   :amount =>  line_items.sum { |cl| cl.price * cl.quantity },
-                   :weight =>  line_items.sum { |cl| cl.item_unit.weight * cl.quantity } }
-       %>
+    <%= render :partial => 'order', :object => order %>
   <% end %>
   </table>
   <%= render :partial => 'cart_footer' %>
-  <%= javascript_tag "$('cart_box_label').update('#{@count} items in the cart');"  %>
+  <%= javascript_tag "$('cart_box_label').update('#{@cart.size} items in the cart');"  %>
 
 <% end %>
