@@ -22,7 +22,7 @@ class Order < ActiveRecord::Base
   end
 
   def total_points
-    line_items.map(:item_points).sum
+    line_items.map(&:item_points).sum
   end
   
 end

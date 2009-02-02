@@ -6,6 +6,7 @@ class Cart < ActiveRecord::Base
   has_many :suppliers, :through => :orders
   
   def self.find_cart( id )
+    #TODO!!! check if it's not confirmed or shipped
     begin
       find( id )
     rescue

@@ -1,10 +1,12 @@
 class CartController < ApplicationController
   
   def index
+    #TODO!!! check if it's not confirmed or shipped
     @cart = Cart.find_cart(session[:cart_id])
   end
 
   def create    
+    #TODO!!! check if it's not confirmed or shipped
     cart = Cart.find_cart(session[:cart_id])
     @new_cart = cart.empty?
     
@@ -48,22 +50,25 @@ class CartController < ApplicationController
   end
 
   def destroy
-    cart = Cart.find(session[:cart_id])
+    #TODO!!! check if it's not confirmed or shipped
+#    cart = Cart.find(session[:cart_id])
     @line = LineItem.find(params[:id])
-
-    cart.line_items.destroy(@line)
-    if cart.line_items.empty?
-      @cart_is_empty = true
-    else
-      sup_cart_lines = cart.line_items.find_all_by_supplier_id( @line.catalog_item.supplier_id )
-      if sup_cart_lines.empty?
-        @last_supplier = true
+    
+    order = @line.order
+    order.line_items.destroy(@line)
+    
+    if order.empty?
+      @order_is_empty = true
+      cart = order.cart
+      cart.orders.destroy(order)
+      if cart.empty?
+        @cart_is_empty = true
       end
     end
-    @count = cart.line_items.size
   end
   
   def update
+    #TODO!!! check if it's not confirmed or shipped
     @line = LineItem.find(params[:id])
     dir = params[:op]
     case dir
@@ -78,6 +83,17 @@ class CartController < ApplicationController
       else
         raise "Invalid operation"
     end
+  end
+  
+  def clear_cart
+    #TODO!!! check if it's not confirmed or shipped
+    cart = Cart.find(session[:cart_id])
+    cart.orders.each do |order|
+      order.line_items.destroy_all
+    end
+    cart.orders.destroy_all
+    
+    render :partial => 'empty_cart'
   end
   
 end

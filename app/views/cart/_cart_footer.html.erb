@@ -1,6 +1,6 @@
 <div id="botton_panel">
   <%=button_to_function "Checkout", "goCheckout()"%>
-  <%=button_to_function "Clear Cart", "alert('check out')"%>  
+  <%=button_to_remote "Clear Cart", :url => {:action => 'clear_cart'}, :update => 'cart_box', :confirm => "Sure?" %>  
 </div>
 <br>
 <div style="float:left;clear:both;padding:6px">

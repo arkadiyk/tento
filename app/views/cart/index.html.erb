@@ -1,6 +1,5 @@
 <% if @cart.empty? %>
   <%= render :partial => 'empty_cart' %>
-  <%= javascript_tag "$('cart_box_label').update('Cart is empty');"  %>
 <% else %>
   <table id="cart_table" cellspacing="0">
   <% @cart.orders.each do |order| %>
