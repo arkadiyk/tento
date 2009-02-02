@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
   
   has_many :line_items
   has_many :item_units, :through => :line_items
+
+  before_save :calculate_shipping_cost
   
   def empty?
     line_items.empty?
@@ -13,16 +15,33 @@ class Order < ActiveRecord::Base
     line_items.size
   end
   
-  def total_amount
+  def amount
     line_items.map(&:item_amount).sum
   end
  
-  def total_weight
+  def weight
     line_items.map(&:item_weight).sum
   end
 
-  def total_points
+  def points
     line_items.map(&:item_points).sum
   end
+  
+  def ship_to
+    cart.ship_to
+  end
+  
+  private
+    def calculate_shipping_cost
+      return if !supplier.shipping_rule
+      
+      ship_rule = supplier.shipping_rule.split(',')
+      proc = ship_rule.shift
+      args = ship_rule.map do |arg|
+        arg.starts_with?('#') ? send(arg) : arg
+      end
+      self.shipping_cost = ShippingRules.send(proc, *args)
+      
+    end
   
 end

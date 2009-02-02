@@ -35,6 +35,8 @@ class UsersController < ApplicationController
       # reset session
       self.current_user = @user # !! now logged in
       render :template => 'account/show'
+      update_cart_from_current_user
+      
       flash[:notice] = I18n.t(:signup_complete)
       
     else

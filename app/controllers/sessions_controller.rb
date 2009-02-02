@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
       handle_remember_cookie! new_cookie_flag
       render :template => 'account/show'
       flash[:notice] = I18n.t(:logged_in)
+      update_cart_from_current_user
     else
       note_failed_signin
       @login       = params[:login]
@@ -37,6 +38,7 @@ class SessionsController < ApplicationController
     logout_killing_session!
     flash[:notice] = I18n.t(:logged_out)
     session[:cart_id] = save_cart
+    update_cart_from_current_user
     render :js => 'window.location.reload()'
   end
 

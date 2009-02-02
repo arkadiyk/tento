@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
-    t.boolean  "is_confirmed"
+    t.boolean  "confirmed"
     t.integer  "pay_method"
-    t.boolean  "is_paid"
-    t.integer  "shipping_addr_id"
+    t.boolean  "paid"
+    t.boolean  "canceled"
+    t.integer  "ship_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,7 +76,8 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.integer  "cart_id"
     t.integer  "supplier_id"
     t.integer  "shipping_cost"
-    t.boolean  "is_shipped"
+    t.integer  "status",        :default => 0
+    t.boolean  "canceled"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

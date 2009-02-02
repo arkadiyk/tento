@@ -2,12 +2,12 @@ class CartController < ApplicationController
   
   def index
     #TODO!!! check if it's not confirmed or shipped
-    @cart = Cart.find_cart(session[:cart_id])
+    @cart = current_cart
   end
 
   def create    
     #TODO!!! check if it's not confirmed or shipped
-    cart = Cart.find_cart(session[:cart_id])
+    cart = current_cart
     @new_cart = cart.empty?
     
     unit_id = params[:unit_id]

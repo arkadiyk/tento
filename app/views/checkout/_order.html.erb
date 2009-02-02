@@ -1,9 +1,9 @@
  <tr id="co_order_totals_<%=order.id%>" class="total-line">
   <td align="right">Supplier Total</td>
   <td></td>
-  <td align="right"><%= order.total_weight %>kg</td>
-  <td align="right">&yen;<%= order.total_amount %></td>
-  <td align="right"><%= order.total_points %> <%=image_tag("tento.png")%></td>
+  <td align="right"><%= order.weight %>kg</td>
+  <td align="right">&yen;<%= order.amount %></td>
+  <td align="right"><%= order.points %> <%=image_tag("tento.png")%></td>
   <td></td>
  </tr>
 
