@@ -61,9 +61,9 @@ class CartController < ApplicationController
       @order_is_empty = true
       cart = order.cart
       cart.orders.destroy(order)
-      if cart.empty?
-        @cart_is_empty = true
-      end
+      @cart_is_empty = cart.empty?
+    else
+      order.save!
     end
   end
   
@@ -75,10 +75,12 @@ class CartController < ApplicationController
       when "up"
         @line.quantity += 1
         @line.save!
+        @line.order.save!
       when "down"
         if(@line.quantity > 1)
           @line.quantity -= 1
           @line.save!
+          @line.order.save!
         end
       else
         raise "Invalid operation"

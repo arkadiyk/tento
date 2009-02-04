@@ -1,8 +1,28 @@
- <tr id="order_totals_<%=order.id%>" class="total-line">
+<tbody id="order_totals_<%=order.id%>"
+ <tr id="order_totals0_<%=order.id%>" class="ototal-line">
   <td align="right">Supplier Total</td>
   <td></td>
   <td></td>
-  <td align="right"><%= order.weight %>kg</td>
+  <td></td>
   <td align="right">&yen;<%= order.amount %></td>
   <td></td>
  </tr>
+
+ <tr id="order_totals1_<%=order.id%>" class="ototal-line">
+  <td align="right">Shipping</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="right"><%= order.shipping_cost_s %></td>
+  <td></td>
+ </tr>
+
+ <tr id="order_totals2_<%=order.id%>" class="total-line">
+  <td align="right">Total</td>
+  <td></td>
+  <td></td>
+  <td align="right"><%= order.weight %>kg</td>
+  <td align="right">&yen;<%= order.amount_with_shipping %></td>
+  <td></td>
+ </tr>
+</tbody> 

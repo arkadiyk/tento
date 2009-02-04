@@ -3,7 +3,7 @@ unless(@new_line)
 else
   if @new_order 
     if(@new_cart)
-      page.replace_html "cart_box", "<table id='cart_table'></table>"
+      page.replace_html "cart_box", "<table id='cart_table' cellspacing='0'></table>"
       page.insert_html :bottom, 'cart_box', :partial => 'cart_footer'
     end
     page.insert_html :bottom, 'cart_table', :partial => 'supplier', :object => @order.supplier
@@ -16,5 +16,5 @@ else
 end
 page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
 page.visual_effect :highlight, "cart_line_#{@line.id}", :duration => 0.3
-page.replace_html 'cart_box_label', "#{@order.cart.size} items in the cart" 
+page.replace_html 'cart_box_label', "#{@order.cart.title}" 
 

@@ -18,6 +18,14 @@ class Order < ActiveRecord::Base
   def amount
     line_items.map(&:item_amount).sum
   end
+  
+  def amount_with_shipping
+    amount + shipping_cost
+  end
+ 
+  def shipping_cost_s
+    shipping_cost == 0 ? "FREE" : "¥#{shipping_cost}"
+  end
  
   def weight
     line_items.map(&:item_weight).sum
@@ -36,9 +44,11 @@ class Order < ActiveRecord::Base
       return if !supplier.shipping_rule
       
       ship_rule = supplier.shipping_rule.split(',')
+      logger.debug "1: #{ship_rule.inspect}"
       proc = ship_rule.shift
+      logger.debug "2: #{proc} : #{ship_rule.inspect}"
       args = ship_rule.map do |arg|
-        arg.starts_with?('#') ? send(arg) : arg
+        arg.starts_with?('#') ? send(arg.sub('#','')) : arg
       end
       self.shipping_cost = ShippingRules.send(proc, *args)
       

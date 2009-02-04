@@ -13,6 +13,7 @@
   <% end %>
   </table>
   <%= render :partial => 'cart_footer' %>
-  <%= javascript_tag "$('cart_box_label').update('#{@cart.size} items in the cart');"  %>
+  <%= update_cart_title %>
+  <%= javascript_tag "$('cart_box_label').update('#{@cart.title}');"  %>
 
 <% end %>

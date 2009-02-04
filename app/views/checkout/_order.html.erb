@@ -1,9 +1,25 @@
- <tr id="co_order_totals_<%=order.id%>" class="total-line">
+<tbody id="co_order_totals_<%=order.id%>"
+ <tr id="co_order_totals0_<%=order.id%>" class="ototal-line">
   <td align="right">Supplier Total</td>
   <td></td>
-  <td align="right"><%= order.weight %>kg</td>
+  <td></td>
   <td align="right">&yen;<%= order.amount %></td>
-  <td align="right"><%= order.points %> <%=image_tag("tento.png")%></td>
   <td></td>
  </tr>
 
+ <tr id="co_order_totals1_<%=order.id%>" class="ototal-line">
+  <td align="right">Shipping</td>
+  <td></td>
+  <td></td>
+  <td align="right"><%= order.shipping_cost_s %></td>
+  <td></td>
+ </tr>
+
+ <tr id="co_order_totals2_<%=order.id%>" class="total-line">
+  <td align="right">Total</td>
+  <td></td>
+  <td align="right"><%= order.weight %>kg</td>
+  <td align="right">&yen;<%= order.amount_with_shipping %></td>
+  <td align="right"><%=order.points%> <%=image_tag("tento.png")%></td>
+ </tr>
+</tbody> 

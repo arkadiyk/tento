@@ -15,5 +15,17 @@ class Cart < ActiveRecord::Base
   def size
     orders.map(&:size).sum
   end
+  
+  def total_amount
+    orders.map(&:amount_with_shipping).sum
+  end
+  
+  def title
+    if size > 0
+      "Cart total amount: ¥#{total_amount}"
+    else
+      "Cart is empty"
+    end    
+  end
 
 end

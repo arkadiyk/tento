@@ -2,12 +2,14 @@ if @cart_is_empty
   page.replace_html "cart_box", :partial => 'empty_cart'
 else
   page.visual_effect(:fade, "cart_line_#{@line.id}", :duration => 0.6)
+  page.delay(0.6) { page.remove("cart_line_#{@line.id}") }
   
   if @order_is_empty
-     page.visual_effect(:fade, "supplier_#{@line.catalog_item.supplier_id}", :duration => 0.6)
+     page.visual_effect(:fade, "supplier_#{@line.order.supplier.id}", :duration => 0.6)
      page.visual_effect(:fade, "order_totals_#{@line.order.id}", :duration => 0.6)
+     page.delay(0.6) { page.remove("supplier_#{@line.order.supplier.id}", "order_totals_#{@line.order.id}") }
   else
     page.replace "order_totals_#{@line.order.id}", :partial => 'order', :object => @line.order
   end
-  page.replace_html 'cart_box_label', "#{@line.order.cart.size} items in the cart" 
+  page.replace_html 'cart_box_label', "#{@line.order.cart.title}" 
 end

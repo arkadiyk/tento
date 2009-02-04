@@ -254,12 +254,12 @@ a img {border: 0}
 
 .supplier_product_hdr {
 	font-weight: bold;
-	padding: 6px 2px 2px 12px;
+	padding: 16px 2px 2px 12px;
 }
 
 tr.total-line td {
 	font-weight: bold;
-  border-bottom: 2px solid #EB8;
+  border-bottom: 1px solid #EB8;
 }
 
 #botton_panel {
