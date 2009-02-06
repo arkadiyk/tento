@@ -28,9 +28,20 @@ class ApplicationController < ActionController::Base
     end
 
     if session[:cart_id].nil?
-      @current_cart = Cart.create!
+      if logged_in?
+        @current_cart = Cart.create!(:user => current_user, :ship_to => current_user.ship_to)
+      else
+        @current_cart = Cart.create!
+      end
       session[:cart_id] = @current_cart.id
+    else
+      if logged_in? && @current_cart.user != current_user
+        @current_cart.user = current_user
+        @current_cart.ship_to = current_user.shipping_addr
+        @current_cart.save!
+      end
     end
+    
     @current_cart
   end
 
@@ -43,6 +54,7 @@ class ApplicationController < ActionController::Base
       cart.user = nil
       cart.ship_to = nil
     end
+    cart.save!
   end
 
   

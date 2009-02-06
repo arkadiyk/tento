@@ -13,11 +13,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :login
   validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
 
-  validates_presence_of     :first_name, :last_name
-  validates_format_of       :first_name,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
-  validates_length_of       :first_name,     :maximum => 100
-  validates_format_of       :last_name,      :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
-  validates_length_of       :last_name,      :maximum => 100
+  validates_presence_of     :name
+  validates_format_of       :name,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
+  validates_length_of       :name,     :maximum => 100
 
 
   validates_presence_of     :email
@@ -30,7 +28,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :password, :password_confirmation, :first_name, :last_name
+  attr_accessible :login, :email, :password, :password_confirmation, :name
 
 
 
@@ -55,10 +53,6 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
-  def name
-    I18n.t(:name_label, :first_name => first_name, :last_name => last_name)
-  end
-  protected
     
 
 

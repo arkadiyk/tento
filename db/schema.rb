@@ -119,8 +119,6 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
-    t.string   "first_name"
-    t.string   "last_name"
     t.integer  "shipping_addr_id"
     t.boolean  "verified"
     t.integer  "points"
