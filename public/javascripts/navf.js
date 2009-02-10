@@ -30,6 +30,6 @@ function goCheckout() {
 }  
 
 function goCheckoutH(id) {
-  boxLayout('checkout_box','account_box','payment_box');
+  boxLayout('checkout_box','account_box');
   boxExpand('account_box');
 }

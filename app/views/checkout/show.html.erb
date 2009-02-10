@@ -12,4 +12,12 @@
     <%= render :partial => 'order', :object => order %> 
   <% end %>
   </table>
+  <% if logged_in?%>
+	<%= render :partial => 'shipping'%> 
+  	<%= render :partial => 'payment', :locals => {:cart => @cart}%> 
+  <% else %>
+  	<div style="padding:20px; font-size:larger">
+  		Please Login to see shipping and payment information
+	</div>
+  <% end %>
 <% end %>

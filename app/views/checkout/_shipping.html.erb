@@ -1,0 +1,8 @@
+<div id="ship_box" style="padding:20px; font-size:larger">
+<%= current_user.shipping_addr.line1%>
+<%= current_user.shipping_addr.line2%>
+<%= current_user.shipping_addr.postal_code%>
+<p><a href="#">Change...</a></p>
+</div>
+
+<%=javascript_tag "makeFrame('ship_box','Ship To')"%>

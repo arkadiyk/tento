@@ -1,4 +1,4 @@
 User: <%= current_user.name %><br>
 <%= link_to_remote 'Logout', :url => logout_path %>
 
-<%= javascript_tag "$('account_box_label').update('#{current_user.name}');boxRefresh('payment_box');"  %>
+<%= javascript_tag "$('account_box_label').update('#{current_user.name}');boxRefresh('checkout_box');"  %>

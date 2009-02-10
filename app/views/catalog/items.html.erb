@@ -21,8 +21,6 @@
   <% end %>
   </table>
 
-  <script type="text/javascript">
-  	makeColx('<%=@ids[hdr]%>','<%=hdr.name%>' );
-  </script>
+  <%=javascript_tag "makeColx('#{@ids[hdr]}','#{hdr.name}')"%>
 
 <% end %>

@@ -52,6 +52,25 @@ function makeColx(box_id, box_title) {
 	}
 }
 
+function makeFrame(box_id, box_title) {
+	var outer = new Element('div', {id: box_id + '_outer'});
+	var theBox = $(box_id);
+	
+	theBox.wrap(outer);
+	outer.insert({
+		top: '<div class="c_box_headers">' +
+		'<span id="' + box_id + '_label" style="padding-left: 15px">' +
+		box_title +
+		'</span></div>'
+	});
+	outer.addClassName('c_boxes');
+	theBox.addClassName('c_box_context');
+	if(!theBox.visible()){
+		outer.hide();
+		theBox.show();
+	}
+}
+
 function toggleBox(el, op) {
   var theBox = $(el);
   var markBox = $(el + "_label").previous();

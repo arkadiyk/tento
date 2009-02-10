@@ -47,7 +47,6 @@
       <td id="center_col" valign="top" width="60%">
         <div id="info_box" class="a_boxes" style="display:none"></div>
         <div id="checkout_box" class="a_boxes" style="display:none"></div>
-        <div id="payment_box" class="a_boxes" style="display:none"></div>
       </td>
       <td id="right_col" valign="top">
         <div id="account_box" class="a_boxes secure_context" style="display:none"></div>
@@ -69,12 +68,10 @@
     cart_box: '<%=cart_lines_path%>',
     account_box: '<%=account_path%>',
     checkout_box: {url: '<%=checkout_path%>', force: true},
-    payment_box: {url: '<%=payment_path%>', force: true}
   };
   
   makeColx('cart_box', "Shopping Cart"); 
-  makeColx('account_box', "User Account");
-  makeColx('payment_box', "Payment Method"); 
+  makeColx('account_box', "User Account"); 
 
   window.dhtmlHistory.create({
     toJSON: function(o) {
@@ -109,7 +106,6 @@
   });
   	
   $$('.mitem_dd').each( function(el){ el.observe('click', toggleDDMenu); } );
-//  $$('.c_box_headers').each( function(el){ el.observe('click', handleToggleBox); } );
   
 	<%=remote_function :url => categories_path%>
   
