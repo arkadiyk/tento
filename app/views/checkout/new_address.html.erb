@@ -1,0 +1,26 @@
+<% if flash[:error] -%>
+<div style="border:1px solid red;color:red;background-color:#FFC0CB;margin:5px;padding:2px">
+<%= flash[:error] %>
+<% flash.discard %>
+</div>
+<% end -%>
+
+
+<% form_for :address do |a| -%>
+<table cellspacing="5" style="padding:5px;text-align:right;margin:auto" >
+	<%= display_user_field a, :prefecture, :prefix => 'address', :model => 'address' %>
+	<%= display_user_field a, :city, :prefix => 'address', :model => 'address' %>
+	<%= display_user_field a, :address, :prefix => 'address', :model => 'address' %>
+	<%= display_user_field a, :postal_code, :prefix => 'address', :model => 'address' %>
+	<%= display_user_field a, :phone, :prefix => 'address', :model => 'address' %>
+	<tr><td colspan="2"><%=check_box_tag 'default_addr'%> &nbsp; <%=label_tag 'default_addr', "Use this address as a default"%></td></tr>
+	<tr>
+	  <td colspan="2"><br/>
+		<%= submit_to_remote 'create', "New Address", :url => {:action => 'create_address'} %>
+	</tr>
+
+</table>
+<% end -%>
+
+<%= javascript_tag "$('ship_box_label').update('Create New Address');"  %>
+

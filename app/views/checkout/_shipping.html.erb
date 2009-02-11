@@ -1,8 +1,16 @@
 <div id="ship_box" style="padding:20px; font-size:larger">
-<%= current_user.shipping_addr.line1%>
-<%= current_user.shipping_addr.line2%>
-<%= current_user.shipping_addr.postal_code%>
-<p><a href="#">Change...</a></p>
+<p><%= current_user.shipping_addr.prefecture%>
+<%= current_user.shipping_addr.city%>
+<%= current_user.shipping_addr.address%>
+</p><p>
+	<%= current_user.shipping_addr.postal_code%>
+<p>
+<%= current_user.shipping_addr.phone%>
+</p>
+<%= link_to_remote "Change...", :url => { :action => 'new_address' }, :update => 'ship_box' %>
+<p>
+	
+</p>
 </div>
 
 <%=javascript_tag "makeFrame('ship_box','Ship To')"%>

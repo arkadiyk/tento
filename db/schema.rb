@@ -12,9 +12,11 @@
 ActiveRecord::Schema.define(:version => 20090127084623) do
 
   create_table "addresses", :force => true do |t|
-    t.string   "line1"
-    t.string   "line2"
     t.string   "postal_code"
+    t.string   "prefecture"
+    t.string   "city"
+    t.string   "address"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

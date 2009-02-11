@@ -18,10 +18,13 @@
   <%= display_user_field f, :password,  :type => :password_field %>
   <%= display_user_field f, :password_confirmation,  :type => :password_field %>
 
+  <tr><td colspan="2" style="text-align: center;font-weight: bold;padding-top: 10px">Address:</td></tr>
   <% fields_for :address do |a| %>
-    <%= display_user_field a, :line1, :prefix => 'address', :model => 'address' %>
-    <%= display_user_field a, :line2, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :prefecture, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :city, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :address, :prefix => 'address', :model => 'address' %>
     <%= display_user_field a, :postal_code, :prefix => 'address', :model => 'address' %>
+    <%= display_user_field a, :phone, :prefix => 'address', :model => 'address' %>
   <% end %>
 
     <tr>

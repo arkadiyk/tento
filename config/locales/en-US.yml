@@ -56,8 +56,9 @@ en-US:
   signup_problem : "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
  
   address:
-    line1: "Address Line 1"
-    line2: "Address Line 2"
+    prefecture: "Prefecture"
+    city: "City"
+    address: "Address"
     postal_code: "Postal Code"
-    telephone: "Telephone"
+    phone: "Telephone"
     
