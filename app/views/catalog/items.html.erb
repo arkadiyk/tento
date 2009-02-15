@@ -2,7 +2,7 @@
   <table class="cat_tables" id="<%=@ids[hdr]%>">
   <% for item in items %>
     <tr>
-      <td rowspan="2"  style="width:50px"><%=image_tag("rails.png")%></td>
+      <td rowspan="2"  style="width:50px"><%=image_tag("vegi/#{item.image_file}.jpg")%></td>
       <td rowspan="2"><%=h item.long_name %></td>
       <td style="width:75px;border-bottom: none" nowrap="true">
 	    <%if item.item_units.size == 1%>
