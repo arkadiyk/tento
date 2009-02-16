@@ -2,7 +2,24 @@
   <table class="cat_tables" id="<%=@ids[hdr]%>">
   <% for item in items %>
     <tr>
+    	<!--
       <td rowspan="2"  style="width:50px"><%=image_tag("vegi/#{item.image_file}.jpg")%></td>
+	  -->
+<td rowspan="2" width="1%">
+<%= link_to_function image_tag("vegi/#{item.image_file}.jpg"), 
+	"Effect.Appear('img_#{item.id}', {duration: 0.4});", 
+	:class => "edit_link", :id => "edit-#{item.id}" %>
+<!--
+</td>	
+        <td> 
+-->
+        <div style="position:relative;"> 
+          <div id="img_<%=item.id%>" class="img_popup" style="display:none;">
+             	<%=image_tag("vegi-large/#{item.image_file}.jpg")%>
+          </div>
+        </div> 
+      </td>
+
       <td rowspan="2"><%=h item.long_name %></td>
       <td style="width:75px;border-bottom: none" nowrap="true">
 	    <%if item.item_units.size == 1%>

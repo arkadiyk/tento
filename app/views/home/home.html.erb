@@ -109,4 +109,20 @@
   
 	<%=remote_function :url => categories_path%>
   
+  Event.observe(document.body, 'click', 
+  	function(event) {
+	    var el = Event.element(event);
+	
+	//    var elt = $(Event.element(event)).up('.img_popup');
+	//    if (!el.hasClassName('img_popup')) {
+			allPopups = $$('.img_popup');
+			allPopups.each(function(e){
+			  if( !e.visible() )
+			    return;
+//		      Effect.BlindUp(e, {duration: 0.3});
+			  e.hide();
+			});
+	//	}
+  });  
+  
 </script>
