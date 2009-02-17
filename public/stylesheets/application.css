@@ -34,12 +34,51 @@ a img {border: 0}
 #header_box {
   margin: 0;
   padding: 0;
-	position: relative;
-	height: 60px;
-	border-bottom: 3px solid #339966;;
-	background: #99ffcc;
+	position: absolute;
+	height: 125px;
+	left: 5px;
+	top: 5px;
 	width: 100%;
+	background:url(/images/logo-1.png) no-repeat left top;
 }
+
+#header_box1 {
+  margin: 0;
+  padding: 0;
+	position: absolute;
+	height: 86px;
+	left: 132px;
+	top: 0;
+	right: 0;
+	background:url(/images/logo-2.png) repeat-x left top;
+}
+
+#header_box2 {
+  margin: 0;
+  padding: 0;
+	position: absolute;
+	height: 86px;
+	right: 0;
+	top: 0;
+	width: 100%;
+	background:url(/images/logo-3.png) no-repeat right top;
+}
+
+
+#logo1-cell {
+	width: 132px;
+	background:url(/images/logo-1.png) no-repeat left top;
+}
+
+#logo2-cell {
+	background:url(/images/logo-2.png) repeat-x left top;
+}
+
+#logo3-cell {
+	background:url(/images/logo-3.png) no-repeat right top;
+	width:13px;
+}
+
 
 #logo_box {
 	float:left; 
@@ -53,15 +92,15 @@ a img {border: 0}
 
 #nav_box {
   position: absolute;
-  top: 88px;
-	left: 15px;
+  top: 140px;
+	left: 0px;
   height: auto;
   width:170px;
 }
 
 #container_box {
 	position: absolute;
-  top: 64px;
+  top: 84px;
 	left: 185px;
 	right: 0;
   height: auto;
