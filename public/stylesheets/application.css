@@ -46,10 +46,9 @@ a img {border: 0}
 	width:23px;
 }
 
-#logo2-cell h1 {
-	font: 43px fantasy;
-	padding: 20px;
+#logo2-cell img {
 	float:left;
+	padding: 25px;
 }
 
 #nav_box {
