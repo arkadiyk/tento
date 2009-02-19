@@ -34,7 +34,7 @@ a img {border: 0}
 
 #logo1-cell {
 	width: 162px;
-	background:url(/images/logo-1.png) no-repeat right top;
+	background:url(/images/logo-ani.gif) no-repeat right top;
 }
 
 #logo2-cell {
@@ -48,7 +48,7 @@ a img {border: 0}
 
 #logo2-cell img {
 	float:left;
-	padding: 25px;
+	padding: 20px;
 }
 
 #nav_box {

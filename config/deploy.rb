@@ -9,7 +9,7 @@ set :application, "tento"
 #############################################################
 set :use_sudo, false    # Dreamhost does not support sudo
 set :user, "tento"      # Dreamhost SSH User
-set :domain, "tentoexpress.jp"
+set :domain, "dev.tentoexpress.jp"
 
 server domain, :app, :web
 role :db, domain, :primary => true
@@ -46,8 +46,8 @@ namespace :deploy do
   desc "Link shared files"
   #task :before_symlink do
   before :symlink do
-    run "rm -drf #{release_path}/public/uploads"
-    run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
+#    run "rm -drf #{release_path}/public/uploads"
+#    run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
     run "rm -f #{release_path}/config/database.yml"
     run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
