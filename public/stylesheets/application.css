@@ -34,8 +34,15 @@ a img {border: 0}
 
 #logo1-cell {
 	width: 162px;
+}
+
+.logo1-active {
 	background:url(/images/logo-ani.gif) no-repeat right top;
 }
+.logo1-inactive {
+	background:url(/images/logo-1.png) no-repeat right top;
+}
+
 
 #logo2-cell {
 	background:url(/images/logo-2.png) repeat-x left top;
