@@ -99,6 +99,7 @@ function createCartLine(cat_id) {
       asynchronous:true, 
       evalScripts:true, 
       method:'post',
+	  cartUpdateRequest: true,
       parameters:'unit_id=' + unit_id + '&qty=' + qty + '&' + getAuthTokenParam()
       } 
     );
@@ -110,6 +111,7 @@ function updateCartLine(op, id){
   new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
+	  cartUpdateRequest: true,
       method:'put',
       onSuccess: function(){
         $('cart_line_' + id).removeClassName('updating');
@@ -125,6 +127,7 @@ function deleteCartLine(id){
   new Ajax.Request(boxURL.cart_box, {
       asynchronous:true, 
       evalScripts:true, 
+	  cartUpdateRequest: true,
       method:'delete',
       parameters:'id=' + id + '&' + getAuthTokenParam()
       } 

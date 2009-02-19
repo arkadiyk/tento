@@ -42,7 +42,8 @@ function makeColx(box_id, box_title) {
 		box_id +
 		'_label">' +
 		box_title +
-		'</span></a>'
+		'</span><span id="' + box_id + 
+		'_spinner" style="float:right;display:none;padding: 1px 3px 0 0"><img src="/images/spinner.gif"/></span></a>'
 	});
 	outer.addClassName('c_boxes');
 	theBox.addClassName('c_box_context');

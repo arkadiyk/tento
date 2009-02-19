@@ -117,16 +117,31 @@
   
 	<%=remote_function :url => categories_path%>
   
+	Ajax.cartUpdatesCount = 0;
   
     Ajax.Responders.register({
-        onCreate: function(){
+        onCreate: function(opt){
+			o = opt.options.cartUpdateRequest;
+			if(o){
+				$('cart_box_spinner').show();
+				Ajax.cartUpdatesCount++;
+			}
 			$('logo1-cell').addClassName("logo1-active");
 			$('logo1-cell').removeClassName("logo1-inactive");
         },
-        onComplete: function(){
+        onComplete: function(opt){
+			o = opt.options.cartUpdateRequest;
+			if(o){
+				$('cart_box_spinner').show();
+				Ajax.cartUpdatesCount--;
+				if(Ajax.cartUpdatesCount == 0){
+					$('cart_box_spinner').hide();
+				}
+			}
             if (Ajax.activeRequestCount == 0) {
 				$('logo1-cell').addClassName("logo1-inactive");
 				$('logo1-cell').removeClassName("logo1-active");
+
             }
         }
     });
