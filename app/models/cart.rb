@@ -6,10 +6,16 @@ class Cart < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :ship_to, :class_name => "Address"
+  
+  named_scope :customer_orders, lambda { |user| { :conditions => ["confirmed_at is not null and user_id = ?", user] } }
 
    
   def empty?
     orders.empty?
+  end
+
+  def confirmed?
+    !confirmed_at.nil?
   end
 
   def size

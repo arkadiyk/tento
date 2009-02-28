@@ -8,7 +8,7 @@
 <% end -%>
 
 <div style="padding: 10px">
-  <% form_tag session_path do -%>
+  <% form_remote_tag :url => session_path, :update => 'account_box'  do -%>
     <table cellspacing="5" style="padding:5px;text-align:right;margin:auto">
       <tr>
         <td><%= label_tag 'login', I18n.t(:login) %></td>
@@ -20,7 +20,7 @@
       </tr>
       <td colspan="2">
       	<br>
-      	<%= submit_to_remote 'login', I18n.t(:log_in), :url => session_path, :update => 'account_box' %>
+      	<%= submit_tag I18n.t(:log_in) %>
 	  	&nbsp;&nbsp;<%= link_to_function 'Not registered yet?', "boxReload('account_box-signup')"  %>
 	  </td>
     </table>

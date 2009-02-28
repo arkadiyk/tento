@@ -1,0 +1,11 @@
+<h2>Thank you for your Order!</h2>
+
+<%if @cart.pay_method == 'conbini'-%>
+	<p>Your order will be on hold until we confirm the payment</p>
+<%elsif @cart.pay_method == 'cod1' -%>
+	<p>Your order will be sent to supplier shortly.</p>
+<%end-%>	
+<p>You can check order status <%= link_to_function "here", "goCorders();" %>.</p>
+
+<%= javascript_tag "boxReload('cart_box');"  %>
+

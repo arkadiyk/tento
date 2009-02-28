@@ -62,6 +62,8 @@ ActionController::Routing::Routes.draw do |map|
   map.checkout '/checkout', :controller => 'checkout', :action => 'show'
   map.order '/order', :controller => 'order', :action => 'show'
   
+  map.resources :customer_orders, :only => [:index, :show]
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

@@ -4,9 +4,7 @@ Total amount to pay: <span style="font-weight:bold;">&yen;<%=cart.total_amount%>
 <p><%= radio_button_tag "payment_method", "conbini", true%> Pay at convinient store</p>
 <p><%= radio_button_tag "payment_method", "cod1"%> Pay on delivery</p>
 <p><%= radio_button_tag "payment_method", "paypal"%> Pay by PayPal</p>
-<p><%= submit_to_remote "pay_btn", "Pay"%></p>
+<p><%= submit_to_remote "pay_btn", "Pay", :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
 </form>
 </div>
 
-
-<%=javascript_tag "makeFrame('pay_box','Payment Method')"%>

@@ -29,7 +29,17 @@ function goCheckout() {
   dhtmlHistory.add('checkout', "goCheckoutH()");
 }  
 
-function goCheckoutH(id) {
+function goCheckoutH() {
   boxLayout('checkout_box','account_box');
   boxExpand('account_box');
+}
+
+function goCorders() {
+  goCordersH();
+  dhtmlHistory.add('corders', "goCordersH()");
+}  
+
+function goCorders() {
+  boxLayout('corders_box','account_box', 'cart_box');
+  boxCollapse('account_box','cart_box');
 }

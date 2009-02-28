@@ -259,6 +259,16 @@ a img {border: 0}
   border-bottom: 1px dotted #EB8;
 }
 
+#checkout_box hr{
+	border:  1px dotted #EB8;
+	width: 80%;
+}
+
+#checkout_box table {
+	width: 95%;
+	margin: auto;
+}
+
 .supplier_product_hdr {
 	font-weight: bold;
 	padding: 16px 2px 2px 12px;

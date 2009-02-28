@@ -44,11 +44,9 @@ namespace :deploy do
   end
 
   desc "Link shared files"
-  #task :before_symlink do
-  before :symlink do
-#    run "rm -drf #{release_path}/public/uploads"
-#    run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
-    run "rm -f #{release_path}/config/database.yml"
-    run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
+  task :simlink_shared do
+    run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
 end
+
+after 'deploy:update_code', 'deploy:simlink_shared'

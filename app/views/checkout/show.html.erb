@@ -1,7 +1,7 @@
 <% if @cart.empty? %>
   <%= render :partial => 'cart/empty_cart' %>
 <% else %>
-  <table id="checkout_table" cellspacing="0" width="100%">
+  <table id="checkout_table" cellspacing="0">
   <% @cart.orders.each do |order| %>
     <%= render :partial => 'cart/supplier', :object => order.supplier %>
     <% for item in order.line_items %>
@@ -12,8 +12,10 @@
     <%= render :partial => 'order', :object => order %> 
   <% end %>
   </table>
+  <hr>
   <% if logged_in?%>
-	<%= render :partial => 'shipping'%> 
+	<%= render :partial => 'shipping', :object => @cart.ship_to%> 
+    <hr>
   	<%= render :partial => 'payment', :locals => {:cart => @cart}%> 
   <% else %>
   	<div style="padding:20px; font-size:larger">
@@ -21,3 +23,4 @@
 	</div>
   <% end %>
 <% end %>
+

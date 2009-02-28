@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
-    t.boolean  "confirmed"
-    t.integer  "pay_method"
-    t.boolean  "paid"
-    t.boolean  "canceled"
+    t.datetime "confirmed_at"
+    t.string   "pay_method"
+    t.datetime "paid_at"
+    t.datetime "canceled_at"
     t.integer  "ship_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"

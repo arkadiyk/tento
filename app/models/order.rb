@@ -44,9 +44,7 @@ class Order < ActiveRecord::Base
       return if !supplier.shipping_rule
       
       ship_rule = supplier.shipping_rule.split(',')
-      logger.debug "1: #{ship_rule.inspect}"
       proc = ship_rule.shift
-      logger.debug "2: #{proc} : #{ship_rule.inspect}"
       args = ship_rule.map do |arg|
         arg.starts_with?('#') ? send(arg.sub('#','')) : arg
       end
