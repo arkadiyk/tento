@@ -272,7 +272,7 @@ a img {border: 0}
 	width: 80%;
 }
 
-#checkout_box table {
+.cart_ro_table {
 	width: 95%;
 	margin: auto;
 }

@@ -1,2 +1,26 @@
-<h1>CustomerOrder#show</h1>
-<p>Find me in app/views/customer_order/show.html.erb</p>
+<% if @corder %>
+  <div style="width:95%">
+  	<% if @prev %>
+	  <%=link_to_function "Prev", "goCorder('#{@prev}')"%>
+	<% end %>
+	<% if @prev && @next %>
+	  &nbsp;&nbsp;|&nbsp;
+	<% end %>
+	<% if @next %>
+	  <%=link_to_function "Next", "goCorder('#{@next}')"%>
+	<% end %>
+  </div>
+  <table  class="cart_ro_table" cellspacing="0">
+	<% @corder.orders.each do |order| %>
+		<%= render :partial => 'cart/supplier', :object => order.supplier %>
+		<% for item in order.line_items %>
+		  <tr id="ord_cart_line_<%=item.id%>">
+		    <%= render :partial => 'checkout/cart_line', :object => item %>
+		  </tr>
+		<% end %>
+		<%= render :partial => 'checkout/order', :object => order %> 
+	<% end %>
+  </table>
+<% else %>
+  <h2>Order not found</h2>
+<% end %>

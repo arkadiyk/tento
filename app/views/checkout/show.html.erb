@@ -1,7 +1,7 @@
 <% if @cart.empty? %>
   <%= render :partial => 'cart/empty_cart' %>
 <% else %>
-  <table id="checkout_table" cellspacing="0">
+  <table class="cart_ro_table" cellspacing="0">
   <% @cart.orders.each do |order| %>
     <%= render :partial => 'cart/supplier', :object => order.supplier %>
     <% for item in order.line_items %>
