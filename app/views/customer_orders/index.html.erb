@@ -1,2 +1,15 @@
-<h1>CustomerOrder#index</h1>
-<p>Find me in app/views/customer_order/index.html.erb</p>
+<table id="corder_table">
+<tr>
+	<th>Order#</th>
+	<th>Amount</th>
+	<th>Ordered At</th>
+</tr>	
+<% @orders.each do |order| -%>
+<tr>
+	<td><%= link_to_function order.order_id, "goCorder('#{order.order_id}')" %></td>
+	<td>&yen;<%= order.total_amount %></td>
+	<td><%= order.confirmed_at %></td>
+</tr>
+
+<% end -%>
+</table>

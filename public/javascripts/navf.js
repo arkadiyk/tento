@@ -39,7 +39,21 @@ function goCorders() {
   dhtmlHistory.add('corders', "goCordersH()");
 }  
 
-function goCorders() {
+function goCordersH() {
   boxLayout('corders_box','account_box', 'cart_box');
-  boxCollapse('account_box','cart_box');
+  boxCollapse('cart_box');
+  boxExpand('account_box');
 }
+
+function goCorder(id) {
+  goCorderH(id);
+  dhtmlHistory.add('corder~' + id, "goCorderH('" + id +"')");
+}  
+
+function goCorderH(id) {
+  var box_id = "corder-" + id;
+  boxLayout(box_id,'cart_box','account_box');
+  boxCollapse('cart_box');
+  boxExpand('account_box');
+}
+

@@ -26,6 +26,10 @@ class Cart < ActiveRecord::Base
     orders.map(&:amount_with_shipping).sum
   end
   
+  def order_id
+    "#{pay_method}00#{id + 77100}" 
+  end
+  
   def title
     if size > 0
       "Cart total amount: ¥#{total_amount}"

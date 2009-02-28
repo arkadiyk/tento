@@ -75,6 +75,14 @@ a img {border: 0}
   width: auto;
 }
 
+#corder_table {
+	margin: auto;
+	width: 100%;
+}
+
+#corder_table td,th {
+	text-align:right;
+}
 
 #main_box {
   position: absolute;
