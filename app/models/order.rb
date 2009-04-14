@@ -38,7 +38,7 @@ class Order < ActiveRecord::Base
   def ship_to
     cart.ship_to
   end
-  
+   
   private
     def calculate_shipping_cost
       return if !supplier.shipping_rule

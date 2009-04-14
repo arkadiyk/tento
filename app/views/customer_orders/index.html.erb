@@ -8,7 +8,7 @@
 <tr>
 	<td><%= link_to_function order.order_id, "goCorder('#{order.order_id}')" %></td>
 	<td>&yen;<%= order.total_amount %></td>
-	<td><%= order.confirmed_at %></td>
+	<td><%= order.ordered_at %></td>
 </tr>
 
 <% end -%>

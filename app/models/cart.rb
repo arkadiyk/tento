@@ -41,6 +41,10 @@ class Cart < ActiveRecord::Base
     find :first, :conditions => {:id => oid, :user_id => user}
   end
   
+  def ordered_at
+    confirmed_at.to_s(:db)
+  end
+ 
   def title
     if size > 0
       "Cart total amount: ¥#{total_amount}"
