@@ -21,18 +21,18 @@ class LoadCatalog
   end  
   
   def map_record(nl)
-    nl["Supplier"] = map_supplier(nl["Supplier"])
-    nl["ProductLine"] = map_pl(nl["ProductLine"])
-    unit_fields = ["UnitEn","UnitJa","UnitWeight","UnitPrice","UnitPoints"]
+    unit_fields = ["UnitEn","UnitJa","UnitWeight","UnitPrice","UnitPoints","ProductLine"]
     unit_fields.each do | fld |
       if nl[fld]
         nl[fld] = nl[fld].split(',')
       end
     end
+    nl["Supplier"] = map_supplier(nl["Supplier"])
+    nl["ProductLine"] = map_pl(nl["ProductLine"])
   end
   
   def create_record(nl)
-    id = nl["Supplier"] + '-' + nl["ProductLine"] + "-" + nl["ItemId"]
+    id = "#{nl["Supplier"]}-#{nl["ItemId"]}"
     ei = CatalogItem.find(:all, :conditions =>["item_id = ?", id])
     if ei.length > 0
       puts "Skipping #{id}"
@@ -40,11 +40,14 @@ class LoadCatalog
     end
     
     nc = CatalogItem.create :supplier_id => nl["Supplier"],
-      :product_line_id => nl["ProductLine"],
       :item_id => id,
       :name_en => nl['NameEn'], 
       :long_name_en => nl['DescEn'],
       :image_file => nl['ImageFile']
+      
+    nl["ProductLine"].each do |pl_id|
+      nc.product_line << ProductLine.find(pl_id)
+    end
       
     nl['UnitPrice'].each_index do |i|
       ItemUnit.create :price => nl['UnitPrice'][i], 

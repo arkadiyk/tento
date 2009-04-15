@@ -1,4 +1,7 @@
-<% @cat_items.each do |hdr, items| %>
+<%   @cat_items.keys.sort.each do |hdr|
+	 items = @cat_items[hdr] 
+-%>
+
   <table class="cat_tables" id="<%=@ids[hdr]%>">
   <% for item in items %>
     <tr>

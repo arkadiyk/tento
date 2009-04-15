@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
 
   create_table "catalog_items", :force => true do |t|
     t.integer  "supplier_id"
-    t.integer  "product_line_id"
     t.string   "item_id"
     t.string   "name_en"
     t.string   "name_ja"
@@ -43,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.string   "image_file"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "catalog_items_product_lines", :id => false, :force => true do |t|
+    t.integer "catalog_item_id"
+    t.integer "product_line_id"
   end
 
   create_table "current_specials", :force => true do |t|
@@ -85,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
   end
 
   create_table "product_lines", :force => true do |t|
+    t.integer  "parent_id"
     t.string   "name_en"
     t.string   "name_ja"
     t.string   "long_name_en"

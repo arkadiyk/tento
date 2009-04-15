@@ -1,6 +1,12 @@
 <% for cat in category_list -%>
-  <div class="cat_item" onClick="goCatalog('<%=id%>','<%=cat.id%>')">
-    <strong><%=cat.name_en%></strong>
-    <p class="cat_desc"><%=cat.long_name_en%></p>
+  <div class="cat_item">
+	<%= link_to_function cat.name, "goCatalog('#{id}','#{cat.id}')", :title => "#{cat.long_name}" %>
+	<% if cat.respond_to?("children") && !cat.children.empty? -%>
+    	<p class="cat_desc">
+    		<% for subcat in cat.children -%>
+				<%= link_to_function subcat.name, "goCatalog('#{id}','#{subcat.id}')", :title => "#{subcat.long_name}" %>
+			<% end -%>
+		</p>
+	<% end %>
   </div>
 <% end -%>

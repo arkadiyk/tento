@@ -5,9 +5,9 @@ class LineItem < ActiveRecord::Base
   before_create :update_fields_from_catalog_item
   
   # belongs_to :product_line, :through => :catalog_items
-  def product_line
-    catalog_item.product_line
-  end
+#  def product_line
+#    catalog_item.product_line
+#  end
   
   def catalog_item
     item_unit.catalog_item

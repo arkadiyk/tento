@@ -1,30 +1,35 @@
 class CatalogController < ApplicationController
   def items
+    @cat_items = {}; @ids = {}
     cat = params[:p1]
     case cat
       when 'sp' # specials
         item_list = [] # not at the moment
+
       when 'pl' # product_line
-        header_obj = :supplier
-        item_list = CatalogItem.find_all_by_product_line_id(params[:p2], {:include => header_obj})
+        pl = ProductLine.find(params[:p2])
+        cs = pl.children
+        cs = [pl] if cs.empty?
+        cs.each do |spl|
+          @ids[spl] = "ch_#{cat}_#{params[:p2]}_#{spl.id}"
+          @cat_items[spl] = ProductLine.find(spl.id).catalog_items
+        end
+
       when 'su' # supplier
-        header_obj = :product_line
-        item_list = CatalogItem.find_all_by_supplier_id(params[:p2], {:include => header_obj})
+        item_list = CatalogItem.find_all_by_supplier_id(params[:p2])
+        item_list.each do |item|
+          hdr = item.product_line
+          @ids[hdr] = "ch_#{cat}_#{params[:p2]}_#{hdr.id}"
+          @cat_items[hdr] ||= []
+          @cat_items[hdr] << item
+        end
+      
     end
-    
-    @cat_items = {}; @ids = {}
-    item_list.each do |item|
-      hdr = item.send(header_obj)
-      @ids[hdr] = "ch_#{cat}_#{params[:p2]}_#{hdr.id}"
-      @cat_items[hdr] ||= []
-      @cat_items[hdr] << item
-    end
-    
   end
 
   def categories
-    @pl = ProductLine.find :all
-    @su = Supplier.find :all
+    @pl = ProductLine.roots 
+    @su = Supplier.all
   end
 
 end

@@ -226,7 +226,7 @@ a img {border: 0}
 	margin:0 1px 0 0;
 	padding:0;
 }
-#tab a 
+#tab a.mitem_dd, #tab a.mitem_cm
 {
 	background:url(/images/bright.gif) no-repeat right bottom;
 	text-decoration:none;
@@ -237,7 +237,7 @@ a img {border: 0}
 	margin:0;
 	padding:0;
 }
-#tab a span 
+#tab a.mitem_dd span, #tab a.mitem_cm span 
 {
 	display:block;
 	background:url(/images/bleft.gif) no-repeat left bottom;
@@ -248,11 +248,11 @@ a img {border: 0}
 	line-height:21px;
 	padding:0 10px;
 }
-#tab a:hover,#tab li.item_active a 
+#tab a.mitem_dd:hover,#tab li.item_active a.mitem_dd,#tab a.mitem_cm:hover,#tab li.item_active a.mitem_cm
 {
 	background-position:right top;
 }
-#tab a:hover span,#tab li.item_active a span 
+#tab a.mitem_dd:hover span,#tab li.item_active a.mitem_dd span,#tab a.mitem_cm:hover span,#tab li.item_active a.mitem_cm span 
 {
 	background-position:left top;
 	color:#000;
