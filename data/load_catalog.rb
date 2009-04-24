@@ -4,18 +4,26 @@ require "csv"
 
 class LoadCatalog
   def load_file
-    filename = 'data/ProductList.csv'
+    filename = 'data/ProductListNew.csv'
     
     results = CSV.read(filename) 
+#    p results
+    
     header_line = results.shift
-    results.each do |line|
-      if !line[0]
+#    p header_line
+#    p results
+
+    
+    results.each do |line|      
+      if line[0].empty?
         next
       end
+      p line
+
       nl = Hash[*header_line.zip(line).flatten]
       map_record(nl)
-      create_record(nl)
-      puts "Record created #{nl.inspect}\n"
+      succ = create_record(nl)
+      puts "Record created #{nl.inspect}\n" if succ
     end
     true
   end  
@@ -27,8 +35,9 @@ class LoadCatalog
         nl[fld] = nl[fld].split(',')
       end
     end
+    p nl
     nl["Supplier"] = map_supplier(nl["Supplier"])
-    nl["ProductLine"] = map_pl(nl["ProductLine"])
+    nl["ProductLine"] = nl["ProductLine"].map{|ln| map_pl(ln)}
   end
   
   def create_record(nl)
@@ -36,13 +45,17 @@ class LoadCatalog
     ei = CatalogItem.find(:all, :conditions =>["item_id = ?", id])
     if ei.length > 0
       puts "Skipping #{id}"
-      return # ignore for now
+      return false
     end
     
     nc = CatalogItem.create :supplier_id => nl["Supplier"],
       :item_id => id,
       :name_en => nl['NameEn'], 
-      :long_name_en => nl['DescEn'],
+      :long_name_en => nl['LongNameEn'],
+      :desc_en => nl['DescEn'],
+      :name_ja => nl['NameJa'], 
+      :long_name_ja => nl['LongNameJa'],
+      :desc_ja => nl['DescJa'],
       :image_file => nl['ImageFile']
       
     nl["ProductLine"].each do |pl_id|
@@ -57,15 +70,29 @@ class LoadCatalog
         :points => nl['UnitPoints'][i],
         :catalog_item => nc
     end
-
+    true
   end
   
-  def map_supplier(id)
-    id
+  def map_supplier(name)
+    case name
+      when "AizuIkiIki" then 1
+      when "Saito Kokichi" then 2  
+    end
+  
   end
   
-  def map_pl(id)
-    id
+  def map_pl(name)
+    case name
+      when "vegetable" then 2
+      when "root" then 3
+      when "leaf" then 4
+      when "beans" then 5
+      when "herb" then 6
+      when "mashroom" then 7
+      when "fruit" then 8
+      when "picles" then 10
+      when "rice" then 11
+    end
   end
   
 end

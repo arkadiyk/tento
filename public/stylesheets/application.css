@@ -188,6 +188,10 @@ a img {border: 0}
   margin-left: 6px;
 }
 
+.item_desc {
+  font-size: 0.9em;
+  margin-left: 12px;
+}
 
 .catalog_line_boxes {
   border: 1px solid #B74;

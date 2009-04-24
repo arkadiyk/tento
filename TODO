@@ -1,7 +1,6 @@
 Account Box
 PayPal integration
 FIX Animated Logo for IE
-"Ordered At" date format
 Refresh last order box when new order is submitted
 Order screen needs ShipTo, Payment Methid
 Order history Cancel/Update
@@ -16,6 +15,7 @@ Checkout screen design
 size for pics for nicer load.
 description on pop-up
 Shipping cost for Set Boxes
+change "Supplir" with "Farm"
 
 
 

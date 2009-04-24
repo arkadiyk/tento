@@ -16,7 +16,18 @@
 	        </div> 
       </td>
 
-      <td rowspan="2"><%=h item.long_name %></td>
+      <td height="50" style="border-bottom: none">
+      	<strong><%=h item.label %></strong>
+		<% if !item.desc.blank? -%>
+	    	<p class="item_desc">
+	    		<% if(item.desc.size < 140) -%>
+					<%= item.desc %>
+				<% else -%>
+					<%= item.desc[0,139] + " ..."%>
+				<% end %>
+			</p>
+		<% end -%>
+	  </td>
       <td style="width:75px;border-bottom: none" nowrap="true">
 	    <%if item.item_units.size == 1%>
 	  		<%=item.item_units[0].label%>
@@ -27,6 +38,7 @@
 	  </td>
     </tr>
     <tr>
+	  <td valign="bottom">From <%=item.supplier.name%></td>
       <td nowrap="true"><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
           <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
       </td>

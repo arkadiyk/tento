@@ -5,6 +5,10 @@ class CatalogItem < ActiveRecord::Base
   has_many :current_specials
   has_many :special_types, :through => :current_specials
 
-  translatable_columns :long_name, :name
+  translatable_columns :long_name, :name, :desc
+  
+  def label
+    long_name.blank? ? name : "#{name}(#{long_name})"
+  end
     
 end

@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   
   before_filter :ajax_only
+  before_filter :set_locale 
+  
   
   def current_cart
     if session[:cart_id]
@@ -62,10 +64,32 @@ class ApplicationController < ActionController::Base
   end
 
   
+  protected 
+    def set_locale 
+      I18n.locale = session[:locale] || I18n.default_locale 
+
+      logger.error "****************************"
+      logger.error I18n.locale
+      logger.error session[:locale]
+      logger.error "****************************"
+
+#      locale_path = "#{LOCALES_DIRECTORY}#{I18n.locale}.yml" 
+#      unless I18n.load_path.include? locale_path 
+#        I18n.load_path << locale_path 
+#        I18n.backend.send(:init_translations) 
+#      end 
+#      rescue Exception => err 
+#        logger.error err 
+#        flash.now[:notice] = "#{I18n.locale} translation not available" 
+#        I18n.load_path -= [locale_path] 
+#        I18n.locale = session[:locale] = I18n.default_locale 
+    end 
+ 
   private
     def ajax_only
       if !request.xhr?
         redirect_to('/')
       end
     end
+
 end

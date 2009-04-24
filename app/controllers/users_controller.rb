@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
-  
-  before_filter :localizate
-  
-  def localizate
-    I18n.locale = params[:locale] || I18n.default_locale
-  end
-
+ 
   # render new.rhtml
   def new
     @user = User.new

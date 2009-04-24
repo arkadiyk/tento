@@ -10,12 +10,15 @@ class PopulateTestData < ActiveRecord::Migration
 
     Supplier.create :name_en => 'Aizu Bee Farm', 
       :shipping_rule => 'free_shipping'
-      
+#1      
     vg = ProductLine.create :name_en => 'Vegetables', :long_name_en => "Root Veggie, Leaf Veggie, Beans, Herbs"
+#2
+    vg.children.create  :name_en => 'Other Veggies'
     vg.children.create  :name_en => 'Root Veggies'
     vg.children.create  :name_en => 'Leaf Veggies'
     vg.children.create  :name_en => 'Beans'
     vg.children.create  :name_en => 'Herbs'
+    vg.children.create  :name_en => 'Mashrooms'
     
     ProductLine.create :name_en => 'Fruits'
     ProductLine.create  :name_en => 'Bee Products', :long_name_en => "Honey, Royal Jelly, Propolis"

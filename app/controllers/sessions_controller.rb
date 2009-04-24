@@ -1,12 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
  
-  before_filter :localizate
-  
-  def localizate
-    I18n.locale = params[:locale] || I18n.default_locale
-  end
-
   # render new.rhtml
   def new
   end

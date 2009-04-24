@@ -1,5 +1,5 @@
 class ItemUnit < ActiveRecord::Base
-  belongs_to :catalog_item
+  belongs_to :catalog_item, :counter_cache => true
   translatable_columns :name
   
   def supplier

@@ -1,0 +1,15 @@
+ja-JP:
+  email : "メール"
+  log_in : "ログイン"
+  log_out : "ログアウト"
+  login : "ログイン"
+  password : "パスワード"
+  
+  address:
+    prefecture: "県"
+    city: "都市"
+    address: "住所"
+    postal_code: "郵便番号"
+    phone: "電話番号"
+
+    
