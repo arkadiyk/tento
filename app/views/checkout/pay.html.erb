@@ -1,11 +1,11 @@
-<h2>Thank you for your Order!</h2>
+<h2><%=I18n.t("order.thanks")%></h2>
 
 <%if @cart.pay_method == 'BT'-%>
-	<p>Your order will be on hold until we confirm the payment</p>
-<%elsif @cart.pay_method == 'CD' || @cart.pay_method == 'KD' -%>
-	<p>Your order will be sent to supplier shortly.</p>
+	<p><%=I18n.t("order.on_hold")%></p>
+<%elsif @cart.pay_method == 'CD' || @cart.pay_method == 'PP' -%>
+	<p><%=I18n.t("order.complete")%></p>
 <%end-%>	
-<p>You can check order status <%= link_to_function "here", "goCorders()" %>.</p>
+<p><%=I18n.t("order.status_check", :link => link_to_function(I18n.t("order.here"), "goCorders()") )%></p>
 
 <%= javascript_tag "boxReload('cart_box','corders_box')"  %>
 

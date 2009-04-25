@@ -19,7 +19,7 @@
   	<%= render :partial => 'payment', :locals => {:cart => @cart}%> 
   <% else %>
   	<div style="padding:20px; font-size:larger">
-  		Please Login to see shipping and payment information
+	  <%=I18n.t("order.please_login")%>
 	</div>
   <% end %>
 <% end %>

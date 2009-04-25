@@ -7,7 +7,7 @@
 <p>
 <%= shipping.phone%>
 </p>
-<%= link_to_remote "Change...", :url => { :action => 'new_address' }, :update => 'ship_box' %>
+<%= link_to_remote I18n.t("address.change"), :url => { :action => 'new_address' }, :update => 'ship_box' %>
 <p>
 	
 </p>

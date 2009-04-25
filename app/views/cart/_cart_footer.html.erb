@@ -1,10 +1,8 @@
 <div id="botton_panel">
-  <%=button_to_function "Checkout", "goCheckout()"%>
-  <%=button_to_remote "Clear Cart", :url => {:action => 'clear_cart'}, :update => 'cart_box', :confirm => "Sure?" %>  
+  <%=button_to_function I18n.t("cart.checkout"), "goCheckout()"%>
+  <%=button_to_remote I18n.t("cart.clear"), :url => {:action => 'clear_cart'}, :update => 'cart_box', :confirm => I18n.t("cart.clear_confirmation") %>  
 </div>
 <br>
 <div style="float:left;clear:both;padding:6px">
-  Please add items from Catalog by updating desired quantity and pressing ">>" Button.
-  You can remove cart line by pressing <%=image_tag("remove.png")%> and adjust quantity by pressing 
-  <%=image_tag("up.png")%> or <%=image_tag("down.png")%> buttons.
+  <%=I18n.t("cart.instruction", :remove_img => image_tag("remove.png"), :up_img => image_tag("up.png"), :down_img => image_tag("down.png"))%>
 </div>

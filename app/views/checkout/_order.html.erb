@@ -1,6 +1,6 @@
 <tbody id="co_order_totals_<%=order.id%>"
  <tr id="co_order_totals0_<%=order.id%>" class="ototal-line">
-  <td align="right">Supplier Total</td>
+  <td align="right"><%=I18n.t("cart.supplier_total")%></td>
   <td></td>
   <td></td>
   <td align="right">&yen;<%= order.amount %></td>
@@ -8,7 +8,7 @@
  </tr>
 
  <tr id="co_order_totals1_<%=order.id%>" class="ototal-line">
-  <td align="right">Shipping</td>
+  <td align="right"><%=I18n.t("cart.shipping")%></td>
   <td></td>
   <td></td>
   <td align="right"><%= order.shipping_cost_s %></td>
@@ -16,7 +16,7 @@
  </tr>
 
  <tr id="co_order_totals2_<%=order.id%>" class="total-line">
-  <td align="right">Total</td>
+  <td align="right"><%=I18n.t("cart.total")%></td>
   <td></td>
   <td align="right"><%= order.weight %>kg</td>
   <td align="right">&yen;<%= order.amount_with_shipping %></td>

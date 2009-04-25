@@ -1,11 +1,10 @@
 <div id="pay_box" style="font-size:larger;padding:10px;line-height:140%">
-Total amount to pay: <span style="font-weight:bold;">&yen;<%=cart.total_amount%></span>
+<%=I18n.t("order.total_to_pay")%> <span style="font-weight:bold;">&yen;<%=cart.total_amount%></span>
 <form>
-<p><%= radio_button_tag "payment_method", "BT", true%> Pay by Bank Transfer (Furikomi)</p>
-<p><%= radio_button_tag "payment_method", "CD"%> Pay cash on delivery</p>
-<p><%= radio_button_tag "payment_method", "KD"%> Pay credit cart on delivery</p>
-<p><%= radio_button_tag "payment_method", "PP"%> Pay by PayPal</p>
-<p><%= submit_to_remote "pay_btn", "Pay", :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
+<p><%= radio_button_tag "payment_method", "BT", true%> <%=I18n.t("order.pm.bank_transfer")%></p>
+<p><%= radio_button_tag "payment_method", "CD"%> <%=I18n.t("order.pm.on_delivery")%></p>
+<p><%= radio_button_tag "payment_method", "PP"%> <%=I18n.t("order.pm.paypal")%></p>
+<p><%= submit_to_remote "pay_btn", I18n.t("order.pay"), :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
 </form>
 </div>
 

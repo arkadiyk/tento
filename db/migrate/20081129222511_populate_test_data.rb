@@ -1,29 +1,37 @@
 class PopulateTestData < ActiveRecord::Migration
   def self.up
-    Supplier.create :name_en => 'Aizu Iki Iki', 
-      :long_name_en => 'Natural Veggie Farm',
+    Supplier.create :name_en => 'AizuIkiIki',
+      :name_ja => '会津活活',
+      :long_name_en => 'Aizu IkiIki Shizenmura',
+      :long_name_ja => '会津活活自然村',
       :shipping_rule => 'calculated_shipping,#weight,#amount,#ship_to'
       
     Supplier.create :name_en => 'Saito Kokichi', 
-      :long_name_en => 'Rice Farm',
+      :name_ja => '斉藤幸吉',
+      :long_name_en => 'Saito Kokichi Farm',
+      :long_name_ja => '斉藤農家',
       :shipping_rule => 'flat_shipping,580'
 
-    Supplier.create :name_en => 'Aizu Bee Farm', 
+    Supplier.create :name_en => 'Aizu Bandai Bee Farm', 
+      :name_ja => '会津磐梯蜂蜜',
       :shipping_rule => 'free_shipping'
 #1      
-    vg = ProductLine.create :name_en => 'Vegetables', :long_name_en => "Root Veggie, Leaf Veggie, Beans, Herbs"
+    vg = ProductLine.create :name_en => 'Vegetables', :long_name_en => "Root Veggie, Green Veggie, Beans, Herbs",
+      :name_ja => '野菜', :long_name_ja => '根菜、緑色野菜、豆類、ハーブ'
 #2
-    vg.children.create  :name_en => 'Other Veggies'
-    vg.children.create  :name_en => 'Root Veggies'
-    vg.children.create  :name_en => 'Leaf Veggies'
-    vg.children.create  :name_en => 'Beans'
-    vg.children.create  :name_en => 'Herbs'
-    vg.children.create  :name_en => 'Mashrooms'
+    vg.children.create  :name_en => 'Other Veggies', :name_ja => 'その他野菜' 
+    vg.children.create  :name_en => 'Root Veggies',  :name_ja => '根菜'
+    vg.children.create  :name_en => 'Green Veggies', :name_ja => '緑色野菜'
+    vg.children.create  :name_en => 'Beans', :name_ja => '豆類'
+    vg.children.create  :name_en => 'Herbs', :name_ja => 'ハーブ'
+    vg.children.create  :name_en => 'Mashrooms', :name_ja => 'きのこ'
     
-    ProductLine.create :name_en => 'Fruits'
-    ProductLine.create  :name_en => 'Bee Products', :long_name_en => "Honey, Royal Jelly, Propolis"
-    ProductLine.create  :name_en => 'Canned/Bottled', :long_name_en => "Pickles, Oil, Juice, Jam, etc"
-    ProductLine.create :name_en => 'Rice'
+    ProductLine.create :name_en => 'Fruits', :name_ja => 'くだもの'
+    ProductLine.create  :name_en => 'Honey Products', :long_name_en => "Honey, Royal Jelly, Propolis",
+      :name_ja => '蜂蜜製品', :long_name_ja => '蜂蜜、ロイヤルゼリー、プロポリス'
+    ProductLine.create  :name_en => 'Canned/Bottled', :long_name_en => "Pickles, Oil, Juice, Jam, etc",
+      :name_ja => '缶、瓶詰め', :long_name_ja => 'ピクルス、油、ジャム、ジュース等'
+    ProductLine.create :name_en => 'Rice', :name_ja => '米'
 
   end
 

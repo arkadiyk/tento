@@ -19,9 +19,11 @@ class CatalogController < ApplicationController
         item_list = CatalogItem.find_all_by_supplier_id(params[:p2])
         item_list.each do |item|
           hdr = item.product_line
-          @ids[hdr] = "ch_#{cat}_#{params[:p2]}_#{hdr.id}"
-          @cat_items[hdr] ||= []
-          @cat_items[hdr] << item
+          hdr.each do |hd|
+            @ids[hd] = "ch_#{cat}_#{params[:p2]}_#{hd.id}"
+            @cat_items[hd] ||= []
+            @cat_items[hd] << item
+          end
         end
       
     end

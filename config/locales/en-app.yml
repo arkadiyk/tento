@@ -1,39 +1,6 @@
 en-US:
-#  activerecord:
-#    errors:
-#      messages:
-#        inclusion: "is not included in the list"
-#        exclusion: "is reserved"
-#        invalid: "is invalid"
-#        confirmation: "doesn't match confirmation"
-#        accepted: "must be accepted"
-#        empty: "can't be empty"
-#        blank: "can't be blank"
-#        too_long: "is too long (maximum is {{count}} characters)"
-#        too_short: "is too short (minimum is {{count}} characters)"
-#        wrong_length: "is the wrong length (should be {{count}} characters)"
-#        taken: "has already been taken"
-#        not_a_number: "is not a number"
-#        greater_than: "must be greater than {{count}}"
-#        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
-#        equal_to: "must be equal to {{count}}"
-#        less_than: "must be less than {{count}}"
-#        less_than_or_equal_to: "must be less than or equal to {{count}}"
-#        odd: "must be odd"
-#        even: "must be even"
-#      template:
-#        header:
-#          one:    "1 error prohibited this {{model}} from being saved"
-#          other:  "{{count}} errors prohibited this {{model}} from being saved"
-#        # The variable :count is also available
-#        body: "There were problems with the following fields:"
-  account_activated : "{{login}} your account has been activated.  Welcome aboard!"
-  account_activation_url_message : "Visit this url to activate your account:"
+#login, user, accounts
   account_created : "Your account has been created."
-  activation_complete_email_subject : 'Your account has been activated!'
-  activation_required_email_subject : 'Please activate your new account'
-  blank_activation_code : "The activation code was missing.  Please follow the URL from your email."
-  bogus_activation_code : "We couldn't find a {{model}} with that activation code -- check your email? Or maybe you've already activated -- try signing in."
   create_account : "Create account"
   email : "Email"
   log_in : "Log In"
@@ -43,7 +10,7 @@ en-US:
   logged_out : "You have been logged out."
   name : "Full Name"
   login : "Login"
-  login_failed : "Couldn't log you in as {{login}}'"
+  login_failed : "Couldn't log you in as {{login}}"
   new_user_sign_up : "Sign up as a new user"
   not_logged_in : "Not logged in"
   password : "Password"
@@ -52,8 +19,9 @@ en-US:
   sign_up : "Sign up"
   signup_complete : "Signup complete!"
   signup_complete_and_do_login : "Signup complete! Please sign in to continue."
-  signup_complete_with_activation : "Thanks for signing up!  We're sending you an email with your activation code."
-  signup_problem : "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+  signup_problem : "We couldn't set up that account, sorry.  Please try again, or contact an admin"
+  
+  cancel: Cancel
  
   address:
     prefecture: "Prefecture"
@@ -61,4 +29,40 @@ en-US:
     address: "Address"
     postal_code: "Postal Code"
     phone: "Telephone"
+    default: "Use this address as a default"
+    save: "Save Address"
+    change: "Change..."
+    
+  order:
+    history: "Order History"
+    total_to_pay: Total Amount to pay
+    status_check: You can check order status {{link}}.
+    here: here
+    thanks: Thank you for your Order!
+    on_hold: Your order will be shipped shortly after we confirm the payment.
+    complete: Your order will be shipped shortly.
+    please_login: Please Login to see shipping and payment information
+    #payment methods
+    pm:
+      bank_transfer: Pay by Bank Transfer (Furikomi)
+      on_delivery: Pay on delivery
+      paypal: Pay by PayPal
+        
+    
+  cart:
+    checkout: "Checkout"
+    clear: "Clear Cart"
+    clear_confirmation: "Are you sure?"
+    instruction: Please add items from Catalog by updating desired quantity and pressing ">>" Button. You can remove cart line by pressing {{remove_img}} and adjust quantity by pressing {{up_img}} or {{down_img}} buttons
+    empty: Your cart is empty. Please add items from Catalog by updating desired quantity and pressing ">>" Button
+    empty_short: Cart is empty
+    supplier_total: Farm Total
+    shipping: Shipping
+    total: Total
+    
+  catalog:
+    from: From {{supplier}}
+    
+    
+    
     

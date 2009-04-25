@@ -1,4 +1,5 @@
 ja-JP:
+#login, user, accounts
   email : "メール"
   log_in : "ログイン"
   log_out : "ログアウト"
@@ -12,4 +13,6 @@ ja-JP:
     postal_code: "郵便番号"
     phone: "電話番号"
 
+  catalog:
+    from: "{{supplier}} から"
     

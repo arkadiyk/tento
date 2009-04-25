@@ -38,7 +38,7 @@
 	  </td>
     </tr>
     <tr>
-	  <td valign="bottom">From <%=item.supplier.name%></td>
+	  <td valign="bottom"><%=I18n.t("catalog.from", :supplier => item.supplier.name)%></td>
       <td nowrap="true"><%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
           <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
       </td>
