@@ -47,9 +47,9 @@ class Cart < ActiveRecord::Base
  
   def title
     if size > 0
-      "Cart total amount: ¥#{total_amount}"
+      I18n.t("cart.label_total", :amount => total_amount)
     else
-      "Cart is empty"
+      I18n.t("cart.label_empty")
     end    
   end
 

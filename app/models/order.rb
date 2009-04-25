@@ -24,7 +24,7 @@ class Order < ActiveRecord::Base
   end
  
   def shipping_cost_s
-    shipping_cost == 0 ? "FREE" : "¥#{shipping_cost}"
+    shipping_cost == 0 ? I18n.t("order.free_shipping") : "¥#{shipping_cost}"
   end
  
   def weight

@@ -67,22 +67,6 @@ class ApplicationController < ActionController::Base
   protected 
     def set_locale 
       I18n.locale = session[:locale] || I18n.default_locale 
-
-      logger.error "****************************"
-      logger.error I18n.locale
-      logger.error session[:locale]
-      logger.error "****************************"
-
-#      locale_path = "#{LOCALES_DIRECTORY}#{I18n.locale}.yml" 
-#      unless I18n.load_path.include? locale_path 
-#        I18n.load_path << locale_path 
-#        I18n.backend.send(:init_translations) 
-#      end 
-#      rescue Exception => err 
-#        logger.error err 
-#        flash.now[:notice] = "#{I18n.locale} translation not available" 
-#        I18n.load_path -= [locale_path] 
-#        I18n.locale = session[:locale] = I18n.default_locale 
     end 
  
   private

@@ -20,8 +20,11 @@ en-US:
   signup_complete : "Signup complete!"
   signup_complete_and_do_login : "Signup complete! Please sign in to continue."
   signup_problem : "We couldn't set up that account, sorry.  Please try again, or contact an admin"
+  not_regestered: Not registered yet?
+  back_to_login: Back to login screen
   
   cancel: Cancel
+  amount: Amount
  
   address:
     prefecture: "Prefecture"
@@ -34,6 +37,7 @@ en-US:
     change: "Change..."
     
   order:
+    order_id: Order {{id}}
     history: "Order History"
     total_to_pay: Total Amount to pay
     status_check: You can check order status {{link}}.
@@ -42,11 +46,22 @@ en-US:
     on_hold: Your order will be shipped shortly after we confirm the payment.
     complete: Your order will be shipped shortly.
     please_login: Please Login to see shipping and payment information
+    please_login1: Please login to see your order details
+    not_found: Order not found
+    prev: Prev
+    next: Next
+    ordered_at: Ordered at {{at}}
+    pay: Pay
+    free_shipping: FREE
     #payment methods
     pm:
       bank_transfer: Pay by Bank Transfer (Furikomi)
       on_delivery: Pay on delivery
       paypal: Pay by PayPal
+    h:
+      order_id: "Order#"
+      ordered_at: Ordered at
+      
         
     
   cart:
@@ -59,9 +74,24 @@ en-US:
     supplier_total: Farm Total
     shipping: Shipping
     total: Total
+    label_total: "Cart total amount: ¥{{amount}}"
+    label_empty: Cart is empty
+
     
   catalog:
     from: From {{supplier}}
+    
+  home:
+    home: Home
+    specials: Today's Specials!
+    category: Browse By Category
+    supplier: Browse By Farm
+    checkout: Checkout!
+    info: Information
+    cart: Shopping Cart
+    account: User Account
+    history: Orders History
+    checkout: Checkout
     
     
     

@@ -24,14 +24,14 @@
 <div id="nav_box">
   <div id="tab">
     <ul>
-      <li><a href="#" class="mitem_cm" onClick="goInfo(); return false;"><span>Home</span></a></li>
-      <li><a href="#" class="mitem_cm" onClick="goCatalog('sp'); return false;"><span>Today's Specials!</span></a></li>
-      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Browse By Category</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goInfo(); return false;"><span><%=I18n.t("home.home")%></span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goCatalog('sp'); return false;"><span><%=I18n.t("home.specials")%></span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; <%=I18n.t("home.category")%></span></a></li>
       <li><div id="brw_pl_o"><div id="brw_pl" class="brw_items"></div></div></li>
-      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Browse By Supplier</span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; <%=I18n.t("home.supplier")%></span></a></li>
       <li><div id="brw_su_o" style="display:none"><div id="brw_su" class="brw_items"></div></div></li>
-      <li><a href="#" class="mitem_cm" onClick="goCheckout(); return false;"><span>Checkout!</span></a></li>
-      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; Information</span></a></li>
+      <li><a href="#" class="mitem_cm" onClick="goCheckout(); return false;"><span><%=I18n.t("home.checkout")%></span></a></li>
+      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; <%=I18n.t("home.info")%></span></a></li>
       <li><div id="brw_info_o" style="display:none"><div id="brw_info" class="brw_items">
         <ul>
           <li>Farmers</li>
@@ -81,10 +81,10 @@
 	corder: '<%=customer_orders_path%>'
   };
   
-  makeColx('cart_box', "Shopping Cart"); 
-  makeColx('account_box', "User Account"); 
-  makeColx('corders_box', "Orders History"); 
-  makeFrame('checkout_box','Checkout');
+  makeColx('cart_box', '<%=I18n.t("home.cart")%>'); 
+  makeColx('account_box', '<%=I18n.t("home.account")%>'); 
+  makeColx('corders_box', '<%=I18n.t("home.history")%>'); 
+  makeFrame('checkout_box','<%=I18n.t("home.checkout")%>');
 
   window.dhtmlHistory.create({
     toJSON: function(o) {

@@ -8,7 +8,7 @@ class CatalogItem < ActiveRecord::Base
   translatable_columns :long_name, :name, :desc
   
   def label
-    long_name.blank? ? name : "#{name}(#{long_name})"
+    long_name.blank? ? name : "#{name} (#{long_name})"
   end
     
 end

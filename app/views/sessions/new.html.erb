@@ -21,7 +21,7 @@
       <td colspan="2">
       	<br>
       	<%= submit_tag I18n.t(:log_in) %>
-	  	&nbsp;&nbsp;<%= link_to_function 'Not registered yet?', "boxReload('account_box-signup')"  %>
+	  	&nbsp;&nbsp;<%= link_to_function "#{I18n.t(:not_regestered)}", "boxReload('account_box-signup')"  %>
 	  </td>
     </table>
 

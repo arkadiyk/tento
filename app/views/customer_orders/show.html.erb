@@ -1,23 +1,23 @@
 <% if !logged_in? %>
-	<h2>Please login to see your order details</h2>
+	<h2><%=I18n.t("order.please_login1")%></h2>
 <% elsif @corder.nil? %>
-  	<h2>Order not found</h2>
+  	<h2><%=I18n.t("order.not_found")%></h2>
 <% else %>
 <div id="corder_<%=@corder.order_id%>_box">
   <div style="width:95%;padding:10px">
   	<% if @prev %>
-	  <%=link_to_function "Prev", "goCorder('#{@prev}')"%>
+	  <%=link_to_function I18n.t("order.prev"), "goCorder('#{@prev}')"%>
 	<% end %>
 	<% if @prev && @next %>
 	  &nbsp;&nbsp;|&nbsp;
 	<% end %>
 	<% if @next %>
-	  <%=link_to_function "Next", "goCorder('#{@next}')"%>
+	  <%=link_to_function I18n.t("order.next"), "goCorder('#{@next}')"%>
 	<% end %>
   </div>
   <div style="width:95%;padding:10px">
-  	<h2>Order <%= @corder.order_id %></h2>
-	Ordered at <%= @corder.confirmed_at %>
+  	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%></h2>
+	<%=I18n.t("order.ordered_at", :at => @corder.confirmed_at) %>
   </div>
   <table  class="cart_ro_table" cellspacing="0">
 	<% @corder.orders.each do |order| %>
@@ -31,6 +31,6 @@
 	<% end %>
   </table>
 </div>
-<%= javascript_tag "makeFrame('corder_#{@corder.order_id}_box','Order #{@corder.order_id}')"  %>
+<%= javascript_tag "makeFrame('corder_#{@corder.order_id}_box','#{I18n.t("order.order_id", :id => @corder.order_id)}' )"  %>
 
 <% end %>

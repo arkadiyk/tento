@@ -30,7 +30,7 @@
     <tr>
       <td colspan="2"><br/>
 		<%= submit_to_remote 'signup', I18n.t(:sign_up), :url => users_path, :update => 'account_box' %>&nbsp;
-		&nbsp;&nbsp;<%= link_to_function 'Back to login screen', "boxReload('account_box-login')"  %>
+		&nbsp;&nbsp;<%= link_to_function "#{I18n.t(:back_to_login)}", "boxReload('account_box-login')"  %>
     </tr>
 
 </table>
