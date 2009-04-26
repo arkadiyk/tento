@@ -32,6 +32,7 @@ class CatalogController < ApplicationController
   def categories
     @pl = ProductLine.roots 
     @su = Supplier.all
+    @sp = SpecialType.all
   end
 
 end

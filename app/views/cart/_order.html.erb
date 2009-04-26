@@ -4,7 +4,7 @@
   <td></td>
   <td></td>
   <td></td>
-  <td align="right">&yen;<%= order.amount %></td>
+  <td align="right"><%= I18n.t(:yen, :a => order.amount)%></td>
   <td></td>
  </tr>
 
@@ -22,7 +22,7 @@
   <td></td>
   <td></td>
   <td align="right"><%= order.weight %>kg</td>
-  <td align="right">&yen;<%= order.amount_with_shipping %></td>
+  <td align="right"><%= I18n.t(:yen, :a => order.amount_with_shipping)%></td>
   <td></td>
  </tr>
 </tbody> 

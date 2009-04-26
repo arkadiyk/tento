@@ -5,6 +5,6 @@
   <div style="width:13px;line-height:0.7em;height:7px;"><%=link_to_function image_tag("down.png"), "updateCartLine('down', '#{cart_line.id}')"%></div>
 </td>
 <td align="right"><%=cart_line.item_weight%>kg</td>
-<td align="right">&yen;<%=cart_line.item_amount%></td>  
+<td align="right"><%=I18n.t(:yen, :a => cart_line.item_amount)%></td>  
 <td align="right" valign="middle"><%=link_to_function image_tag("remove.png"), "deleteCartLine('#{cart_line.id}')" %></td>
 

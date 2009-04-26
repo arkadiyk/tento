@@ -1,103 +1,103 @@
-"ItemId","Supplier","ProductLine","NameJa","LongNameJa","NameEn","LongNameEn","Reciep","DescEn","DescJa","NameHiragana","UnitEn","UnitJa","UnitWeight","UnitPrice","UnitPoints","ShipStart","ShipEnd","Price","Note"
-1,"AizuIkiIki","vegetable","白菜",,"Hakusai","Chinese cabbage",,,,"はくさい","500g",,0.5,250,25,"1/1/2009","3/31/2009",,
-2,"AizuIkiIki","vegetable","長ネギ",,"Naganegi","Japanese Leek",,,,"ながねぎ","500g",,0.5,450,24,"1/1/2009","3/31/2009",,
-3,"AizuIkiIki","vegetable","里芋",,"Taro Potato","Satoimo",,,,"さといも","1kg",,1,350,35,"1/1/2009","3/31/2009",,
-4,"AizuIkiIki","root","大根",,"Daikon","Japanese Radish",,,,"だいこん","1kg",,1,300,30,"1/1/2009","4/30/2009",,
-5,"AizuIkiIki","root","大蕪",,"Big Turnip","Kabu",,,,"おおかぶ","2kg",,2,200,20,"1/1/2009","3/31/2009",,
-6,"AizuIkiIki","root","人参",,"Carrot",,,,,"にんじん","500g",,0.5,250,25,"6/15/2009","3/31/2009",,
-7,"AizuIkiIki","vegetable","キャベツ",,"Green Cabbage",,,,,"キャベツ","500g",,0.5,250,25,"1/1/2009","10/30/2009",,
-8,"AizuIkiIki","vegetable","オータムポエム","アスパラ菜","Autumn-poem","Brassica rapa family",,,,"オオタムポエム","500g",,0.5,250,25,"1/1/2009","3/31/2009",,
-9,"AizuIkiIki","leaf","小松菜",,"Komatsuna Leaf","Japanese Mustard Spinach",,"It is a type of leaf vegetable. It is also known as Japanese Mustard Spinach and can be stir-fried, pickled, boiled and added to soups or used fresh in salads. It is an excellent source of calcium.
-",,"こまつな","1kg",,1,300,30,"1/1/2009","10/31/2009",,
-10,"AizuIkiIki","vegetable","葉玉ねぎ",,"Spring Onion",,,,,"はたねぎ","1kg",,1,300,30,"1/1/2009","5/30/2009",,
-11,"AizuIkiIki","leaf","くきたち菜",,"Kukitachi Leaf",,,,,"くきたち","1kg",,1,300,30,"1/1/2009","1/31/2009",,
-12,"AizuIkiIki","root","キタアカリ",,"Potato - Kitaakari",,,,"爵薯から品種改良された馬鈴薯です。まだ誕生してから30年を超えたばかりの野菜です","キタアカリ","1kg",,1,300,30,"1/1/2009","1/31/2009",,
-13,"AizuIkiIki","root","男爵いも",,"Potato - Dansyaku",,,,,"だんしゃく","1kg",,1,300,30,"1/1/2009","1月",,
-14,"AizuIkiIki","root","ごぼう",,"Gobou","Burdock Root","A popular Japanese dish is kinpira gobō (金平牛蒡), julienned or shredded burdock root and carrot, braised with soy sauce, sugar, mirin and/or sake, and sesame oil; another is burdock makizushi (sushi filled with pickled burdock root; the burdock root is often artificially coloured orange to resemble a carrot). ","The taproot of young burdock plants can be harvested and eaten as a root vegetable. Burdock root is very crisp and has a sweet, mild, and pungent flavour with a little muddy harshness that can be reduced by soaking julienne/shredded roots in water for five to ten minutes.In the second half of the 20th century, burdock achieved international recognition for its culinary use due to the increasing popularity of the macrobiotic diet, which advocates its consumption. It also contains a fair amount of gobō dietary fiber (GDF, 6g per 100g), calcium, potassium, amino acids,[3] and is also low calorie. It also contains polyphenols that causes darkened surface and muddy harshness by formation of tannin-iron complexes though the harshness shows excellent harmonization with pork in miso soup (tonjiru) and Japanese-style pilaf (takikomi gohan).
-",,"ごぼう","1kg",,1,300,30,"8/1/2009","1月",,
-15,"AizuIkiIki","fruit","りんご",,"Apple",,,,,"りんご","1kg",,1,300,30,,"1月",,
-16,"AizuIkiIki","vegetable","にんにく",,"Garlic",,,,,"にんにく","500g",,0.5,250,25,"1/1/2009","6/30/2009",,
-17,"AizuIkiIki","root","長芋",,"Japanese Mountain Yam",,,,,"ながいも","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","10/1/2009","1/31/2009",,
-18,"AizuIkiIki","vegetable","玉ねぎ",,"Onion",,,,,"たまねぎ","250g,500g,1kg",,"0.25,0.5,1","2500,4000,7000","25,40,70","6/15/2009","3/31/2009",,
-19,"AizuIkiIki","root","凍み大根",,"Shimi-Daikon",,,,,"しみだいこん","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","3/1/2009","4/30/2009",,
-20,"AizuIkiIki","leaf","紅菜苔",,"Kosaitai Leaf","Purple stemmed choy sum",,"This flowering purple choy sum is a popular Chinese specialty that graces the winter garden. The yellow flower with purple leaf stalks and leaf veins contrast handsomely with the green leaves, particularly as the colors intensify in colder weather. The whole plant can be harvested young and will regrow for additional harvests. The young flowering shoots add a mild mustard flavor to fresh salads. Kosaitai also has an excellent flavor when lightly cooked by steaming, boiling or stir-frying.",,"コウサイタイ","500g",,0.5,250,25,"3/1/2009","3/31/2009",,
-21,"AizuIkiIki","picles,root","大根干し",,"Dried Daikon",,,,,"だいこんぼし","1jar",,1,250,25,"4/1/2009","5/31/2009",,
-22,"AizuIkiIki","vegetable","凍みもち",,"Shimi-Mochi",,,,,"しみもち","500g",,0.5,250,25,"4/1/2009","5/31/2009",,
-23,"AizuIkiIki","leaf","宮内菜",,"Niyauchi Leafs",,,,,"みやうちな","500g",,0.5,450,24,"4/1/2009","4/30/2009",,
-24,"AizuIkiIki","vegetable","ほうれん草",,"Spinach",,,,,"ほうれんそう","1kg",,1,350,35,"3/1/2009","10/30/2009",,
-25,"AizuIkiIki","leaf","ふきのとう",,"Fuki butterbur",,,"The flower stalk of a butterbur. known as Fuki, bog rhubarb, or giant butterbur, is an herbaceous perennial plant in the family Asteraceae. It is native to Japan, where the spring growth is relished as a vegetable.
-",,"ふきのとう","1kg",,1,300,30,"3/1/2009","4/30/2009",,
-26,"AizuIkiIki","vegetable","アスパラガス",,"Asparagus",,,"The traditional preparation method for this vegetable involves pre-treating with salt and soaking in water, a technique known as itazuri, or removing harshness.
-",,"アスパラ","2kg",,2,200,20,"5/1/2009",,,
-27,"AizuIkiIki","vegetable","栽培うど",,"Udo",,,,,"さいばいうど","500g",,0.5,250,25,"5/1/2009","5/30/2009",,
-28,"AizuIkiIki","vegetable","胡瓜",,"Cucumber",,,,,"きゅうり","500g",,0.5,250,25,"5/1/2009","10/30/2009",,
-29,"AizuIkiIki","leaf","山椒の葉",,"Sansyo Leaf",,,,,"さんしょうのは","500g",,0.5,250,25,"5/1/2009","5/30/2009",,
-30,"AizuIkiIki","vegetable","絹さや",,"Kinusaya",,,,,"きぬさや","1kg",,1,300,30,"5/1/2009","7/31/2009",,
-31,"AizuIkiIki","root","蕪",,"Turnips",,,,,"かぶ","1kg",,1,300,30,"5/1/2009","10/30/2009",,
-32,"AizuIkiIki","vegetable","わらび",,"Warabi",,,,,"わらび","1kg",,1,300,30,"5/1/2009","6/30/2009",,
-33,"AizuIkiIki","vegetable","こごみ",,"Kogomi",,,,,"こごみ","1kg",,1,300,30,"5/1/2009","5/30/2009",,
-34,"AizuIkiIki","vegetable","蕗",,"Fuki",,,,,"ふき","1kg",,1,300,30,"5/1/2009","5/30/2009",,
-35,"AizuIkiIki","vegetable","山うど",,"Yamaudo",,,,,"やまうど","1kg",,1,300,30,"5/1/2009","5/30/2009",,
-36,"AizuIkiIki","vegetable","水菜",,"Mitzuna",,,,,"みずな","1kg",,1,300,30,"5/1/2009","10/30/2009",,
-37,"AizuIkiIki","vegetable","トマト",,"Tomato",,,,,"トマト","500g",,0.5,250,25,"6/15/2009","10/30/2009",,
-38,"AizuIkiIki","vegetable,beans","枝豆",,"Edamame",,,,,"えだまめ","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","6/15/2009","10/30/2009",,
-39,"AizuIkiIki","vegetable,beans","グリーンピース",,"Green Peas",,,,,"グリーンピース","250g,500g,1kg",,"0.25,0.5,1","2500,4000,7000","25,40,70","6/15/2009","10/30/2009",,
-40,"AizuIkiIki","leaf","大根菜",,"Daikon Leaf",,,,,"だいこんな","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","6/15/2009","10/30/2009",,
-41,"AizuIkiIki","vegetable","にら",,"Ramp",,,,,"にら","500g",,0.5,250,25,"6/15/2009","10/30/2009",,
-42,"AizuIkiIki","vegetable","なす",,"Eggplant",,,,,"なす","1jar",,1,250,25,"6/15/2009","10/30/2009",,
-43,"AizuIkiIki","vegetable","加茂なす",,"Kamo Round Eggplant",,,,,"かもなす","500g",,0.5,250,25,"6/15/2009","10/30/2009",,
-44,"AizuIkiIki","vegetable","子なす",,"Mini Eggplant",,,,,"こなす","500g",,0.5,450,24,"6/15/2009","10/30/2009",,
-45,"AizuIkiIki","vegetable","ピーマン",,"Green Pepper",,,,,"ピーマン","1kg",,1,350,35,"6/15/2009","10/30/2009",,
-46,"AizuIkiIki","vegetable","とうもろこし",,"Corn",,,,,"とうもろこし","1kg",,1,300,30,"6/1/2009","10/30/2009",,
-47,"AizuIkiIki","leaf","モロヘイヤ",,"Moroheiya","Mallow Leaf",,,,"もろへいや","2kg",,2,200,20,"7/1/2009","10/30/2009",,
-48,"AizuIkiIki","vegetable","ブロッコリ",,"Broccoli",,,"Young malukhiyah leaves are used as a green leaf vegetable; Corchorus olitorius is used mainly in southern Asia, Egypt and Cyprus, Corchorus capsularis in Japan and China. It has a mucilaginous (somewhat ""slimy"") texture, similar to okra, when cooked.
-",,"ブロッコリー","500g",,0.5,250,25,"7/1/2009","10/30/2009",,
-49,"AizuIkiIki","leaf","レタス",,"Lettuce",,,"Broccoli is packed with great qualities...it contains twice the vitamin C of an orange, it has almost as much calcium as whole milk--and the calcium is better absorbed, and it contains selenium, a mineral that has been found to have anti-cancer and anti-viral properties.
-",,"レタス","500g",,0.5,250,25,"7/1/2009","10/30/2009",,
-50,"AizuIkiIki","vegetable,beans","いんげん",,"Green Beans",,,"Broccoli is a modest source of vitamin A and alpha-tocopherol vitamin E It also has antioxidant properties.
-",,"いんげん","500g",,0.5,250,25,"7/1/2009","10/30/2009",,
-51,"AizuIkiIki","vegetable,beans","モロッコインゲン豆",,"Morroco Haricot Beans",,,,,"モロッコ","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-52,"AizuIkiIki","vegetable","伏見唐辛子",,"Fushimi Hot Pepper",,,,,"ふしみとうがらし","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-53,"AizuIkiIki","vegetable","万願寺唐辛子",,"Manganji Hot Pepper",,,,,"まんがんじとうがらし","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-54,"AizuIkiIki","leaf","しその葉",,"Shiso Perilla Leaf",,,,,"しそのは","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-55,"AizuIkiIki","vegetable","ツルムラサキ",,"Tsurumurasaki","?",,,,"ツルムラサキ","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-56,"AizuIkiIki","fruit","小桃",,"Mini Peach",,,,,"こもも","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-57,"AizuIkiIki","vegetable","アイコ",,"Aiko","?",,,,"アイコ","1kg",,1,300,30,"7/1/2009","10/30/2009",,
-58,"AizuIkiIki","vegetable","フルティカ",,"Furutika","?",,,,"フルティカ","500g",,0.5,250,25,"7/1/2009","10/30/2009",,
-59,"AizuIkiIki","leaf","レッドオーク",,"Red Leaf Lettuce",,,,"見て美しく、食べておいしいニューレタス。
+ItemId,Supplier,ProductLine,NameJa,LongNameJa,NameEn,LongNameEn,Reciep,DescEn,DescJa,NameHiragana,UnitEn,UnitJa,UnitWeight,UnitPrice,UnitPoints,ShipStart,ShipEnd,Note
+1,AizuIkiIki,vegetable,白菜,,Hakusai,Chinese cabbage,,,,はくさい,500g,500g,0.5,250,25,1/1/2009,3/31/2009
+2,AizuIkiIki,vegetable,長ネギ,,Naganegi,Japanese Leek,,,,ながねぎ,500g,500g,0.5,450,24,1/1/2009,3/31/2009
+3,AizuIkiIki,vegetable,里芋,,Taro Potato,Satoimo,,,,さといも,1kg,1kg,1,350,35,1/1/2009,3/31/2009
+4,AizuIkiIki,root,大根,,Daikon,Japanese Radish,,,,だいこん,1kg,1kg,1,300,30,1/1/2009,4/30/2009
+5,AizuIkiIki,root,大蕪,,Big Turnip,Kabu,,,,おおかぶ,2kg,2kg,2,200,20,1/1/2009,3/31/2009
+6,AizuIkiIki,root,人参,,Carrot,,,,,にんじん,500g,500g,0.5,250,25,6/15/2009,3/31/2009
+7,AizuIkiIki,vegetable,キャベツ,,Green Cabbage,,,,,キャベツ,500g,500g,0.5,250,25,1/1/2009,10/30/2009
+8,AizuIkiIki,vegetable,オータムポエム,アスパラ菜,Autumn-poem,Brassica rapa family,,,,オオタムポエム,500g,500g,0.5,250,25,1/1/2009,3/31/2009
+9,AizuIkiIki,leaf,小松菜,,Komatsuna Leaf,Japanese Mustard Spinach,,"It is a type of leaf vegetable. It is also known as Japanese Mustard Spinach and can be stir-fried, pickled, boiled and added to soups or used fresh in salads. It is an excellent source of calcium.
+",,こまつな,1kg,1kg,1,300,30,1/1/2009,10/31/2009
+10,AizuIkiIki,vegetable,葉玉ねぎ,,Spring Onion,,,,,はたねぎ,1kg,1kg,1,300,30,1/1/2009,5/30/2009
+11,AizuIkiIki,leaf,くきたち菜,,Kukitachi Leaf,,,,,くきたち,1kg,1kg,1,300,30,1/1/2009,1/31/2009
+12,AizuIkiIki,root,キタアカリ,,Potato - Kitaakari,,,,爵薯から品種改良された馬鈴薯です。まだ誕生してから30年を超えたばかりの野菜です,キタアカリ,1kg,1kg,1,300,30,1/1/2009,1/31/2009
+13,AizuIkiIki,root,男爵いも,,Potato - Dansyaku,,,,,だんしゃく,1kg,1kg,1,300,30,1/1/2009,1月
+14,AizuIkiIki,root,ごぼう,,Gobou,Burdock Root,"A popular Japanese dish is kinpira gobō (金平牛蒡), julienned or shredded burdock root and carrot, braised with soy sauce, sugar, mirin and/or sake, and sesame oil; another is burdock makizushi (sushi filled with pickled burdock root; the burdock root is often artificially coloured orange to resemble a carrot). ","The taproot of young burdock plants can be harvested and eaten as a root vegetable. Burdock root is very crisp and has a sweet, mild, and pungent flavour with a little muddy harshness that can be reduced by soaking julienne/shredded roots in water for five to ten minutes.In the second half of the 20th century, burdock achieved international recognition for its culinary use due to the increasing popularity of the macrobiotic diet, which advocates its consumption. It also contains a fair amount of gobō dietary fiber (GDF, 6g per 100g), calcium, potassium, amino acids,[3] and is also low calorie. It also contains polyphenols that causes darkened surface and muddy harshness by formation of tannin-iron complexes though the harshness shows excellent harmonization with pork in miso soup (tonjiru) and Japanese-style pilaf (takikomi gohan).
+",,ごぼう,1kg,1kg,1,300,30,8/1/2009,1月
+15,AizuIkiIki,fruit,りんご,,Apple,,,,,りんご,1kg,1kg,1,300,30,,1月
+16,AizuIkiIki,vegetable,にんにく,,Garlic,,,,,にんにく,500g,500g,0.5,250,25,1/1/2009,6/30/2009
+17,AizuIkiIki,root,長芋,,Japanese Mountain Yam,,,,,ながいも,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",10/1/2009,1/31/2009
+18,AizuIkiIki,vegetable,玉ねぎ,,Onion,,,,,たまねぎ,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2500,4000,7000","25,40,70",6/15/2009,3/31/2009
+19,AizuIkiIki,root,凍み大根,,Shimi-Daikon,,,,,しみだいこん,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",3/1/2009,4/30/2009
+20,AizuIkiIki,leaf,紅菜苔,,Kosaitai Leaf,Purple stemmed choy sum,,"This flowering purple choy sum is a popular Chinese specialty that graces the winter garden. The yellow flower with purple leaf stalks and leaf veins contrast handsomely with the green leaves, particularly as the colors intensify in colder weather. The whole plant can be harvested young and will regrow for additional harvests. The young flowering shoots add a mild mustard flavor to fresh salads. Kosaitai also has an excellent flavor when lightly cooked by steaming, boiling or stir-frying.",,コウサイタイ,500g,500g,0.5,250,25,3/1/2009,3/31/2009
+21,AizuIkiIki,"picles,root",大根干し,,Dried Daikon,,,,,だいこんぼし,1jar,1jar,1,250,25,4/1/2009,5/31/2009
+22,AizuIkiIki,vegetable,凍みもち,,Shimi-Mochi,,,,,しみもち,500g,500g,0.5,250,25,4/1/2009,5/31/2009
+23,AizuIkiIki,leaf,宮内菜,,Niyauchi Leafs,,,,,みやうちな,500g,500g,0.5,450,24,4/1/2009,4/30/2009
+24,AizuIkiIki,vegetable,ほうれん草,,Spinach,,,,,ほうれんそう,1kg,1kg,1,350,35,3/1/2009,10/30/2009
+25,AizuIkiIki,leaf,ふきのとう,,Fuki butterbur,,,"The flower stalk of a butterbur. known as Fuki, bog rhubarb, or giant butterbur, is an herbaceous perennial plant in the family Asteraceae. It is native to Japan, where the spring growth is relished as a vegetable.
+",,ふきのとう,1kg,1kg,1,300,30,3/1/2009,4/30/2009
+26,AizuIkiIki,vegetable,アスパラガス,,Asparagus,,,"The traditional preparation method for this vegetable involves pre-treating with salt and soaking in water, a technique known as itazuri, or removing harshness.
+",,アスパラ,2kg,2kg,2,200,20,5/1/2009
+27,AizuIkiIki,vegetable,栽培うど,,Udo,,,,,さいばいうど,500g,500g,0.5,250,25,5/1/2009,5/30/2009
+28,AizuIkiIki,vegetable,胡瓜,,Cucumber,,,,,きゅうり,500g,500g,0.5,250,25,5/1/2009,10/30/2009
+29,AizuIkiIki,leaf,山椒の葉,,Sansyo Leaf,,,,,さんしょうのは,500g,500g,0.5,250,25,5/1/2009,5/30/2009
+30,AizuIkiIki,vegetable,絹さや,,Kinusaya,,,,,きぬさや,1kg,1kg,1,300,30,5/1/2009,7/31/2009
+31,AizuIkiIki,root,蕪,,Turnips,,,,,かぶ,1kg,1kg,1,300,30,5/1/2009,10/30/2009
+32,AizuIkiIki,vegetable,わらび,,Warabi,,,,,わらび,1kg,1kg,1,300,30,5/1/2009,6/30/2009
+33,AizuIkiIki,vegetable,こごみ,,Kogomi,,,,,こごみ,1kg,1kg,1,300,30,5/1/2009,5/30/2009
+34,AizuIkiIki,vegetable,蕗,,Fuki,,,,,ふき,1kg,1kg,1,300,30,5/1/2009,5/30/2009
+35,AizuIkiIki,vegetable,山うど,,Yamaudo,,,,,やまうど,1kg,1kg,1,300,30,5/1/2009,5/30/2009
+36,AizuIkiIki,vegetable,水菜,,Mitzuna,,,,,みずな,1kg,1kg,1,300,30,5/1/2009,10/30/2009
+37,AizuIkiIki,vegetable,トマト,,Tomato,,,,,トマト,500g,500g,0.5,250,25,6/15/2009,10/30/2009
+38,AizuIkiIki,"vegetable,beans",枝豆,,Edamame,,,,,えだまめ,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",6/15/2009,10/30/2009
+39,AizuIkiIki,"vegetable,beans",グリーンピース,,Green Peas,,,,,グリーンピース,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2500,4000,7000","25,40,70",6/15/2009,10/30/2009
+40,AizuIkiIki,leaf,大根菜,,Daikon Leaf,,,,,だいこんな,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",6/15/2009,10/30/2009
+41,AizuIkiIki,vegetable,にら,,Ramp,,,,,にら,500g,500g,0.5,250,25,6/15/2009,10/30/2009
+42,AizuIkiIki,vegetable,なす,,Eggplant,,,,,なす,1jar,1jar,1,250,25,6/15/2009,10/30/2009
+43,AizuIkiIki,vegetable,加茂なす,,Kamo Round Eggplant,,,,,かもなす,500g,500g,0.5,250,25,6/15/2009,10/30/2009
+44,AizuIkiIki,vegetable,子なす,,Mini Eggplant,,,,,こなす,500g,500g,0.5,450,24,6/15/2009,10/30/2009
+45,AizuIkiIki,vegetable,ピーマン,,Green Pepper,,,,,ピーマン,1kg,1kg,1,350,35,6/15/2009,10/30/2009
+46,AizuIkiIki,vegetable,とうもろこし,,Corn,,,,,とうもろこし,1kg,1kg,1,300,30,6/1/2009,10/30/2009
+47,AizuIkiIki,leaf,モロヘイヤ,,Moroheiya,Mallow Leaf,,,,もろへいや,2kg,2kg,2,200,20,7/1/2009,10/30/2009
+48,AizuIkiIki,vegetable,ブロッコリ,,Broccoli,,,"Young malukhiyah leaves are used as a green leaf vegetable; Corchorus olitorius is used mainly in southern Asia, Egypt and Cyprus, Corchorus capsularis in Japan and China. It has a mucilaginous (somewhat ""slimy"") texture, similar to okra, when cooked.
+",,ブロッコリー,500g,500g,0.5,250,25,7/1/2009,10/30/2009
+49,AizuIkiIki,leaf,レタス,,Lettuce,,,"Broccoli is packed with great qualities...it contains twice the vitamin C of an orange, it has almost as much calcium as whole milk--and the calcium is better absorbed, and it contains selenium, a mineral that has been found to have anti-cancer and anti-viral properties.
+",,レタス,500g,500g,0.5,250,25,7/1/2009,10/30/2009
+50,AizuIkiIki,"vegetable,beans",いんげん,,Green Beans,,,"Broccoli is a modest source of vitamin A and alpha-tocopherol vitamin E It also has antioxidant properties.
+",,いんげん,500g,500g,0.5,250,25,7/1/2009,10/30/2009
+51,AizuIkiIki,"vegetable,beans",モロッコインゲン豆,,Morroco Haricot Beans,,,,,モロッコ,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+52,AizuIkiIki,vegetable,伏見唐辛子,,Fushimi Hot Pepper,,,,,ふしみとうがらし,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+53,AizuIkiIki,vegetable,万願寺唐辛子,,Manganji Hot Pepper,,,,,まんがんじとうがらし,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+54,AizuIkiIki,leaf,しその葉,,Shiso Perilla Leaf,,,,,しそのは,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+55,AizuIkiIki,vegetable,ツルムラサキ,,Tsurumurasaki,?,,,,ツルムラサキ,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+56,AizuIkiIki,fruit,小桃,,Mini Peach,,,,,こもも,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+57,AizuIkiIki,vegetable,アイコ,,Aiko,?,,,,アイコ,1kg,1kg,1,300,30,7/1/2009,10/30/2009
+58,AizuIkiIki,vegetable,フルティカ,,Furutika,?,,,,フルティカ,500g,500g,0.5,250,25,7/1/2009,10/30/2009
+59,AizuIkiIki,leaf,レッドオーク,,Red Leaf Lettuce,,,,"見て美しく、食べておいしいニューレタス。
 ●さまざまな葉型や赤と緑の葉色があり，見た目の美しいリーフレタス．
 松丸サラダの色どりの他，花壇のふちどりや寄せ植えなどのガーデニングにも使える．
-●大株にして収穫する他，ベビーサラダにも向く．","レッドオーク","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","7/1/2009","10/30/2009",,
-60,"AizuIkiIki","vegetable","オクラ",,"Okura",,,,,"オクラ","250g,500g,1kg",,"0.25,0.5,1","2500,4000,7000","25,40,70","8/1/2009","9/30/2009",,
-61,"AizuIkiIki","fruit","ブドウ",,"Grapes",,,,,"ブドウ","250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60","9/1/2009","10/30/2009",,
-62,"AizuIkiIki","root","サツマイモ",,"Sweet Potato",,,,,"サツマイモ","500g",,0.5,250,25,"10/1/2009",,,
-63,"AizuIkiIki","vegetable","きゅうり",,"Cucumber",,,,,,"1jar",,1,250,25,,,,
-64,"AizuIkiIki","vegetable","なす",,"Eggplant",,,,,,"500g",,0.5,450,24,,,,
-65,"AizuIkiIki","vegetable","ピーマン",,"Green Pepper",,,,,,"1kg",,1,350,35,,,,
-66,"AizuIkiIki","vegetable","ししとう",,"Green chilli pepper",,,,,,"1kg",,1,300,30,,,,
-67,"AizuIkiIki","vegetable","カリフラワー",,"cauliflower",,,,,,"2kg",,2,200,20,,,,
-68,"AizuIkiIki","vegetable","芽キャベツ",,"Brussels sprouts",,,,,,"500g",,0.5,250,25,,,,
-69,"AizuIkiIki","vegetable","クレソン",,"Watercress",,,,,,"500g",,0.5,250,25,,,,
-70,"AizuIkiIki","herb","セロリ",,"Celery",,,,,,"500g",,0.5,250,25,,,,
-71,"AizuIkiIki","vegetable","プチトマト",,"cherry tomatos",,,,,,"1kg",,1,300,30,,,,
-72,"AizuIkiIki","vegetable","春菊",,"Chrysanth-emum greens",,,,,,"1kg",,1,300,30,,,,
-73,"AizuIkiIki","vegetable","ズッキーニ",,"Zucchini",,,,,,"1kg",,1,300,30,,,,
-74,"AizuIkiIki","mashroom","しいたけ",,"Shiitake mushrooms",,,,,,"1kg",,1,300,30,,,,
-75,"AizuIkiIki","mashroom","しめじ",,"Brown button mushrooms",,,,,,"1kg",,1,300,30,,,,
-76,"AizuIkiIki","mashroom","えのきだけ",,"Yellow button mushrooms",,,,,,"1kg",,1,300,30,,,,
-77,"AizuIkiIki","beans","あずき",,"Azuki beans",,,,,,"1kg",,1,300,30,,,,
-78,"AizuIkiIki","root","レンコン",,"lotus root",,,,,,"500g",,0.5,250,25,,,,
-79,"AizuIkiIki","vegetable","かぼちゃ",,"Pumpkin",,,,,,"250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60",,,,
-80,"AizuIkiIki","fruit","みかん",,"Tangerine ",,,,,,"250g,500g,1kg",,"0.25,0.5,1","2500,4000,7000","25,40,70",,,,
-81,"AizuIkiIki","fruit","もも",,"Peach",,,,,,"250g,500g,1kg",,"0.25,0.5,1","2000,3500,6000","20,35,60",,,,
-82,"AizuIkiIki","fruit","なし",,"Pear",,,,,,"500g",,0.5,250,25,,,,
-83,"AizuIkiIki","fruit","ぶどう",,"Grapes",,,,,,"1jar",,1,250,25,,,,
-84,"AizuIkiIki","fruit","すいか",,"Watermelon",,,,,,"500g",,0.5,450,24,,,,
-85,"AizuIkiIki","fruit","いちご",,"Strawberries",,,,,,"1kg",,1,350,35,,,,
-86,"AizuIkiIki","fruit","さくらんぼ",,"Cherries",,,,,,"1kg",,1,300,30,,,,
-87,"AizuIkiIki","fruit","メロン",,"Melon",,,,,,"2kg",,2,200,20,,,,
-88,"AizuIkiIki","fruit","かき",,"Persimmon",,,,,,"500g",,0.5,250,25,,,,
-89,"AizuIkiIki","vegetable","ぎんなん",,"Gingkonuts",,,,,,"500g",,0.5,250,25,,,,
-90,"AizuIkiIki","vegetable","栗",,"Chestnuts",,,,,,"500g",,0.5,250,25,,,,
-91,"AizuIkiIki","rice","会津コシヒカリ",,"Aizu Rice - Koshihikari",,,,,"あいづこしひかり","1kg",,1,300,30,"10月",,,
-1,"Saito Kokichi","rice","会津コシヒカリ",,"Aizu Rice - Koshihikari",,,,,"あいづこしひかり","1kg",,1,300,30,"10月",,,
+●大株にして収穫する他，ベビーサラダにも向く．",レッドオーク,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",7/1/2009,10/30/2009
+60,AizuIkiIki,vegetable,オクラ,,Okura,,,,,オクラ,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2500,4000,7000","25,40,70",8/1/2009,9/30/2009
+61,AizuIkiIki,fruit,ブドウ,,Grapes,,,,,ブドウ,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60",9/1/2009,10/30/2009
+62,AizuIkiIki,root,サツマイモ,,Sweet Potato,,,,,サツマイモ,500g,500g,0.5,250,25,10/1/2009
+63,AizuIkiIki,vegetable,きゅうり,,Cucumber,,,,,,1jar,1jar,1,250,25
+64,AizuIkiIki,vegetable,なす,,Eggplant,,,,,,500g,500g,0.5,450,24
+65,AizuIkiIki,vegetable,ピーマン,,Green Pepper,,,,,,1kg,1kg,1,350,35
+66,AizuIkiIki,vegetable,ししとう,,Green chilli pepper,,,,,,1kg,1kg,1,300,30
+67,AizuIkiIki,vegetable,カリフラワー,,cauliflower,,,,,,2kg,2kg,2,200,20
+68,AizuIkiIki,vegetable,芽キャベツ,,Brussels sprouts,,,,,,500g,500g,0.5,250,25
+69,AizuIkiIki,vegetable,クレソン,,Watercress,,,,,,500g,500g,0.5,250,25
+70,AizuIkiIki,herb,セロリ,,Celery,,,,,,500g,500g,0.5,250,25
+71,AizuIkiIki,vegetable,プチトマト,,cherry tomatos,,,,,,1kg,1kg,1,300,30
+72,AizuIkiIki,vegetable,春菊,,Chrysanth-emum greens,,,,,,1kg,1kg,1,300,30
+73,AizuIkiIki,vegetable,ズッキーニ,,Zucchini,,,,,,1kg,1kg,1,300,30
+74,AizuIkiIki,mashroom,しいたけ,,Shiitake mushrooms,,,,,,1kg,1kg,1,300,30
+75,AizuIkiIki,mashroom,しめじ,,Brown button mushrooms,,,,,,1kg,1kg,1,300,30
+76,AizuIkiIki,mashroom,えのきだけ,,Yellow button mushrooms,,,,,,1kg,1kg,1,300,30
+77,AizuIkiIki,beans,あずき,,Azuki beans,,,,,,1kg,1kg,1,300,30
+78,AizuIkiIki,root,レンコン,,lotus root,,,,,,500g,500g,0.5,250,25
+79,AizuIkiIki,vegetable,かぼちゃ,,Pumpkin,,,,,,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60"
+80,AizuIkiIki,fruit,みかん,,Tangerine ,,,,,,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2500,4000,7000","25,40,70"
+81,AizuIkiIki,fruit,もも,,Peach,,,,,,"250g,500g,1kg","250g,500g,1kg","0.25,0.5,1","2000,3500,6000","20,35,60"
+82,AizuIkiIki,fruit,なし,,Pear,,,,,,500g,500g,0.5,250,25
+83,AizuIkiIki,fruit,ぶどう,,Grapes,,,,,,1jar,1jar,1,250,25
+84,AizuIkiIki,fruit,すいか,,Watermelon,,,,,,500g,500g,0.5,450,24
+85,AizuIkiIki,fruit,いちご,,Strawberries,,,,,,1kg,1kg,1,350,35
+86,AizuIkiIki,fruit,さくらんぼ,,Cherries,,,,,,1kg,1kg,1,300,30
+87,AizuIkiIki,fruit,メロン,,Melon,,,,,,2kg,2kg,2,200,20
+88,AizuIkiIki,fruit,かき,,Persimmon,,,,,,500g,500g,0.5,250,25
+89,AizuIkiIki,vegetable,ぎんなん,,Gingkonuts,,,,,,500g,500g,0.5,250,25
+90,AizuIkiIki,vegetable,栗,,Chestnuts,,,,,,500g,500g,0.5,250,25
+91,AizuIkiIki,rice,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,,あいづこしひかり,1kg,1kg,1,300,30,10月
+1,Saito Kokichi,rice,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,,あいづこしひかり,1kg,1kg,1,300,30,10月

@@ -1,18 +1,94 @@
 ja-JP:
 #login, user, accounts
+  account_created : "会員登録をしました。"
+  create_account : "会員登録"
   email : "メール"
   log_in : "ログイン"
   log_out : "ログアウト"
+  logged_in : "ログインしました"
+  logged_in_as : "こんにちは{{login}}さん"
+  logged_out : "ログアウトしました"
+  name : "氏名"
   login : "ログイン"
+  login_failed : "{{login}}としてログインできませんでした。"
+  new_user_sign_up : "新規会員登録"
+  not_logged_in : "ログインしてください。"
   password : "パスワード"
+  password_confirmation : "パスワード確認"
+  remember_me : "次回からIDの入力を省略"
+  sign_up : "登録"
+  signup_complete : "登録終了しました。"
+  signup_complete_and_do_login : "Signup complete! Please sign in to continue."
+  signup_problem : "会員登録できませんでした。再入力してください。"
+  not_regestered: "今すぐ登録"
+  back_to_login:  "ログイン画面に戻る"
   
+  cancel: "キャンセル"
+  amount: "金額"
+  yen: "{{a}}円"
+ 
   address:
     prefecture: "県"
-    city: "都市"
+    city: "市"
     address: "住所"
     postal_code: "郵便番号"
     phone: "電話番号"
-
-  catalog:
-    from: "{{supplier}} から"
+    default: "この住所をデフォルトとして設定"
+    save: "住所を保存"
+    change: "変更"
     
+  order:
+    order_id: "注文番号 {{id}}"
+    history: "購入履歴"
+    total_to_pay: "お支払い金額"
+    status_check: "ご注文・お届け状況の確認 {{link}}."
+    here: "ココ"
+    thanks: "ご注文ありがとうございます。"
+    on_hold: "お支払い確認終了後、準備が出来次第発送いたします。"
+    complete: "ご注文いただいた商品は、準備が出来次第発送いたします。"
+    please_login: "お届け状況、お支払い情報についてはログインをしてください。"
+    please_login1: "注文確認はログインをしてください。"
+    not_found: "見つかりません。"
+    prev: "前"
+    next: "次"
+    ordered_at: "{{at}}に注文"
+    pay: "支払い"
+    free_shipping: "発送無料"
+    #payment methods
+    pm:
+      bank_transfer: "銀行振込（先払い）"
+      on_delivery: "代金引換"
+      paypal: "ペイパルによるクレジットカード払い"
+    h:
+      order_id: "注文番号"
+      ordered_at: "に注文"
+      
+        
+    
+  cart:
+    checkout: "ご注文手続き"
+    clear: "カートを空にする"
+    clear_confirmation: "カートの商品を削除してもよろしいですか？"
+    instruction: '商品を選び">>"ボタンで数量を指定ください。 カートから{{remove_img}}で商品を削除ができます。数量は{{up_img}}または{{down_img}}でご指定ください。'
+    empty: 'お客様のカートには商品がございません。商品を選び">>"ボタンで数量を指定ください。'
+    empty_short: "カートには商品がございません。"
+    supplier_total: "サプライヤ合計"
+    shipping: "送料"
+    total: "合計"
+    label_total: "合計金額: {{amount}}円"
+    label_empty: "カートには商品がございません。"
+    
+  catalog:
+    from: "From {{supplier}}"
+    
+  home:
+    home: Home
+    specials: "本日のおすすめ"
+    category: "カテゴリー検索"
+    supplier: "農家検索"
+    checkout: "ご注文手続き"
+    info: "Information"
+    cart: "カート"
+    account: "会員情報"
+    history: "購入履歴"
+    checkout: "ご注文手続き"

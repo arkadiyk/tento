@@ -4,7 +4,7 @@
 	<% if cat.respond_to?("children") && !cat.children.empty? -%>
     	<p class="cat_desc">
     		<% for subcat in cat.children -%>
-				<%= link_to_function subcat.name, "goCatalog('#{id}','#{subcat.id}')", :title => "#{subcat.long_name}" %>
+				<%= link_to_function subcat.name, "goCatalog('#{id}','#{subcat.id}')", :title => "#{subcat.long_name}" %>&nbsp;|&nbsp;
 			<% end -%>
 		</p>
 	<% end %>

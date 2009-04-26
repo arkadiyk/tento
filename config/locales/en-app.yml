@@ -25,6 +25,7 @@ en-US:
   
   cancel: Cancel
   amount: Amount
+  yen: "¥{{a}}"
  
   address:
     prefecture: "Prefecture"

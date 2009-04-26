@@ -7,6 +7,6 @@ class ItemUnit < ActiveRecord::Base
   end
    
   def label
-    "#{name} / ¥#{price}"
+    "#{name} / #{I18n.t(:yen, :a => price)}"
   end
 end

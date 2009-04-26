@@ -7,6 +7,8 @@ class CreateCarts < ActiveRecord::Migration
       t.datetime :paid_at
       t.datetime :canceled_at
       t.integer :ship_to_id
+      t.string :shipping_comment
+      t.string :preffered_delivery_time
       
       t.timestamps
     end

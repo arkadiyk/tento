@@ -1,2 +1,3 @@
+page['brw_sp'].replace_html :partial => 'category_list', :object => @sp, :locals => { :id => "sp" }
 page['brw_pl'].replace_html :partial => 'category_list', :object => @pl, :locals => { :id => "pl" }
 page['brw_su'].replace_html :partial => 'category_list', :object => @su, :locals => { :id => "su" }

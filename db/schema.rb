@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.datetime "paid_at"
     t.datetime "canceled_at"
     t.integer  "ship_to_id"
+    t.string   "shipping_comment"
+    t.string   "preffered_delivery_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -102,6 +104,10 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
   end
 
   create_table "special_types", :force => true do |t|
+    t.string   "name_en"
+    t.string   "name_ja"
+    t.string   "long_name_en"
+    t.string   "long_name_ja"
     t.string   "type"
     t.string   "rule"
     t.datetime "created_at"
