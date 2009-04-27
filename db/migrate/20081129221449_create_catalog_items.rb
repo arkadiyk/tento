@@ -12,6 +12,8 @@ class CreateCatalogItems < ActiveRecord::Migration
       t.string :desc_en
       t.string :desc_ja
       t.string :image_file
+      t.boolean :active, :default => true
+      t.boolean :in_stock, :default => true
 
       t.timestamps
     end

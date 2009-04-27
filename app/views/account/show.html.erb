@@ -1,4 +1,8 @@
+<p style="margin:auto">
 User: <%= current_user.name %><br>
+Points: <%= current_user.points %><br>
+</p>
+
 <p><%= link_to_remote I18n.t(:log_out), :url => logout_path %></p>
 <p><%= link_to_function I18n.t("order.history"), "goCorders()" %></p>
 

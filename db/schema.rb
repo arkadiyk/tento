@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.string   "desc_en"
     t.string   "desc_ja"
     t.string   "image_file"
+    t.boolean  "active",           :default => true
+    t.boolean  "in_stock",         :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.decimal  "weight"
     t.integer  "price"
     t.integer  "points"
+    t.boolean  "active",          :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

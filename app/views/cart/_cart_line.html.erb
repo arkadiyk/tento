@@ -1,10 +1,10 @@
-<td><%=h cart_line.item_name %></td>
+<td><%=cart_line.item_name %></td>
+<td align="right"><%=cart_line.item_unit.name%> &times;&nbsp;</td>
 <td align="right" style="border:1px solid gray;border-right:none; width: 23px;padding-right:2px"><%=cart_line.quantity%></td>
 <td align="left" style="border: 1px solid gray;border-left: none;width:13px;padding:0;margin:0">
   <div style="width:13px;line-height:0.7em;height:7px;"><%=link_to_function image_tag("up.png"), "updateCartLine('up', '#{cart_line.id}')"%></div>
   <div style="width:13px;line-height:0.7em;height:7px;"><%=link_to_function image_tag("down.png"), "updateCartLine('down', '#{cart_line.id}')"%></div>
 </td>
-<td align="right"><%=cart_line.item_weight%>kg</td>
 <td align="right"><%=I18n.t(:yen, :a => cart_line.item_amount)%></td>  
 <td align="right" valign="middle"><%=link_to_function image_tag("remove.png"), "deleteCartLine('#{cart_line.id}')" %></td>
 

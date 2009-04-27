@@ -11,6 +11,7 @@ class Cart < ActiveRecord::Base
   
   named_scope :customer_orders, lambda { |user| { :conditions => ["confirmed_at is not null and user_id = ?", user] } }
 
+  after_save :update_user_points
    
   def empty?
     orders.empty?
@@ -27,6 +28,11 @@ class Cart < ActiveRecord::Base
   def total_amount
     orders.map(&:amount_with_shipping).sum
   end
+  
+  def total_points
+    orders.map(&:points).sum
+  end
+ 
   
   def order_id
     "#{pay_method}00#{id + ORDER_INIT_NUM}" 
@@ -52,5 +58,14 @@ class Cart < ActiveRecord::Base
       I18n.t("cart.label_empty")
     end    
   end
+  
+  private
+    def update_user_points
+      #TODO introduce "orders" name scope into User object
+      if changed.index("confirmed_at")
+        user.points = Cart.customer_orders(user).map(&:total_points).sum
+        user.save!
+      end
+    end
 
 end

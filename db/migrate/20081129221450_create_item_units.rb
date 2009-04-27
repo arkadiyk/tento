@@ -8,6 +8,7 @@ class CreateItemUnits < ActiveRecord::Migration
       t.decimal :weight, :scale => 3
       t.integer :price
       t.integer :points                     # points/unit ( usually 10% of unit price )
+      t.boolean :active, :default => true
 
       t.timestamps
     end

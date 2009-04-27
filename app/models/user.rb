@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
+  #TODO introduce "orders" name scope into User object
   
 
   # HACK HACK HACK -- how to do attr_accessible from here?

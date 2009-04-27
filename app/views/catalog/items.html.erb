@@ -20,10 +20,10 @@
       	<strong><%=h item.label %></strong>
 		<% if !item.desc.blank? -%>
 	    	<p class="item_desc">
-	    		<% if(item.desc.size < 140) -%>
+	    		<% if(item.desc.mb_chars.size < 100) -%>
 					<%= item.desc %>
 				<% else -%>
-					<%= item.desc[0,139] + " ..."%>
+					<%= item.desc.mb_chars[0,99] + " ..."%>
 				<% end %>
 			</p>
 		<% end -%>

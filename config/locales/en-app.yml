@@ -25,6 +25,7 @@ en-US:
   
   cancel: Cancel
   amount: Amount
+  points: Points
   yen: "¥{{a}}"
  
   address:

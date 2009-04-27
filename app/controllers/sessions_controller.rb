@@ -29,8 +29,10 @@ class SessionsController < ApplicationController
 
   def destroy
     save_cart = session[:cart_id]
+    save_locale = session[:locale]
     logout_killing_session!
     flash[:notice] = I18n.t(:logged_out)
+    session[:locale] = save_locale
     session[:cart_id] = save_cart
     update_cart_from_current_user
     render :js => 'window.location.reload()'

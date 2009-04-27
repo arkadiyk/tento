@@ -13,6 +13,11 @@ class LoadCatalog
 #    p header_line
 #    p results
 
+
+# DEACTIVATE ALL CatalogItems and ItemUnits
+    CatalogItem.update_all(:active => false)
+    ItemUnit.update_all(:active => false)
+    
     
     results.each do |line|      
       if line[0].empty?
@@ -44,11 +49,16 @@ class LoadCatalog
     id = "#{nl["Supplier"]}-#{nl["ItemId"]}"
     ei = CatalogItem.find(:all, :conditions =>["item_id = ?", id])
     if ei.length > 0
-      puts "Skipping #{id}"
-      return false
+      puts "Updating #{id}"
+      raise "\n\nNot Unique #{id}!!!\n\n" if(ei.length > 1)
+      nc = ei[0]
+      nc.product_line = []  #reasign categories
+    else
+      puts "Creating #{id}"
+      nc = CatalogItem.new
     end
     
-    nc = CatalogItem.create :supplier_id => nl["Supplier"],
+    nc.update_attributes! :supplier_id => nl["Supplier"],
       :item_id => id,
       :name_en => nl['NameEn'], 
       :long_name_en => nl['LongNameEn'],
@@ -56,19 +66,27 @@ class LoadCatalog
       :name_ja => nl['NameJa'], 
       :long_name_ja => nl['LongNameJa'],
       :desc_ja => nl['DescJa'],
-      :image_file => nl['ImageFile']
+      :image_file => nl['ImageFile'],
+      :in_stock => nl['InStock'] == 'Y',
+      :active => true
       
     nl["ProductLine"].each do |pl_id|
       nc.product_line << ProductLine.find(pl_id)
     end
       
-    nl['UnitPrice'].each_index do |i|
-      ItemUnit.create :price => nl['UnitPrice'][i], 
-        :weight => nl['UnitWeight'][i], 
+    nl['UnitWeight'].each_index do |i|
+      uw = nl['UnitWeight'][i]
+      item = nc.item_units.first :conditions =>["weight = ?", uw]
+      
+      if item.nil? 
+        item = ItemUnit.new :weight => uw, :catalog_item => nc
+      end
+      
+      item.update_attributes! :price => nl['UnitPrice'][i], 
         :name_en => nl['UnitEn'] ? nl['UnitEn'][i] : nil, 
         :name_ja => nl['UnitJa'] ? nl['UnitJa'][i] : nil, 
         :points => nl['UnitPoints'][i],
-        :catalog_item => nc
+        :active => true
     end
     true
   end
@@ -76,7 +94,7 @@ class LoadCatalog
   def map_supplier(name)
     case name
       when "AizuIkiIki" then 1
-      when "Saito Kokichi" then 2  
+      when "Saito Kokichi" then 2
     end
   
   end
