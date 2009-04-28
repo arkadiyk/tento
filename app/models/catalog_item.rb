@@ -10,5 +10,10 @@ class CatalogItem < ActiveRecord::Base
   def label
     long_name.blank? ? name : "#{name} (#{long_name})"
   end
+  
+  def <=>(other) 
+    self.name.downcase <=> other.name.downcase 
+  end 
+ 
     
 end

@@ -3,7 +3,7 @@
 -%>
 
   <table class="cat_tables" id="<%=@ids[hdr]%>">
-  <% for item in items %>
+  <% for item in items.sort %>
     <tr>
 	
 	<td width="1%">
@@ -39,25 +39,31 @@
 	  </td>
       
 	  
-	  <td width="15%">
-		<table class="cat_context">
-		<tr><td height="33%" nowrap="true">
-		    <%if item.item_units.size == 1%>
-		  		<%=item.item_units[0].label%>
-				<%=hidden_field_tag "unit_id[#{item.id}]", item.item_units[0].id %>
-			<%else%>
-				<%=collection_select(:unit_id, item.id, item.item_units, :id, :label)%>
-			<%end%>
-		</td></tr>
-		<tr><td height="33%" nowrap="true">
-		<%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
-          <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
-		</td></tr>
-		<tr><td height="33%" nowrap="true">
-			<span class="cat_cart cat_cart_<%=item.id%>"><%= in_the_cart(@item_cart_map[item.id]) %></span>
-		</td></tr>
-		</table>
-	  </td>
+	  	<% if item.in_stock? -%>
+		  <td width="15%">
+			<table class="cat_context">
+			<tr><td height="33%" nowrap="true">
+			    <%if item.item_units.size == 1%>
+			  		<%=item.item_units[0].label%>
+					<%=hidden_field_tag "unit_id[#{item.id}]", item.item_units[0].id %>
+				<%else%>
+					<%=collection_select(:unit_id, item.id, item.item_units, :id, :label)%>
+				<%end%>
+			</td></tr>
+			<tr><td height="33%" nowrap="true">
+			<%= text_field_tag "cart_item[#{item.id}]", "1" , :size => 4, :class => "cart_item" %>
+	          <%=button_to_function ">>", "createCartLine('#{item.id}')"%>
+			</td></tr>
+			<tr><td height="33%" nowrap="true">
+				<span class="cat_cart cat_cart_<%=item.id%>"><%= in_the_cart(@item_cart_map[item.id]) %></span>
+			</td></tr>
+			</table>
+		  </td>
+		<% else -%>
+			<td align="right" width="15%">
+				<%=image_tag("soldout.gif")%>
+			</td>
+		<% end -%>
 	  
     </tr>
 

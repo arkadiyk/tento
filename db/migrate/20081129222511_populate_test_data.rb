@@ -4,7 +4,7 @@ class PopulateTestData < ActiveRecord::Migration
       :name_ja => '会津活活',
       :long_name_en => 'Aizu IkiIki Shizenmura',
       :long_name_ja => '会津活活自然村',
-      :shipping_rule => 'calculated_shipping,#weight,#amount,#ship_to'
+      :shipping_rule => 'flat_shipping,800' # 'calculated_shipping,#weight,#amount,#ship_to'
       
     Supplier.create :name_en => 'Saito Kokichi', 
       :name_ja => '斉藤幸吉',

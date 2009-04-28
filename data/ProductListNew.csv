@@ -38,67 +38,67 @@ ItemId,Supplier,ProductLine,SpecialTag,NameJa,LongNameJa,NameEn,LongNameEn,DescE
 33,AizuIkiIki,"other-veggie,mountain-veggie",,こごみ,,Kogomi,,,,こごみ,1kg,1kg,,1,960,600,96,5/1/2009,5/30/2009,Y
 34,AizuIkiIki,"other-veggie,mountain-veggie",,蕗,,Fuki,,,,ふき,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",5/1/2009,5/30/2009,N
 35,AizuIkiIki,"other-veggie,mountain-veggie",,山うど,,Yamaudo,,,,やまうど,350g,350g,,0.35,720,450,72,5/1/2009,5/30/2009,Y
-36,AizuIkiIki,leaf,,水菜,,Mitzuna,,,,みずな,200g,200g,,0.2,240,150,24,10/1/2009,12/31/2009
-37,AizuIkiIki,fruit-veggie,,トマト,,Tomato,,,,トマト,1kg,1kg,,1,640,400,64,6/15/2009,10/30/2009
-38,AizuIkiIki,"other-veggie,beans",,枝豆,,Edamame,,,,えだまめ,1kg,1kg,,1,1600,1000,160,6/15/2009,10/30/2009
-39,AizuIkiIki,"fruit-veggie,beans",,グリーンピース,,Green Peas,,,,グリーンピース,150g,150g,,0.15,290,180,29,6/1/2009,6/30/2009
-40,AizuIkiIki,leaf,,大根菜,,Daikon Leaf,,,,だいこんな,250g,250g,,0.25,240,150,24,6/15/2009,10/30/2009
-41,AizuIkiIki,leaf,,にら,,Ramp,,,,にら,150g,150g,,0.15,240,150,24,6/15/2009,2/28/2009
-42,AizuIkiIki,fruit-veggie,,なす,,Eggplant,,,,なす,500g,500g,,0.5,400,250,40,6/15/2009,10/30/2009
-43,AizuIkiIki,fruit-veggie,,加茂なす,,Kamo Round Eggplant,,,,かもなす,1pc,1ケ,,0.001,290,180,29,6/15/2009,10/30/2009
-44,AizuIkiIki,fruit-veggie,,子なす,,Mini Eggplant,,,,こなす,500g,500g,,0.5,400,250,40,6/15/2009,10/30/2009
-45,AizuIkiIki,"fruit-veggie,leaf",,ピーマン,,Green Pepper,,,,ピーマン,150g,150g,,0.15,210,130,21,6/15/2009,10/30/2009
-46,AizuIkiIki,other-veggie,,とうもろこし,,Corn,,,,とうもろこし,1pc,1本,,0.001,240,150,24,7/1/2009,10/30/2009
+36,AizuIkiIki,leaf,,水菜,,Mitzuna,,,,みずな,200g,200g,,0.2,240,150,24,10/1/2009,12/31/2009,Y
+37,AizuIkiIki,fruit-veggie,,トマト,,Tomato,,,,トマト,1kg,1kg,,1,640,400,64,6/15/2009,10/30/2009,Y
+38,AizuIkiIki,"other-veggie,beans",,枝豆,,Edamame,,,,えだまめ,1kg,1kg,,1,1600,1000,160,6/15/2009,10/30/2009,Y
+39,AizuIkiIki,"fruit-veggie,beans",,グリーンピース,,Green Peas,,,,グリーンピース,150g,150g,,0.15,290,180,29,6/1/2009,6/30/2009,Y
+40,AizuIkiIki,leaf,,大根菜,,Daikon Leaf,,,,だいこんな,250g,250g,,0.25,240,150,24,6/15/2009,10/30/2009,Y
+41,AizuIkiIki,leaf,,にら,,Ramp,,,,にら,150g,150g,,0.15,240,150,24,6/15/2009,2/28/2009,Y
+42,AizuIkiIki,fruit-veggie,,なす,,Eggplant,,,,なす,500g,500g,,0.5,400,250,40,6/15/2009,10/30/2009,Y
+43,AizuIkiIki,fruit-veggie,,加茂なす,,Kamo Round Eggplant,,,,かもなす,1pc,1ケ,,0.001,290,180,29,6/15/2009,10/30/2009,Y
+44,AizuIkiIki,fruit-veggie,,子なす,,Mini Eggplant,,,,こなす,500g,500g,,0.5,400,250,40,6/15/2009,10/30/2009,Y
+45,AizuIkiIki,"fruit-veggie,leaf",,ピーマン,,Green Pepper,,,,ピーマン,150g,150g,,0.15,210,130,21,6/15/2009,10/30/2009,Y
+46,AizuIkiIki,other-veggie,,とうもろこし,,Corn,,,,とうもろこし,1pc,1本,,0.001,240,150,24,7/1/2009,10/30/2009,Y
 47,AizuIkiIki,leaf,,モロヘイヤ,,Moroheiya,Mallow Leaf,"Young malukhiyah leaves are used as a green leaf other-veggie; Corchorus olitorius is used mainly in southern Asia, Egypt and Cyprus, Corchorus capsularis in Japan and China. It has a mucilaginous (約somewhat ""slimy"") texture, similar to okra, when cooked.
-",,もろへいや,150g,150g,,0.15,210,130,21,7/1/2009,10/30/2009
+",,もろへいや,150g,150g,,0.15,210,130,21,7/1/2009,10/30/2009,Y
 48,AizuIkiIki,"other-veggie,leaf",,ブロッコリ,,Broccoli,,"Broccoli is packed with great qualities...it contains twice the vitamin C of an orange, it has almost as much calcium as whole milk--and the calcium is better absorbed, and it contains selenium, a mineral that has been found to have anti-cancer and anti-viral properties.
-",,ブロッコリー,1pc,1ケ,,0.001,290,180,29,7/1/2009,10/30/2009
-49,AizuIkiIki,leaf,,レタス,,Lettuce,,,,レタス,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",7/1/2009,10/30/2009
+",,ブロッコリー,1pc,1ケ,,0.001,290,180,29,7/1/2009,10/30/2009,Y
+49,AizuIkiIki,leaf,,レタス,,Lettuce,,,,レタス,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",7/1/2009,10/30/2009,N
 50,AizuIkiIki,"other-veggie,beans,fruit-veggie",,いんげん,,Green Beans,,"Broccoli is a modest source of vitamin A and alpha-tocopherol vitamin E It also has antioxidant properties.
-",,いんげん,150g,150g,,0.15,240,150,24,7/1/2009,10/30/2009
-51,AizuIkiIki,"other-veggie,beans,fruit-veggie",,モロッコインゲン豆,,Morroco Haricot Beans,,,,モロッコ,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",7/1/2009,10/30/2009
-52,AizuIkiIki,spice,,伏見唐辛子,,Fushimi Hot Pepper,,,,ふしみとうがらし,100g,100g,,0.1,290,180,29,7/1/2009,9/30/2009
-53,AizuIkiIki,spice,,万願寺唐辛子,,Manganji Hot Pepper,,,,まんがんじとうがらし,100g,100g,,0.1,400,250,40,7/1/2009,9/30/2009
-54,AizuIkiIki,"leaf,herb",,しその葉,,Shiso Perilla Leaf,,,,しそのは,50g,50g,,0.05,240,150,24,7/1/2009,8/30/2009
-55,AizuIkiIki,leaf,,ツルムラサキ,,Tsurumurasaki,?,,,ツルムラサキ,250g,250g,,0.25,240,150,24,7/1/2009,10/30/2009
-56,AizuIkiIki,fruit,,小桃,,Mini Peach,,,,こもも,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009
-57,AizuIkiIki,fruit-veggie,,アイコトマト,,Aiko,?,,,アイコ,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009
-58,AizuIkiIki,fruit-veggie,,フルティカトマト,,Furutika,?,,,フルティカ,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009
+",,いんげん,150g,150g,,0.15,240,150,24,7/1/2009,10/30/2009,Y
+51,AizuIkiIki,"other-veggie,beans,fruit-veggie",,モロッコインゲン豆,,Morroco Haricot Beans,,,,モロッコ,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",7/1/2009,10/30/2009,N
+52,AizuIkiIki,spice,,伏見唐辛子,,Fushimi Hot Pepper,,,,ふしみとうがらし,100g,100g,,0.1,290,180,29,7/1/2009,9/30/2009,Y
+53,AizuIkiIki,spice,,万願寺唐辛子,,Manganji Hot Pepper,,,,まんがんじとうがらし,100g,100g,,0.1,400,250,40,7/1/2009,9/30/2009,Y
+54,AizuIkiIki,"leaf,herb",,しその葉,,Shiso Perilla Leaf,,,,しそのは,50g,50g,,0.05,240,150,24,7/1/2009,8/30/2009,Y
+55,AizuIkiIki,leaf,,ツルムラサキ,,Tsurumurasaki,?,,,ツルムラサキ,250g,250g,,0.25,240,150,24,7/1/2009,10/30/2009,Y
+56,AizuIkiIki,fruit,,小桃,,Mini Peach,,,,こもも,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009,Y
+57,AizuIkiIki,fruit-veggie,,アイコトマト,,Aiko,?,,,アイコ,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009,Y
+58,AizuIkiIki,fruit-veggie,,フルティカトマト,,Furutika,?,,,フルティカ,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009,Y
 59,AizuIkiIki,leaf,,レッドオーク,,Red Leaf Lettuce,,,"見て美しく、食べておいしいニューレタス。
 ●さまざまな葉型や赤と緑の葉色があり，見た目の美しいリーフレタス．
 松丸サラダの色どりの他，花壇のふちどりや寄せ植えなどのガーデニングにも使える．
-●大株にして収穫する他，ベビーサラダにも向く．",レッドオーク,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009
-60,AizuIkiIki,"other-veggie,leaf",,オクラ,,Okura,,,,オクラ,1pack,1パック,,0.001,240,150,24,7/1/2009,9/30/2009
-61,AizuIkiIki,fruit,,ブドウ,,Grapes,,,,ブドウ,1kg,1kg,,1,800,500,80,9/1/2009,11/30/2009
-62,AizuIkiIki,"root,potato",,サツマイモ,,Sweet Potato,,,,サツマイモ,1kg,1kg,,1,560,350,56,10/1/2009,11/30/2009
-63,AizuIkiIki,"fruit-veggie,leaf",,きゅうり,,Cucumber,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-64,AizuIkiIki,fruit-veggie,,なす,,Eggplant,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-65,AizuIkiIki,"other-veggie,leaf",,ピーマン,,Green Pepper,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-66,AizuIkiIki,"other-veggie,leaf",,ししとう,,Green chilli pepper,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-67,AizuIkiIki,"other-veggie,leaf",,カリフラワー,,cauliflower,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-68,AizuIkiIki,"other-veggie,leaf",,芽キャベツ,,Brussels sprouts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-69,AizuIkiIki,"other-veggie,leaf",,クレソン,,Watercress,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-70,AizuIkiIki,"herb,leaf",,セロリ,,Celery,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-71,AizuIkiIki,fruit-veggie,,プチトマト,,cherry tomatos,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-72,AizuIkiIki,leaf,,春菊,,Chrysanth-emum greens,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-73,AizuIkiIki,"fruit-veggie,leaf",,ズッキーニ,,Zucchini,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-74,AizuIkiIki,mashroom,,しいたけ,,Shiitake mushrooms,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-75,AizuIkiIki,mashroom,,しめじ,,Brown button mushrooms,?,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-76,AizuIkiIki,mashroom,,えのきだけ,,Yellow button mushrooms,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-77,AizuIkiIki,beans,,あずき,,Azuki beans,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-78,AizuIkiIki,root,,レンコン,,lotus root,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-79,AizuIkiIki,"other-veggie,fruit-veggie",,かぼちゃ,,Pumpkin,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-80,AizuIkiIki,fruit,,みかん,,Tangerine ,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-81,AizuIkiIki,fruit,,もも,,Peach,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-82,AizuIkiIki,fruit,,なし,,Pear,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-83,AizuIkiIki,fruit,,ぶどう,,Grapes,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-84,AizuIkiIki,fruit,,すいか,,Watermelon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-85,AizuIkiIki,fruit,,いちご,,Strawberries,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-86,AizuIkiIki,fruit,,さくらんぼ,,Cherries,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-87,AizuIkiIki,fruit,,メロン,,Melon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-88,AizuIkiIki,fruit,,かき,,Persimmon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-89,AizuIkiIki,other-veggie,,ぎんなん,,Gingkonuts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-90,AizuIkiIki,other-veggie,,栗,,Chestnuts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80"
-91,AizuIkiIki,rice,,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,あいづこしひかり,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",10月
-1,Saito Kokichi,rice,,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,あいづこしひかり,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",10月
-1,Bandai Bee Farm,honey,,はちみつ（アカシア）,,Honey
+●大株にして収穫する他，ベビーサラダにも向く．",レッドオーク,1kg,1kg,,1,880,550,88,7/1/2009,10/30/2009,Y
+60,AizuIkiIki,"other-veggie,leaf",,オクラ,,Okura,,,,オクラ,1pack,1パック,,0.001,240,150,24,7/1/2009,9/30/2009,Y
+61,AizuIkiIki,fruit,,ブドウ,,Grapes,,,,ブドウ,1kg,1kg,,1,800,500,80,9/1/2009,11/30/2009,Y
+62,AizuIkiIki,"root,potato",,サツマイモ,,Sweet Potato,,,,サツマイモ,1kg,1kg,,1,560,350,56,10/1/2009,11/30/2009,Y
+63,AizuIkiIki,"fruit-veggie,leaf",,きゅうり,,Cucumber,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+64,AizuIkiIki,fruit-veggie,,なす,,Eggplant,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+65,AizuIkiIki,"other-veggie,leaf",,ピーマン,,Green Pepper,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+66,AizuIkiIki,"other-veggie,leaf",,ししとう,,Green chilli pepper,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+67,AizuIkiIki,"other-veggie,leaf",,カリフラワー,,cauliflower,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+68,AizuIkiIki,"other-veggie,leaf",,芽キャベツ,,Brussels sprouts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+69,AizuIkiIki,"other-veggie,leaf",,クレソン,,Watercress,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+70,AizuIkiIki,"herb,leaf",,セロリ,,Celery,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+71,AizuIkiIki,fruit-veggie,,プチトマト,,cherry tomatos,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+72,AizuIkiIki,leaf,,春菊,,Chrysanth-emum greens,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+73,AizuIkiIki,"fruit-veggie,leaf",,ズッキーニ,,Zucchini,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+74,AizuIkiIki,mashroom,,しいたけ,,Shiitake mushrooms,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+75,AizuIkiIki,mashroom,,しめじ,,Brown button mushrooms,?,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+76,AizuIkiIki,mashroom,,えのきだけ,,Yellow button mushrooms,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+77,AizuIkiIki,beans,,あずき,,Azuki beans,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+78,AizuIkiIki,root,,レンコン,,lotus root,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+79,AizuIkiIki,"other-veggie,fruit-veggie",,かぼちゃ,,Pumpkin,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+80,AizuIkiIki,fruit,,みかん,,Tangerine ,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+81,AizuIkiIki,fruit,,もも,,Peach,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+82,AizuIkiIki,fruit,,なし,,Pear,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+83,AizuIkiIki,fruit,,ぶどう,,Grapes,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+84,AizuIkiIki,fruit,,すいか,,Watermelon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+85,AizuIkiIki,fruit,,いちご,,Strawberries,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+86,AizuIkiIki,fruit,,さくらんぼ,,Cherries,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+87,AizuIkiIki,fruit,,メロン,,Melon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+88,AizuIkiIki,fruit,,かき,,Persimmon,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+89,AizuIkiIki,other-veggie,,ぎんなん,,Gingkonuts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+90,AizuIkiIki,other-veggie,,栗,,Chestnuts,,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
+91,AizuIkiIki,rice,,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,あいづこしひかり,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",10月,,Y
+1,Saito Kokichi,rice,,会津コシヒカリ,,Aizu Rice - Koshihikari,,,,あいづこしひかり,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",10月,,Y
+1,Bandai Bee Farm,honey,,はちみつ（アカシア）,,Honey (Acacia),,,,,"100g,250g,500g","100g,250g,500g",,"0.001,0.002,0.003","160,400,800","100,250,500","16,40,80",,,Y
