@@ -81,7 +81,8 @@ ja-JP:
     
   catalog:
     from: "From {{supplier}}"
-    
+    in_the_cart: "{{qty}} in the cart"
+   
   home:
     home: Home
     specials: "本日のおすすめ"

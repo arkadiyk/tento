@@ -124,13 +124,25 @@ a img {border: 0}
 }
 
 .cat_tables td {
-    border-bottom: 1px dotted #EB8;
+  border-bottom: 1px dashed #EB8;
+}
+
+.cat_context {
+	 height:78px;
+	 width:100%; 
+}
+.cat_context td {
+  border: none;
 }
 
 #cart_table {
   padding: 6px;
   width: 100%;
   float:left;
+}
+
+.cat_cart {
+	color: red;
 }
 
 
@@ -288,8 +300,13 @@ a img {border: 0}
 }
 
 tr.total-line td {
-	font-weight: bold;
+  font-weight: bold;
   border-bottom: 1px solid #EB8;
+}
+
+tr.ototal-line td {
+  padding-top: 8px;
+  border-top: 1px dotted #EB8;
 }
 
 #botton_panel {
@@ -300,7 +317,7 @@ tr.total-line td {
     margin: auto;
     text-align: center; 
     background-color: #cfc;
-    width: 70%;
+    width: 80%;
     clear:both;
 }
 

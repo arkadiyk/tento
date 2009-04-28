@@ -1,3 +1,6 @@
 page.replace_html "cart_line_#{@line.id}", :partial => 'cart_line', :object => @line
 page.replace "order_totals_#{@line.order.id}", :partial => 'order', :object => @line.order
-page.replace_html 'cart_box_label', "#{@line.order.cart.title}" 
+page.replace_html 'cart_box_label', "#{@line.order.cart.title}"
+page.select(".cat_cart_#{@line.item_unit.catalog_item.id}").each do |s|
+    page.replace_html s, in_the_cart(@line.order.cart.item_qty_map[@line.item_unit.catalog_item.id])
+end

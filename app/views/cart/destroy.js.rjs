@@ -13,3 +13,7 @@ else
   end
   page.replace_html 'cart_box_label', "#{@line.order.cart.title}" 
 end
+
+page.select(".cat_cart_#{@line.item_unit.catalog_item.id}").each do |s|
+    page.replace_html s, in_the_cart(@line.order.cart.item_qty_map[@line.item_unit.catalog_item.id])
+end

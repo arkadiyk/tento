@@ -59,6 +59,15 @@ class Cart < ActiveRecord::Base
     end    
   end
   
+  def item_qty_map
+    the_map = {}
+    line_items.each do |i| 
+      the_map[i.item_unit.catalog_item.id] ||= 0
+      the_map[i.item_unit.catalog_item.id] += i.quantity
+    end
+    the_map
+  end
+  
   private
     def update_user_points
       #TODO introduce "orders" name scope into User object

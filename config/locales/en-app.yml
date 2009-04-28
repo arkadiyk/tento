@@ -82,6 +82,7 @@ en-US:
     
   catalog:
     from: From {{supplier}}
+    in_the_cart: "{{qty}} in the cart"
     
   home:
     home: Home

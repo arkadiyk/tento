@@ -2,5 +2,6 @@
   <%=I18n.t("cart.empty")%>
 </p>
 <%= javascript_tag "$('cart_box_label').update('#{I18n.t('cart.empty_short')}');"  %>
+<%= javascript_tag "$$('.cat_cart').each(function(v, i) {Element.update(v, '');});"  %>
 
 

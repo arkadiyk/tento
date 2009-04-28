@@ -1,5 +1,7 @@
 class CatalogController < ApplicationController
   def items
+    @item_cart_map = current_cart.item_qty_map
+    
     @cat_items = {}; @ids = {}
     cat = params[:p1]
     case cat

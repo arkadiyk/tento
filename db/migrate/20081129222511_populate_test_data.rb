@@ -19,12 +19,16 @@ class PopulateTestData < ActiveRecord::Migration
     vg = ProductLine.create :name_en => 'Vegetables', :long_name_en => "Root Veggie, Green Veggie, Beans, Herbs",
       :name_ja => '野菜', :long_name_ja => '根菜、緑色野菜、豆類、ハーブ'
 #2
-      vg.children.create  :name_en => 'Other Veggies', :name_ja => 'その他野菜' 
-      vg.children.create  :name_en => 'Root Veggies',  :name_ja => '根菜'
       vg.children.create  :name_en => 'Green Veggies', :name_ja => '緑色野菜'
+      vg.children.create  :name_en => 'Fruit Veggies', :name_ja => '果菜'
+      vg.children.create  :name_en => 'Root Veggies',  :name_ja => '根菜'
+      vg.children.create  :name_en => 'Mountain(wild) Veggies',  :name_ja => '山菜'
+      vg.children.create  :name_en => 'Potatos', :name_ja => '芋類'
       vg.children.create  :name_en => 'Beans', :name_ja => '豆類'
-      vg.children.create  :name_en => 'Herbs', :name_ja => 'ハーブ'
       vg.children.create  :name_en => 'Mashrooms', :name_ja => 'きのこ'
+      vg.children.create  :name_en => 'Herbs', :name_ja => 'ハーブ'
+      vg.children.create  :name_en => 'Spices', :name_ja => 'スパイス'
+      vg.children.create  :name_en => 'Other Veggies', :name_ja => 'その他野菜' 
     
     ProductLine.create :name_en => 'Fruits', :name_ja => 'くだもの'
     ProductLine.create  :name_en => 'Honey Products', :long_name_en => "Honey, Royal Jelly, Propolis",

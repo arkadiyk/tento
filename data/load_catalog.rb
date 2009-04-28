@@ -95,21 +95,39 @@ class LoadCatalog
     case name
       when "AizuIkiIki" then 1
       when "Saito Kokichi" then 2
+      when "Bandai Bee Farm" then 3
     end
   
   end
   
   def map_pl(name)
     case name
-      when "vegetable" then 2
-      when "root" then 3
-      when "leaf" then 4
-      when "beans" then 5
-      when "herb" then 6
-      when "mashroom" then 7
-      when "fruit" then 8
-      when "picles" then 10
-      when "rice" then 11
+#2 'Green Veggies', :name_ja => '緑色野菜'
+#3 'Fruit Veggies', :name_ja => '緑色野菜'
+#4 'Root Veggies',  :name_ja => '根菜'
+#5 'Mountain(wild) Veggies',  :name_ja => '根菜'
+#6 'Potatos', :name_ja => '豆類'
+#7 'Beans', :name_ja => '豆類'
+#8 'Mashrooms', :name_ja => 'きのこ'
+#9 'Herbs', :name_ja => 'ハーブ'
+#10 'Spices', :name_ja => 'ハーブ'
+#11 'Other Veggies', :name_ja => 'その他野菜' 
+            
+      when "leaf" then 2
+      when "fruit-veggie" then 3
+      when "root" then 4
+      when "mountain-veggie" then 5
+      when "potato" then 6
+      when "beans" then 7
+      when "mashroom" then 8
+      when "herb" then 9
+      when "spice" then 10
+      when "other-veggie" then 11
+      # =====
+      when "fruit" then 12
+      when "honey" then 13
+      when "picles" then 14
+      when "rice" then 15
     end
   end
   
