@@ -52,6 +52,7 @@ en-US:
     not_found: Order not found
     prev: Prev
     next: Next
+    index: "Order List"
     ordered_at: Ordered at {{at}}
     pay: Pay
     free_shipping: FREE

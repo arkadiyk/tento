@@ -6,17 +6,9 @@
   <% for item in items.sort %>
     <tr>
 	
-	<td width="1%">
-			<%= image_tag_with_check "vegi/#{item.image_file}.jpg",  
-			:onclick => "Effect.Appear('img_#{@ids[hdr]}_#{item.id}', {duration: 0.3});" %>
-	
-	        <div style="position:relative;"> 
-	          <div id='img_<%= "#{@ids[hdr]}_#{item.id}"%>' class="img_popup" style="display:none;">
-	             <%=image_tag("vegi-large/#{item.image_file}.jpg")%>
-	          </div>
-	        </div> 
+	  <td width="1%">
+		<%= cat_image_with_popup(item.image_file, "img_#{@ids[hdr]}_#{item.id}") %>
       </td>
-
       
 	  <td>
 		<table class="cat_context">

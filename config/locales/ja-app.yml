@@ -52,6 +52,7 @@ ja-JP:
     not_found: "見つかりません。"
     prev: "前"
     next: "次"
+    index: "Order List"
     ordered_at: "{{at}}に注文"
     pay: "支払い"
     free_shipping: "発送無料"
