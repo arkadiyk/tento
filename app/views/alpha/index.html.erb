@@ -1,0 +1,10 @@
+<table border="1">
+<% @open_carts.each do |cart| -%>
+	<tr>
+		<td><%=cart.order_id%></td>
+		<td><%=cart.user.name%></td>
+		<td>&yen;<%=cart.total_amount%></td>
+		<td><%=cart.pay_method%></td>
+		<td><%=cart.confirmed_at.to_s(:short)%></td>
+	</tr>
+<% end -%>

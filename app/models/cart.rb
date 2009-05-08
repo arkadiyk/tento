@@ -10,6 +10,9 @@ class Cart < ActiveRecord::Base
   belongs_to :ship_to, :class_name => "Address"
   
   named_scope :customer_orders, lambda { |user| { :conditions => ["confirmed_at is not null and user_id = ?", user] } }
+  
+  named_scope :confirmed, :conditions => "confirmed_at is not null"
+
 
   after_save :update_user_points
    
