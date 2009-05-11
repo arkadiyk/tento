@@ -56,6 +56,14 @@ en-US:
     ordered_at: Ordered at {{at}}
     pay: Pay
     free_shipping: FREE
+    status:
+        shipped: "Shipped"
+        part_shipped: "Partially Shipped"
+        not_shipped: "Processing"
+        paid: "Paid"
+        not_paid_long: "Waiting for Payment confirmation"
+        not_paid: ""
+        
     #payment methods
     pm:
       bank_transfer: Pay by Bank Transfer (Furikomi)

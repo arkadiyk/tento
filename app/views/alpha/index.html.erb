@@ -1,10 +1,25 @@
 <table border="1">
+	<tr>
+		<th>ID</th>
+		<th>User</th>
+		<th>Order Total</th>
+		<th>Pay Method</th>
+		<th>Ordered at</th>
+		<th>Shipping Status</th>
+		<th>Payment Status</th>
+		<th></th>
+		<th></th>
+	</tr>
 <% @open_carts.each do |cart| -%>
 	<tr>
-		<td><%=cart.order_id%></td>
+		<td><%= link_to cart.order_id, :action => 'view_order', :id => cart.id %></td>
 		<td><%=cart.user.name%></td>
 		<td>&yen;<%=cart.total_amount%></td>
 		<td><%=cart.pay_method%></td>
 		<td><%=cart.confirmed_at.to_s(:short)%></td>
+		<td><%=cart.shipping_status%></td>
+		<td><%=cart.payment_status%></td>
+		<td><%= link_to "Payments", :action => 'payments', :id => cart.id %></td>
+		<td><%= link_to "Shipments", :action => 'shipments', :id => cart.id %></td>
 	</tr>
 <% end -%>

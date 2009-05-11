@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  order_id: 1
+  tracking_no: MyString
+  weight: 9.99
+  price: 9.99
+  complete: false
+
+two:
+  order_id: 1
+  tracking_no: MyString
+  weight: 9.99
+  price: 9.99
+  complete: false

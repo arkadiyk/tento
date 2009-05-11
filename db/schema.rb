@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090127084623) do
+ActiveRecord::Schema.define(:version => 20090511051052) do
 
   create_table "addresses", :force => true do |t|
     t.string   "postal_code"
@@ -96,12 +96,33 @@ ActiveRecord::Schema.define(:version => 20090127084623) do
     t.datetime "updated_at"
   end
 
+  create_table "payments", :force => true do |t|
+    t.integer  "cart_id"
+    t.decimal  "amount"
+    t.string   "transaction_id"
+    t.string   "status"
+    t.string   "who"
+    t.string   "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "product_lines", :force => true do |t|
     t.integer  "parent_id"
     t.string   "name_en"
     t.string   "name_ja"
     t.string   "long_name_en"
     t.string   "long_name_ja"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shipments", :force => true do |t|
+    t.integer  "order_id"
+    t.string   "tracking_no"
+    t.decimal  "weight"
+    t.decimal  "price"
+    t.boolean  "complete",    :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

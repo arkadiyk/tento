@@ -11,11 +11,20 @@ class AlphaController < ApplicationController
   def index
     @open_carts = Cart.confirmed
   end
+  
+  def payments
+    
+  end
+  
+  def shipments
+    
+  end
 
 
   protected
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
+        @user = username
         username == "tento" && Digest::SHA1.hexdigest(password) == "51cfdc3af28c718856cb835602f5ca9e9f569343"
       end
     end

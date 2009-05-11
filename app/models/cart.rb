@@ -5,6 +5,9 @@ class Cart < ActiveRecord::Base
   has_many :line_items, :through => :orders
 
   has_many :suppliers, :through => :orders
+  
+  has_many :payments
+  has_many :shipments, :through => :orders
 
   belongs_to :user
   belongs_to :ship_to, :class_name => "Address"
@@ -22,6 +25,33 @@ class Cart < ActiveRecord::Base
 
   def confirmed?
     !confirmed_at.nil?
+  end
+  
+  def paid?
+    !paid_at.nil?
+  end
+  
+  def canceled?
+    !canceled_at.nil?
+  end
+  
+  def shipping_status
+    ostat = orders.map(&:status).uniq
+    if(ostat.length == 1 && ostat[0] == 4)
+      I18n.t("order.status.shipped")
+    elsif(ostat.length > 1 && ostat.index(4))
+      I18n.t("order.status.part_shipped")
+    else
+      I18n.t("order.status.not_shipped")
+    end
+  end
+  
+  def payment_status(format = :short)
+    if paid?
+      I18n.t("order.status.paid")
+    else
+      format == :short ? I18n.t("order.status.not_paid") : I18n.t("order.status.not_paid_long")
+    end
   end
 
   def size
