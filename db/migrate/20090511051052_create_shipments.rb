@@ -1,11 +1,12 @@
 class CreateShipments < ActiveRecord::Migration
   def self.up
-    create_table :shipments do |t|
+    create_table :shipments, :force => true  do |t|
       t.integer :order_id
       t.string :tracking_no
       t.decimal :weight
       t.decimal :price
       t.boolean :complete, :default => true
+      t.string :comments
 
       t.timestamps
     end

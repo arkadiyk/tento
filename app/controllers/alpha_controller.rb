@@ -5,19 +5,26 @@ class AlphaController < ApplicationController
   def pp
   end
 
-  def update
-  end
-  
   def index
     @open_carts = Cart.confirmed
   end
   
   def payments
-    
+    @cart = Cart.find params[:id]
+    @payment = Payment.new
+    if(params[:commit] == 'Add')
+      @payment = Payment.new(params[:new_payment])
+      @payment.cart = @cart
+      @payment.save!
+    elsif(params[:commit] == 'Update')
+      @payment = Payment.find(params[:upd_line])
+      attrs = params[:payment]["#{@payment.id}"]
+      @payment.update_attributes(:comments => attrs[:comments])
+    end
   end
   
   def shipments
-    
+    @cart = Cart.find params[:id]
   end
 
 

@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20090511051052) do
     t.string   "status"
     t.string   "who"
     t.string   "params"
+    t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -123,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20090511051052) do
     t.decimal  "weight"
     t.decimal  "price"
     t.boolean  "complete",    :default => true
+    t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
