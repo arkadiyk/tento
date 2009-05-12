@@ -46,11 +46,15 @@ class Cart < ActiveRecord::Base
     end
   end
   
-  def payment_status(format = :short)
-    if paid?
+  def payment_status
+    if amount_paid == 0
+      I18n.t("order.status.not_paid")
+    elsif amount_paid == total_amount
       I18n.t("order.status.paid")
+    elsif amount_paid < total_amount
+      I18n.t("order.status.part_paid")
     else
-      format == :short ? I18n.t("order.status.not_paid") : I18n.t("order.status.not_paid_long")
+      I18n.t("order.status.overpaid")
     end
   end
 
@@ -66,6 +70,9 @@ class Cart < ActiveRecord::Base
     orders.map(&:points).sum
   end
  
+  def amount_paid
+    payments.map(&:amount).sum
+  end
   
   def order_id
     "#{pay_method}00#{id + ORDER_INIT_NUM}" 

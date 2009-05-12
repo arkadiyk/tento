@@ -1,0 +1,33 @@
+<h2><%=@cart.order_id%> <%= link_to "Order List", :action => :index %></h2>
+
+<%= render :partial => "order_totals", :locals => {:cart => @cart} %>
+
+<% @cart.orders.each do |order| -%>
+<p style="font-size:larger;font-weight:bold;margin-left:10px"><%= order.supplier.name %></p>
+<table>
+	<tr>
+		<th>Item</th>
+		<th>Ja</th>
+		<th>Unit</th>
+		<th>Qty</th>
+		<th>Price</th>
+		<th>Amount</th>
+		<th>Weight</th>
+	<% order.line_items.each do |li| -%>
+	<tr>
+		<td><%=li.catalog_item.name_en%></td>
+		<td><%=li.catalog_item.name_ja%></td>
+		<td><%=li.item_unit.name%></td>
+		<td align="right"><%=li.quantity%></td>
+		<td align="right">&yen;<%=li.price%></td>
+		<td align="right">&yen;<%=li.item_amount%></td>
+		<td align="right"><%=li.item_weight%>Kg</td>
+	</tr>
+	<% end -%>
+	<tr class="totals">
+		<td align="right" colspan="5">Totals:</td>
+		<td align="right">&yen;<%=order.amount%></td>
+		<td align="right"><%=order.weight%>Kg</td>
+	</tr>
+</table>
+<% end -%>

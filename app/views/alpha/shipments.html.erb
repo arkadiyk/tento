@@ -1,0 +1,50 @@
+<h2><%= @cart.order_id %> <%= link_to "Order List", :action => :index %></h2>
+
+<%= render :partial => "order_totals", :locals => {:cart => @cart} %>
+
+
+<%= error_messages_for :new_shipment %>
+<% form_tag do  %>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Farm</th>
+		<th>Tracking No</th>
+		<th>Weight</th>
+		<th>Price</th>
+		<th>All?</th>
+		<th>Comments</th>
+		<th></th>
+	</tr>
+	<% @cart.shipments.each do |@shipment| -%>
+		<tr>
+			<td><%= @shipment.id%></td>
+			<td><%= @shipment.order.supplier_name %></td>
+			<td><%= @shipment.tracking_no%></td>
+			<td align="right"><%= @shipment.weight %>kg</td>
+			<td>&yen;<%= @shipment.price%></td>
+			<td><%= @shipment.complete ? 'Yes' : '<strong>NO</strong>' %>
+			<td><%= text_field "shipment[]", :comments, :size => 40 %></td>
+			<td><%= submit_tag 'Update', :onclick => "$('upd_line').value = '#{@shipment.id}'" %></td>
+		</tr>
+	<% end -%>
+	<tr>
+		<td></td>
+		<td>
+			<% if @cart.orders.size > 1 %>
+				<%= collection_select :new_shipment, :order_id, @cart.orders, :id, :supplier_name, options ={:prompt => "-Select a farm"}%>
+			<% else %>
+				<%= hidden_field :new_shipment, :order_id, :value => @cart.orders[0].id %>
+				<%= @cart.orders[0].supplier.name %>
+			<% end -%>
+		</td>
+		<td><%= text_field :new_shipment, :tracking_no, :size => 20 %></td>
+		<td><%= text_field :new_shipment, :weight, :size => 6 %></td>
+		<td><%= text_field :new_shipment, :price, :size => 4 %></td>
+		<td><%= check_box :new_shipment, :complete %></td>
+		<td><%= text_field :new_shipment, :comments, :size => 40 %></td>
+		<td><%= submit_tag 'Add' %></td>
+	</tr>
+</table>
+<%= hidden_field_tag :upd_line %>
+<% end %>

@@ -17,20 +17,44 @@
   </div>
   <div style="width:95%;padding:10px">
   	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%></h2>
-	<%=I18n.t("order.ordered_at", :at => @corder.confirmed_at) %>
-  </div>
-  <table  class="cart_ro_table" cellspacing="0">
-	<% @corder.orders.each do |order| %>
-		<%= render :partial => 'cart/supplier', :object => order.supplier %>
-		<% for item in order.line_items %>
-		  <tr id="ord_cart_line_<%=item.id%>">
-		    <%= render :partial => 'checkout/cart_line', :object => item %>
-		  </tr>
+
+	<table class="order_header_tbl">
+		<tr>
+			<th><%=I18n.t("amount")%></th>
+			<th><%=I18n.t("order.h.ordered_at")%></th>
+			<th><%=I18n.t("order.shipping_status")%></th>
+			<th><%=I18n.t("order.payment_status")%></th>
+		</tr>
+		<tr>
+			<td><%= I18n.t(:yen, :a => @corder.total_amount)%></td>
+			<td><%= @corder.ordered_at %></td>
+			<td><%= @corder.shipping_status %></td>
+			<td><%= @corder.payment_status %></td>
+		</tr>	
+	</table>
+
+	  <table  class="cart_ro_table" cellspacing="0">
+		<% @corder.orders.each do |order| %>
+
+			 <tr>
+			   <th colspan="6"><%= order.supplier.name %></th>
+			 </tr>
+
+			<% for item in order.line_items %>
+			  <tr id="ord_cart_line_<%=item.id%>">
+			    <%= render :partial => 'checkout/cart_line', :object => item %>
+			  </tr>
+			<% end %>
+			<%= render :partial => 'checkout/order', :object => order %> 
+			<tr><td colspan="6">&nbsp;</td></tr>
 		<% end %>
-		<%= render :partial => 'checkout/order', :object => order %> 
-	<% end %>
-  </table>
+	  </table>
+
+    <h2>Payments</h2>
+    <h2>Shipments</h2>
+  </div>
 </div>
+
 <%= javascript_tag "makeFrame('corder_#{@corder.order_id}_box','#{I18n.t("order.order_id", :id => @corder.order_id)}' )"  %>
 
 <% end %>

@@ -1,5 +1,8 @@
-<h1><%= @cart.order_id %></h1>
+<h2><%= @cart.order_id %> <%= link_to "Order List", :action => :index %></h2>
 
+<%= render :partial => "order_totals", :locals => {:cart => @cart} %>
+
+<%= error_messages_for :new_payment %>
 <% form_tag do  %>
 <table>
 	<tr>
@@ -15,7 +18,7 @@
 		<tr>
 			<td><%= @payment.id%></td>
 			<td><%= @payment.transaction_id%></td>
-			<td>&yen;<%= @payment.amount %></td>
+			<td align="right">&yen;<%= @payment.amount.to_i %></td>
 			<td><%= @payment.status%></td>
 			<td><%= text_field "payment[]", :comments, :size => 40 %></td>
 			<td><%= @payment.params %></td>
@@ -24,11 +27,11 @@
 	<% end -%>
 	<tr>
 		<td></td>
-		<td><%= text_field :new_payment, :transaction_id, :size => 40 %></td>
-		<td><%= text_field :new_payment, :amount, :size => 8, :value => @cart.total_amount %></td>
-		<td><%= text_field :new_payment, :status, :size => 8 %></td>
+		<td><%= text_field :new_payment, :transaction_id, :size => 20 %></td>
+		<td><%= text_field :new_payment, :amount, :size => 6, :value => (@cart.total_amount - @cart.amount_paid).to_i %></td>
+		<td>&lt;PAYPAL Only&gt;</td>
 		<td><%= text_field :new_payment, :comments, :size => 40 %></td>
-		<td><%= text_field :new_payment, :params, :size => 40 %></td>
+		<td>&lt;PAYPAL Only&gt;</td>
 		<td><%= submit_tag 'Add' %></td>
 	</tr>
 </table>

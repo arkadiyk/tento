@@ -3,6 +3,8 @@
 	<th><%=I18n.t("order.h.order_id")%></th>
 	<th><%=I18n.t("amount")%></th>
 	<th colspan="2"><%=I18n.t("points")%></th>
+	<th><%=I18n.t("order.shipping_status")%></th>
+	<th><%=I18n.t("order.payment_status")%></th>
 	<th><%=I18n.t("order.h.ordered_at")%></th>
 </tr>	
 <% @orders.each do |order| -%>
@@ -11,6 +13,8 @@
 	<td><%= I18n.t(:yen, :a => order.total_amount)%></td>
 	<td><%= order.total_points %>
 	<td align="left" width="3%"><%=image_tag("tento.png")%></td>
+	<td><%= order.shipping_status %></td>
+	<td><%= order.payment_status %></td>
 	<td><%= order.ordered_at %></td>
 </tr>
 

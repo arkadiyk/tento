@@ -290,8 +290,18 @@ a img {border: 0}
 }
 
 .cart_ro_table {
-	width: 95%;
-	margin: auto;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.cart_ro_table th {
+	text-align: left;
+	background: #EB8;
+	padding: 3px;
+}
+
+.cart_ro_table td {
+	padding: 0 3px;
 }
 
 .supplier_product_hdr {
@@ -340,3 +350,14 @@ tr.ototal-line td {
   padding:5px;
 }
 
+.order_header_tbl {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #EB8;
+}
+
+.order_header_tbl td, .order_header_tbl th {
+	border: 1px dotted #EB8;
+	padding: 3px;
+	text-align: center;
+}

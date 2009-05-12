@@ -53,9 +53,21 @@ ja-JP:
     prev: "前"
     next: "次"
     index: "Order List"
-    ordered_at: "{{at}}に注文"
     pay: "支払い"
     free_shipping: "発送無料"
+
+    shipping_status: "Shipped?"
+    payment_status: "Paid?"
+    status:
+        shipped: "Shipped"
+        part_shipped: "Partially Shipped"
+        not_shipped: "Processing"
+        paid: "Paid"
+        not_paid_long: "Waiting for Payment confirmation"
+        not_paid: "Not Paid"
+        overpaid: "Overpaid"
+        part_paid: "Partially Paid"
+    
     #payment methods
     pm:
       bank_transfer: "銀行振込（先払い）"

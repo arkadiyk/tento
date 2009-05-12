@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   
   has_many :line_items
   has_many :item_units, :through => :line_items
+  has_many :shipments
 
   before_save :calculate_shipping_cost
   
@@ -37,6 +38,10 @@ class Order < ActiveRecord::Base
   
   def ship_to
     cart.ship_to
+  end
+  
+  def supplier_name
+    supplier.name
   end
    
   private

@@ -19,20 +19,32 @@ body, table, div, td, input {
     font-family: Helvetica, Tahoma, sans-serif;
     font-size: 12px;
     font-weight: normal;
-    color: #483324;
+    color: #333333;
 }
 
-h1 {
-	margin: 20px;
+h2 {
+	margin: 5px 10px;
 }
 
 table 
 {
 	border-collapse: collapse;
-	margin: 10px;
+	margin: 5px 10px;
+    border: 1px solid #cccccc;
 }
 
 td, th {
-  border: 1px dotted #B74;
-  padding: 3px;
+  border: 1px dotted #cccccc;
+  padding: 4px;
+}
+
+#header_tbl {
+}
+
+#header_tbl td {
+	font-size: 16px;
+}
+
+.totals td {
+	font-weight: bold;
 }

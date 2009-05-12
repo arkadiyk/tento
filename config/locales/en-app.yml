@@ -53,16 +53,19 @@ en-US:
     prev: Prev
     next: Next
     index: "Order List"
-    ordered_at: Ordered at {{at}}
     pay: Pay
     free_shipping: FREE
+    shipping_status: "Shipped?"
+    payment_status: "Paid?"
     status:
         shipped: "Shipped"
         part_shipped: "Partially Shipped"
         not_shipped: "Processing"
         paid: "Paid"
         not_paid_long: "Waiting for Payment confirmation"
-        not_paid: ""
+        not_paid: "Not Paid"
+        overpaid: "Overpaid"
+        part_paid: "Partially Paid"
         
     #payment methods
     pm:
