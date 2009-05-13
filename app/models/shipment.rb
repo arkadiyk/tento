@@ -1,6 +1,5 @@
 class Shipment < ActiveRecord::Base
   belongs_to :order
   validates_presence_of :order_id, :message => "<< Select a farm"
-  validates_presence_of :tracking_no
-  
+  validates_presence_of :tracking_no, :shipped_at, :estimated_delivery  
 end

@@ -1,26 +1,49 @@
 <% if @cart.empty? %>
   <%= render :partial => 'cart/empty_cart' %>
 <% else %>
-  <table class="cart_ro_table" cellspacing="0">
-  <% @cart.orders.each do |order| %>
-    <%= render :partial => 'cart/supplier', :object => order.supplier %>
-    <% for item in order.line_items %>
-      <tr id="co_cart_line_<%=item.id%>">
-        <%= render :partial => 'cart_line', :object => item %>
-      </tr>
-    <% end %>
-    <%= render :partial => 'order', :object => order %> 
-  <% end %>
-  </table>
-  <hr>
-  <% if logged_in?%>
-	<%= render :partial => 'shipping', :object => @cart.ship_to%> 
-    <hr>
-  	<%= render :partial => 'payment', :locals => {:cart => @cart}%> 
-  <% else %>
-  	<div style="padding:20px; font-size:larger">
-	  <%=I18n.t("order.please_login")%>
-	</div>
-  <% end %>
-<% end %>
+  <div style="width:95%;padding:10px" class="cart_ro_box">
+  
+	<table class="order_header_tbl">
+		<tr>
+			<th><%=I18n.t("amount")%></th>
+			<th><%=I18n.t("order.h.ordered_at")%></th>
+			<th><%=I18n.t("order.shipping_status")%></th>
+			<th><%=I18n.t("order.payment_status")%></th>
+		</tr>
+		<tr>
+			<td><%= I18n.t(:yen, :a => @corder.total_amount)%></td>
+			<td><%= @corder.ordered_at %></td>
+			<td><%= @corder.shipping_status %></td>
+			<td><%= @corder.payment_status %></td>
+		</tr>	
+	</table>
 
+  
+	  <table class="cart_ro_table" cellspacing="0">
+	  <% @cart.orders.each do |order| %>
+		 <tr>
+		   <th colspan="6"><%= order.supplier.name %></th>
+		 </tr>
+	    <% for item in order.line_items %>
+	      <tr id="co_cart_line_<%=item.id%>">
+	        <%= render :partial => 'cart_line', :object => item %>
+	      </tr>
+	    <% end %>
+	    <%= render :partial => 'order', :object => order %> 
+		<tr><td colspan="6">&nbsp;</td></tr>
+	  <% end %>
+	  </table>
+	
+		<br>
+	  <% if logged_in?%>
+	    <h3>Shipping Information</h3>
+		<%= render :partial => 'shipping', :object => @cart.ship_to%> 
+	    <h3>Payment Information</h3>
+	  	<%= render :partial => 'payment', :locals => {:cart => @cart}%> 
+	  <% else %>
+	  	<div style="padding:20px; font-size:larger">
+		  <%=I18n.t("order.please_login")%>
+		</div>
+	  <% end %>
+   </div>
+<% end %>

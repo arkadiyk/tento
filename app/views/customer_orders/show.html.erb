@@ -4,6 +4,7 @@
   	<h2><%=I18n.t("order.not_found")%></h2>
 <% else %>
 <div id="corder_<%=@corder.order_id%>_box">
+ 
   <div style="width:95%;padding:10px">
   	<% if @prev %>
 	  <%=link_to_function I18n.t("order.prev"), "goCorder('#{@prev}')"%>
@@ -15,6 +16,7 @@
 	  <%=link_to_function I18n.t("order.next"), "goCorder('#{@next}')"%>
 	<% end %>
   </div>
+ 
   <div style="width:95%;padding:10px">
   	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%></h2>
 
@@ -35,7 +37,6 @@
 
 	  <table  class="cart_ro_table" cellspacing="0">
 		<% @corder.orders.each do |order| %>
-
 			 <tr>
 			   <th colspan="6"><%= order.supplier.name %></th>
 			 </tr>
@@ -50,8 +51,45 @@
 		<% end %>
 	  </table>
 
-    <h2>Payments</h2>
-    <h2>Shipments</h2>
+	<% if @corder.payments.size > 0 %>
+		<br>
+	    <h2>Payments</h2>
+		<table  class="order_header_tbl">
+			<tr>
+				<th>Transaction_id</th>
+				<th>Amount</th>
+				<th>Paid at</th>
+			</tr>
+				
+		<% @corder.payments.each do |payment| -%>
+			<tr>
+				<td><%= payment.transaction_id%></td>
+				<td align="right">&yen;<%= payment.amount.to_i %></td>
+				<td align="right"><%= payment.updated_at.to_s(:db) %></td>
+			</tr>
+		<% end -%>
+		</table>
+	<% end -%>
+	<br>
+	<% if @corder.shipments.size > 0 %>
+		<br>
+	    <h2>Shipments</h2>
+		<table  class="order_header_tbl">
+			<tr>
+				<th>Tracking No</th>
+				<th>Shipped At</th>
+				<th>Est. Delivery Date</th>
+			</tr>
+				
+		<% @corder.shipments.each do |shipment| -%>
+			<tr>
+				<td><%= shipment.tracking_no%></td>
+				<td align="right"><%= shipment.shipped_at.to_s(:db) %></td>
+				<td align="right"><%= shipment.estimated_delivery.to_s(:db) %></td>
+			</tr>
+		<% end -%>
+		</table>
+	<% end -%>
   </div>
 </div>
 

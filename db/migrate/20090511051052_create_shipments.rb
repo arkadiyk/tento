@@ -7,6 +7,8 @@ class CreateShipments < ActiveRecord::Migration
       t.decimal :price
       t.boolean :complete, :default => true
       t.string :comments
+      t.datetime :shipped_at
+      t.date :estimated_delivery
 
       t.timestamps
     end

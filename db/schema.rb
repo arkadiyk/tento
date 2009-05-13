@@ -123,8 +123,10 @@ ActiveRecord::Schema.define(:version => 20090511051052) do
     t.string   "tracking_no"
     t.decimal  "weight"
     t.decimal  "price"
-    t.boolean  "complete",    :default => true
+    t.boolean  "complete",           :default => true
     t.string   "comments"
+    t.datetime "shipped_at"
+    t.date     "estimated_delivery"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
