@@ -56,9 +56,9 @@
 	    <h2>Payments</h2>
 		<table  class="order_header_tbl">
 			<tr>
-				<th>Transaction_id</th>
-				<th>Amount</th>
-				<th>Paid at</th>
+				<th><%= I18n.t("payment.transaction_id")%></th>
+				<th><%= I18n.t("amount")%></th>
+				<th><%= I18n.t("payment.paid_at")%></th>
 			</tr>
 				
 		<% @corder.payments.each do |payment| -%>
@@ -76,9 +76,9 @@
 	    <h2>Shipments</h2>
 		<table  class="order_header_tbl">
 			<tr>
-				<th>Tracking No</th>
-				<th>Shipped At</th>
-				<th>Est. Delivery Date</th>
+				<th><%= I18n.t("shipping.tracking_no")%></th>
+				<th><%= I18n.t("shipping.shipped_at")%>Shipped At</th>
+				<th><%= I18n.t("shipping.estimated_delivery")%>Est. Delivery Date</th>
 			</tr>
 				
 		<% @corder.shipments.each do |shipment| -%>

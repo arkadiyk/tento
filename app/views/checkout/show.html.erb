@@ -6,15 +6,13 @@
 	<table class="order_header_tbl">
 		<tr>
 			<th><%=I18n.t("amount")%></th>
-			<th><%=I18n.t("order.h.ordered_at")%></th>
-			<th><%=I18n.t("order.shipping_status")%></th>
-			<th><%=I18n.t("order.payment_status")%></th>
+			<th><%=I18n.t("cart.shipping")%></th>
+			<th><%=I18n.t("points")%></th>
 		</tr>
 		<tr>
-			<td><%= I18n.t(:yen, :a => @corder.total_amount)%></td>
-			<td><%= @corder.ordered_at %></td>
-			<td><%= @corder.shipping_status %></td>
-			<td><%= @corder.payment_status %></td>
+			<td><%= I18n.t(:yen, :a => @cart.total_amount)%></td>
+			<td><%= @cart.orders.map(&:shipping_cost) %></td>
+			<td><%= @cart.total_points %></td>
 		</tr>	
 	</table>
 

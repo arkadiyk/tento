@@ -76,7 +76,14 @@ en-US:
       order_id: "Order#"
       ordered_at: Ordered at
       
-        
+  shipping:
+      tracking_no: "Tracking No"
+      shipped_at: "Shipped At"
+      estimated_delivery: "Est. Delivery Date"
+      
+  payment:
+      transaction_id: "Transaction ID"
+      paid_at: "Paid At"      
     
   cart:
     checkout: "Checkout"
