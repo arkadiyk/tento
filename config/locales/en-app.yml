@@ -27,6 +27,7 @@ en-US:
   amount: Amount
   points: Points
   yen: "¥{{a}}"
+  farm: "Farm"
  
   address:
     prefecture: "Prefecture"

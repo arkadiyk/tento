@@ -47,7 +47,6 @@
 			  </tr>
 			<% end %>
 			<%= render :partial => 'checkout/order', :object => order %> 
-			<tr><td colspan="6">&nbsp;</td></tr>
 		<% end %>
 	  </table>
 
@@ -77,6 +76,7 @@
 		<table  class="order_header_tbl">
 			<tr>
 				<th><%= I18n.t("shipping.tracking_no")%></th>
+				<th><%= I18n.t("farm")%></th>
 				<th><%= I18n.t("shipping.shipped_at")%>Shipped At</th>
 				<th><%= I18n.t("shipping.estimated_delivery")%>Est. Delivery Date</th>
 			</tr>
@@ -84,6 +84,7 @@
 		<% @corder.shipments.each do |shipment| -%>
 			<tr>
 				<td><%= shipment.tracking_no%></td>
+				<td><%= shipment.order.supplier_name%></td>
 				<td align="right"><%= shipment.shipped_at.to_s(:db) %></td>
 				<td align="right"><%= shipment.estimated_delivery.to_s(:db) %></td>
 			</tr>
