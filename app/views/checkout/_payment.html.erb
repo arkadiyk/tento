@@ -1,10 +1,15 @@
 <div id="pay_box" style="font-size:larger;padding:10px;line-height:140%">
 <%=I18n.t("order.total_to_pay")%> <span style="font-weight:bold;"><%=I18n.t(:yen, :a => cart.total_amount)%></span>
+
+
 <form>
+	<fieldset style="margin: 5px; padding: 6px">
+		<legend>&nbsp;<%=I18n.t("order.pm.payment_method")%>&nbsp;</legend>
 <p><%= radio_button_tag "payment_method", "BT", true%> <%=I18n.t("order.pm.bank_transfer")%></p>
 <p><%= radio_button_tag "payment_method", "CD"%> <%=I18n.t("order.pm.on_delivery")%></p>
 <p><%= radio_button_tag "payment_method", "PP"%> <%=I18n.t("order.pm.paypal")%></p>
-<p><%= submit_to_remote "pay_btn", I18n.t("order.pay"), :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
+<p><%= submit_to_remote "pay_btn", I18n.t("order.pay"), :html=>{:style => "width: 100px; margin: 10px 0 5px 30px"}, :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
+</fieldset>
 </form>
 </div>
 

@@ -58,6 +58,14 @@ class Cart < ActiveRecord::Base
     end
   end
 
+  def payment_method_long
+    case pay_method
+      when 'BT' then I18n.t("order.pm.bank_transfer")
+      when 'CD' then I18n.t("order.pm.on_delivery")
+      when 'PP' then I18n.t("order.pm.paypal")
+    end  
+  end
+
   def size
     orders.map(&:size).sum
   end

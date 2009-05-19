@@ -18,7 +18,18 @@
   </div>
  
   <div style="width:95%;padding:10px">
-  	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%></h2>
+  	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%> (<%=@corder.payment_method_long%>)</h2>
+	
+	<div style="margin: 5px 0 15px 5px">
+	<p>
+	<%= @corder.ship_to.prefecture %>
+	<%= @corder.ship_to.city %>
+	<%= @corder.ship_to.address %>
+	</p><p>
+	<%= @corder.ship_to.postal_code%>
+	<p>
+	<%= @corder.ship_to.phone%>
+	</div>
 
 	<table class="order_header_tbl">
 		<tr>

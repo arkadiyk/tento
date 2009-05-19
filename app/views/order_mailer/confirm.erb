@@ -1,0 +1,106 @@
+<head>
+<style type="text/css">
+<!--
+body,div,td,th,p {font-family: tahoma,arial;font-size:10pt}
+h2{font-size:12pt}
+table {border: 1px solid #B74;width:80%;border-collapse:collapse;}
+td, th{border-bottom: 1px dotted #B74}
+.total-line td {border-bottom: 1px solid #B74}
+.total-line td, .stotal-line td {font-weight: bold;}
+.cart_ro_table th{
+	background: #EB8;
+	padding: 3px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div>
+
+<h2>Dear <%= @cart.user.name %></h2>
+
+<%= render :partial => 'm1' %>
+  <div style="width:95%;padding:10px">
+  	<h2><%= I18n.t("order.order_id", :id => @cart.order_id)%> (<%=@cart.payment_method_long%>)</h2>
+	
+	<div style="margin: 5px 0 15px 5px">
+	<p>
+	<%= @cart.ship_to.prefecture %>
+	<%= @cart.ship_to.city %>
+	<%= @cart.ship_to.address %>
+	</p><p>
+	<%= @cart.ship_to.postal_code%>
+	<p>
+	<%= @cart.ship_to.phone%>
+	</div>
+
+	<table class="order_header_tbl">
+		<tr>
+			<th align="left"><%=I18n.t("order.h.ordered_at")%></th>
+			<th align="right"><%=I18n.t("amount")%></th>
+			<th align="right"><%=I18n.t("cart.shipping")%></th>
+			<th align="right"><%=I18n.t("points")%></th>
+		</tr>
+		<tr>
+			<td align="left"><%= @cart.ordered_at %></td>
+			<td align="right"><%= I18n.t(:yen, :a => @cart.total_amount)%></td>
+			<td align="right"><%= I18n.t(:yen, :a => @cart.orders.map(&:shipping_cost).sum) %></td>
+			<td align="right"><%= @cart.total_points %></td>
+		</tr>	
+	</table>
+<br>
+	  <table  class="cart_ro_table" cellspacing="0">
+		<% @cart.orders.each do |order| %>
+			 <tr>
+			   <th align="left">Item Name (From <%= order.supplier.name %>)</th>
+			   <th align="right">Quantity &times; Unit</th>
+			   <th align="right">Weight</th>
+			   <th align="right">Price</th>
+			 </tr>
+
+			<% for item in order.line_items %>
+			  <tr id="ord_cart_line_<%=item.id%>">
+			    <%= render :partial => 'cart_line', :object => item %>
+			  </tr>
+			<% end %>
+			<%= render :partial => 'order', :object => order %> 
+		<% end %>
+	  </table>
+
+	<% if @cart.payments.size > 0 %>
+		<br>
+	    <h2>Payments</h2>
+		<table  class="order_header_tbl">
+			<tr>
+				<th><%= I18n.t("payment.transaction_id")%></th>
+				<th><%= I18n.t("amount")%></th>
+				<th><%= I18n.t("payment.paid_at")%></th>
+			</tr>
+				
+		<% @cart.payments.each do |payment| -%>
+			<tr>
+				<td><%= payment.transaction_id%></td>
+				<td align="right">&yen;<%= payment.amount.to_i %></td>
+				<td align="right"><%= payment.updated_at.to_s(:db) %></td>
+			</tr>
+		<% end -%>
+		</table>
+	<% end -%>
+	<br>
+	<% if @cart.shipments.size > 0 %>
+		<br>
+	    <h2>Shipments</h2>
+		<table  class="order_header_tbl">
+			<tr>
+				<th><%= I18n.t("shipping.tracking_no")%></th>
+				<th><%= I18n.t("farm")%></th>
+				<th><%= I18n.t("shipping.shipped_at")%>Shipped At</th>
+				<th><%= I18n.t("shipping.estimated_delivery")%>Est. Delivery Date</th>
+			</tr>
+		</table>
+	<% end -%>
+  </div>
+</div>
+</div>
+</body>

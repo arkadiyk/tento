@@ -67,15 +67,16 @@ en-US:
         not_paid: "Not Paid"
         overpaid: "Overpaid"
         part_paid: "Partially Paid"
-        
     #payment methods
     pm:
-      bank_transfer: Pay by Bank Transfer (Furikomi)
-      on_delivery: Pay on delivery
-      paypal: Pay by PayPal
+      payment_method: "Please choose payment method"
+      bank_transfer: Bank Transfer - Furikomi
+      on_delivery: "Pay on delivery"
+      paypal: PayPal
     h:
       order_id: "Order#"
       ordered_at: Ordered at
+      
       
   shipping:
       tracking_no: "Tracking No"

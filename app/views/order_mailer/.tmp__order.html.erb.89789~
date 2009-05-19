@@ -1,0 +1,19 @@
+<tbody id="co_order_totals_<%=order.id%>"
+ <tr id="co_order_totals1_<%=order.id%>" class="stotal-line">
+  <td align="right"><%=I18n.t("cart.shipping")%></td>
+  <td></td>
+  <td></td>
+  <td align="right"><%= order.shipping_cost_s %></td>
+  <td></td>
+  <td></td>
+ </tr>
+
+ <tr id="co_order_totals2_<%=order.id%>" class="total-line">
+  <td align="right"><%=I18n.t("cart.total")%></td>
+  <td></td>
+  <td align="right"><%= order.weight %>kg</td>
+  <td align="right"><%= I18n.t(:yen, :a => order.amount_with_shipping)%></td>
+  <td align="right"><%=order.points%>&nbsp;</td>
+  <td align="left"><%=image_tag("tento.png")%></td>
+ </tr>
+</tbody> 
