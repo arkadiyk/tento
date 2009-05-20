@@ -2,8 +2,8 @@ class OrderMailer < ActionMailer::Base
   
 
   def confirm(cart)
-    subject    "Order Confirmation - #{cart.order_id}"
-    recipients 'arc68@yahoo.com'
+    subject    I18n.t('order.email.confirm_subject', :id => cart.order_id)
+    recipients cart.user.email
     from       'services@tentoexpress.jp'
     sent_on    Time.now
     content_type "text/html"

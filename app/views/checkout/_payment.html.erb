@@ -8,7 +8,7 @@
 <p><%= radio_button_tag "payment_method", "BT", true%> <%=I18n.t("order.pm.bank_transfer")%></p>
 <p><%= radio_button_tag "payment_method", "CD"%> <%=I18n.t("order.pm.on_delivery")%></p>
 <p><%= radio_button_tag "payment_method", "PP"%> <%=I18n.t("order.pm.paypal")%></p>
-<p><%= submit_to_remote "pay_btn", I18n.t("order.pay"), :html=>{:style => "width: 100px; margin: 10px 0 5px 30px"}, :url => {:action => 'pay'}, :update => 'checkout_box'%></p>
+<p><%= submit_to_remote "complete_btn", I18n.t("order.complete_btn"), :before => "this.disabled=true;this.value='#{I18n.t(:wait)}';", :html=>{:style => "width: 200px; margin: 10px 0 5px 30px"}, :url => {:action => 'complete'}, :update => 'checkout_box'%></p>
 </fieldset>
 </form>
 </div>

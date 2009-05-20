@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
       render :template => 'account/show'
       flash[:notice] = I18n.t(:logged_in)
       update_cart_from_current_user
+      user.update_attribute(:default_locale, I18n.locale)
     else
       note_failed_signin
       @login       = params[:login]

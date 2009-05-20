@@ -28,10 +28,13 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      render :template => 'account/show'
+
       update_cart_from_current_user
+      @user.update_attribute(:default_locale, I18n.locale)
       
       flash[:notice] = I18n.t(:signup_complete)
+
+      render :template => 'account/show'
       
     else
       flash[:error]  = I18n.t(:signup_problem)

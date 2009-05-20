@@ -166,6 +166,8 @@ ActiveRecord::Schema.define(:version => 20090511051052) do
     t.integer  "shipping_addr_id"
     t.boolean  "verified"
     t.integer  "points"
+    t.integer  "available_points"
+    t.string   "default_locale"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

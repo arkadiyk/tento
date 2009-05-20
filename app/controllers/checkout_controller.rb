@@ -7,11 +7,13 @@ class CheckoutController < ApplicationController
     @cart = current_cart
   end
   
-  def pay
+  def complete
     @cart = current_cart
     @cart.confirmed_at = Time.now
     @cart.pay_method = params[:payment_method]
     @cart.save!
+    email  = OrderMailer.create_confirm(@cart)
+    OrderMailer.deliver(email)
   end
 
   def new_address

@@ -28,6 +28,7 @@ en-US:
   points: Points
   yen: "¥{{a}}"
   farm: "Farm"
+  wait: "Please wait..."
  
   address:
     prefecture: "Prefecture"
@@ -55,9 +56,13 @@ en-US:
     next: Next
     index: "Order List"
     pay: Pay
+    complete_btn: "Complete"
     free_shipping: FREE
     shipping_status: "Shipped?"
     payment_status: "Paid?"
+    email:
+        title: Dear {{name}}
+        confirm_subject: Order Confirmation - {{id}}
     status:
         shipped: "Shipped"
         part_shipped: "Partially Shipped"

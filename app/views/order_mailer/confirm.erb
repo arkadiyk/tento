@@ -1,7 +1,6 @@
-<head>
 <style type="text/css">
 <!--
-body,div,td,th,p {font-family: tahoma,arial;font-size:10pt}
+div,td,th,p {font-family: tahoma,arial;font-size:10pt}
 h2{font-size:12pt}
 table {border: 1px solid #B74;width:80%;border-collapse:collapse;}
 td, th{border-bottom: 1px dotted #B74}
@@ -13,12 +12,10 @@ td, th{border-bottom: 1px dotted #B74}
 }
 -->
 </style>
-</head>
 
-<body>
-<div>
+<div style="font-family: tahoma,arial;font-size:10pt">
 
-<h2>Dear <%= @cart.user.name %></h2>
+<h2><%= I18n.t("order.email.title", :name => @cart.user.name) %></h2>
 
 <%= render :partial => 'm1' %>
   <div style="width:95%;padding:10px">
@@ -35,7 +32,7 @@ td, th{border-bottom: 1px dotted #B74}
 	<%= @cart.ship_to.phone%>
 	</div>
 
-	<table class="order_header_tbl">
+	<table style="border: 1px solid #B74;width:90%;border-collapse:collapse;">
 		<tr>
 			<th align="left"><%=I18n.t("order.h.ordered_at")%></th>
 			<th align="right"><%=I18n.t("amount")%></th>
@@ -50,7 +47,7 @@ td, th{border-bottom: 1px dotted #B74}
 		</tr>	
 	</table>
 <br>
-	  <table  class="cart_ro_table" cellspacing="0">
+	  <table cellspacing="0" style="border: 1px solid #B74;width:90%;border-collapse:collapse;">
 		<% @cart.orders.each do |order| %>
 			 <tr>
 			   <th align="left">Item Name (From <%= order.supplier.name %>)</th>
@@ -71,7 +68,7 @@ td, th{border-bottom: 1px dotted #B74}
 	<% if @cart.payments.size > 0 %>
 		<br>
 	    <h2>Payments</h2>
-		<table  class="order_header_tbl">
+		<table style="border: 1px solid #B74;width:90%;border-collapse:collapse;">
 			<tr>
 				<th><%= I18n.t("payment.transaction_id")%></th>
 				<th><%= I18n.t("amount")%></th>
@@ -91,7 +88,7 @@ td, th{border-bottom: 1px dotted #B74}
 	<% if @cart.shipments.size > 0 %>
 		<br>
 	    <h2>Shipments</h2>
-		<table  class="order_header_tbl">
+		<table  style="border: 1px solid #B74;width:90%;border-collapse:collapse;">
 			<tr>
 				<th><%= I18n.t("shipping.tracking_no")%></th>
 				<th><%= I18n.t("farm")%></th>
@@ -103,4 +100,3 @@ td, th{border-bottom: 1px dotted #B74}
   </div>
 </div>
 </div>
-</body>

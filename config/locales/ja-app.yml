@@ -27,6 +27,8 @@ ja-JP:
   amount: "金額"
   points: Points
   yen: "{{a}}円"
+  farm: Farm
+  wait: "Please wait..."
  
   address:
     prefecture: "県"
@@ -54,10 +56,16 @@ ja-JP:
     next: "次"
     index: "Order List"
     pay: "支払い"
+    complete_btn: "Complete"
     free_shipping: "発送無料"
 
     shipping_status: "Shipped?"
     payment_status: "Paid?"
+    email:
+        title: "{{name}}様"
+        confirm_subject: Order Confirmation - {{id}}
+        
+    
     status:
         shipped: "Shipped"
         part_shipped: "Partially Shipped"
