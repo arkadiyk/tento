@@ -67,6 +67,9 @@ en-US:
         shipped: "Shipped"
         part_shipped: "Partially Shipped"
         not_shipped: "Processing"
+        reviewed: "Reviewed"
+        # -v- Fulfilling instead? -v-
+        sent: "Sent to Farm" 
         paid: "Paid"
         not_paid_long: "Waiting for Payment confirmation"
         not_paid: "Not Paid"

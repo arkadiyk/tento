@@ -41,6 +41,10 @@ class Cart < ActiveRecord::Base
       I18n.t("order.status.shipped")
     elsif(ostat.length > 1 && ostat.index(4))
       I18n.t("order.status.part_shipped")
+    elsif(ostat.length == 1 && ostat.index(1))
+      I18n.t("order.status.reviewed")
+    elsif(ostat.index(2))
+      I18n.t("order.status.sent")
     else
       I18n.t("order.status.not_shipped")
     end

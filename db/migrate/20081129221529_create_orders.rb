@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :cart_id
       t.integer :supplier_id
       t.integer :shipping_cost
-      t.integer :status, :default => 0 # 0: cart, 1: confirmed, 2: sent to supplier, 3: suppl ask, 4: shipped
+      t.integer :status, :default => 0 # 0: cart, 1: reviewed, 2: sent to supplier, 3: suppl ask, 4: shipped
       t.boolean :canceled
  
       t.timestamps

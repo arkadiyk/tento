@@ -42,6 +42,15 @@ class AlphaController < ApplicationController
   def view_order
     @cart = Cart.find params[:id]
   end
+  
+  def reviewed 
+    cart = Cart.find params[:id]
+    cart.orders.each do |order|
+      order.update_attribute(:status, 1)
+    end
+    index
+    render :action => 'index'
+  end
 
 
   protected

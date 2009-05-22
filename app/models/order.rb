@@ -6,6 +6,8 @@ class Order < ActiveRecord::Base
   has_many :item_units, :through => :line_items
   has_many :shipments
 
+  named_scope :confirmed_by_supplier, lambda { |supplier| { :conditions => ["status = 1 and supplier_id = ?", supplier] } }
+
   before_save :calculate_shipping_cost
   
   def empty?
@@ -43,6 +45,7 @@ class Order < ActiveRecord::Base
   def supplier_name
     supplier.name
   end
+  
    
   private
     def calculate_shipping_cost

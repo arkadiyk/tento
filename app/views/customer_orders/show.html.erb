@@ -21,13 +21,13 @@
   	<h2><%= I18n.t("order.order_id", :id => @corder.order_id)%> (<%=@corder.payment_method_long%>)</h2>
 	
 	<div style="margin: 5px 0 15px 5px">
-	<p>
+	<p style="margin: 0">
 	<%= @corder.ship_to.prefecture %>
 	<%= @corder.ship_to.city %>
 	<%= @corder.ship_to.address %>
-	</p><p>
+	</p><p style="margin: 0">
 	<%= @corder.ship_to.postal_code%>
-	<p>
+	<p style="margin: 0">
 	<%= @corder.ship_to.phone%>
 	</div>
 
