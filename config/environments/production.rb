@@ -20,3 +20,17 @@ config.action_controller.perform_caching             = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+# Do care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_charset = 'utf-8'
+config.action_mailer.smtp_settings = { 
+  :address => "homie.mail.dreamhost.com", 
+  :port => 587, 
+  :domain => "tentoexpress.jp", 
+  :authentication => :login, 
+  :user_name => "services@tentoexpress.jp", 
+  :password => "parol1" 
+} 
