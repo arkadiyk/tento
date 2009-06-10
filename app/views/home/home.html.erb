@@ -13,9 +13,16 @@
 		<td id="logo1-cell"></td>
 		<td id="logo2-cell" valign="top">
 			<%= image_tag "logo-text.png" %>
-			<span style="float:right;padding:20px">
+			<span style="float:right;clear:right;padding-top:20px">
 				<%= link_to_remote 'English', :url => {:controller => "home", :action => "set_lng", :id => "en-US" } %> | 
 				<%= link_to_remote '日本語', :url => {:controller => "home", :action => "set_lng", :id => "ja-JP" } %>
+			</span>
+			<span style="float:right;clear:right;padding-top:20px">
+				<%= link_to_function 'About Us', "" %> | 
+				<%= link_to_function 'How To Order', "" %> | 
+				<%= link_to_function 'FAQ', "" %> | 
+				<%= link_to_function 'Calendar', "" %> 
+			</span>
 		</td>
 		<td id="logo3-cell"></td>
 	</tr>
@@ -31,17 +38,7 @@
       <li><div id="brw_pl_o"><div id="brw_pl" class="brw_items"></div></div></li>
       <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; <%=I18n.t("home.supplier")%></span></a></li>
       <li><div id="brw_su_o" style="display:none"><div id="brw_su" class="brw_items"></div></div></li>
-      <li><a href="#" class="mitem_cm" onClick="goCheckout(); return false;"><span><%=I18n.t("home.checkout")%></span></a></li>
-      <li><a href="#" class="mitem_dd" onClick="return false;"><span>&#x25B6; <%=I18n.t("home.info")%></span></a></li>
-      <li><div id="brw_info_o" style="display:none"><div id="brw_info" class="brw_items">
-        <ul>
-          <li>Farmers</li>
-          <li>How To Order</li>
-          <li>Calendar</li>
-          <li>Links</li>
-        </ul>
-      </div></div></li>
-      
+      <li><a href="#" class="mitem_cm" onClick="goCheckout(); return false;"><span><%=I18n.t("home.checkout")%></span></a></li>      
     </ul>
   </div>
 </div>
