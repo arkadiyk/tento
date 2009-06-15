@@ -33,8 +33,10 @@
 
 <% end -%>
 
+<% if @cart.orders.map(&:status).uniq[0] == 0 %>
 <% form_tag :action => 'reviewed', :id => @cart.id do %>
 <p style="font-size:larger;font-weight:bold;margin-left:10px">
   <%= submit_tag 'Stamp as REVIEWED' %>
 </p>
 <% end -%>
+<% end %>
