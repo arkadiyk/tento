@@ -21,7 +21,7 @@ role :db, domain, :primary => true
 set :scm, :subversion
 set :scm_user, "arc"   # Sets 'my_svn_user' instead, if you are using different name than your app.
 set :scm_auth_cache, true  # Prompts for password once
-set :scm_password, "arc123" #Proc.new { Capistrano::CLI.password_prompt("SCM password for #{scm_user}:") }
+set :scm_password, Proc.new { Capistrano::CLI.password_prompt("SCM password for #{scm_user}:") }
 set :repository,  "http://svn.tentoexpress.jp/#{application}2/trunk"
 set :deploy_to, "/home/#{user}/#{domain}"
 # keeps a local checkout of the repository on the server to get faster deployments
